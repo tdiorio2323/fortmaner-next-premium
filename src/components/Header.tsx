@@ -26,9 +26,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/src/assets/fort-maner-logo-main.jpg" 
+              src="/lovable-uploads/72eee6a2-4dd7-4ac4-96ea-968115cb8b61.png" 
               alt="Fort Maner" 
-              className="h-10 w-auto filter brightness-0 invert"
+              className="h-10 w-auto"
             />
           </Link>
 
