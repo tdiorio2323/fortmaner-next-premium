@@ -33,8 +33,9 @@ const Banner = ({ title, subtitle, cta, image, onCtaClick }: BannerProps) => {
         </p>
         <Button 
           size="lg"
+          variant="black"
           onClick={onCtaClick}
-          className="bg-brand-red text-brand-white hover:bg-brand-red/90 font-semibold px-8 py-4 text-lg luxury-glow group"
+          className="font-semibold px-8 py-4 text-lg luxury-glow group"
         >
           {cta}
           <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

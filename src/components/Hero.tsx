@@ -31,7 +31,8 @@ const Hero = () => {
         {/* CTA */}
         <Button 
           size="lg" 
-          className="bg-brand-white text-brand-black hover:bg-brand-white/90 font-semibold px-8 py-4 text-lg luxury-glow group"
+          variant="black"
+          className="font-semibold px-8 py-4 text-lg luxury-glow group"
         >
           Shop Now
           <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

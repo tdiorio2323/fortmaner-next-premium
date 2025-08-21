@@ -34,8 +34,8 @@ const CategoryCard = ({ title, href, image, description }: CategoryCardProps) =>
           )}
           <Link to={href}>
             <Button 
-              variant="outline" 
-              className="border-brand-white text-brand-white hover:bg-brand-white hover:text-brand-black group-hover:translate-x-1 transition-all"
+              variant="black"
+              className="group-hover:translate-x-1 transition-all"
             >
               Shop {title}
               <ArrowRight className="ml-2 h-4 w-4" />

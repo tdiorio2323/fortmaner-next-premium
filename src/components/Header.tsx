@@ -47,11 +47,11 @@ const Header = () => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="text-brand-white hover:bg-stone-medium/20">
+            <Button variant="black" size="icon">
               <Search className="h-5 w-5" />
             </Button>
             
-            <Button variant="ghost" size="icon" className="text-brand-white hover:bg-stone-medium/20 relative">
+            <Button variant="black" size="icon" className="relative">
               <ShoppingBag className="h-5 w-5" />
               <span className="absolute -top-1 -right-1 h-4 w-4 bg-brand-red text-brand-white text-xs rounded-full flex items-center justify-center">
                 0
