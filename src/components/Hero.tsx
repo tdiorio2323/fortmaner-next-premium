@@ -20,23 +20,13 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         {/* Logo */}
-        <div className="mb-8">
+        <div className="mb-12">
           <img 
             src="/lovable-uploads/0d0fabe4-ff06-429d-a388-e30e4e7443ed.png" 
             alt="Fort Maner" 
-            className="h-24 w-auto mx-auto"
+            className="h-72 w-auto mx-auto"
           />
         </div>
-        
-        {/* Title */}
-        <h1 className="text-5xl md:text-7xl font-bold text-brand-white mb-6 tracking-wider">
-          FT.MANER
-        </h1>
-        
-        {/* Subtitle */}
-        <p className="text-xl md:text-2xl text-brand-white/90 mb-12 font-light tracking-wide">
-          Luxury Streetwear
-        </p>
         
         {/* CTA */}
         <Button 
