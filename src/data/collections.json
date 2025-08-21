@@ -1,6 +1,9 @@
 {
-  "footwear": ["stone-runners"],
-  "clothing": ["jaguar-tee", "mountain-hoodie", "fortress-shorts"],
-  "accessories": ["chicago-cap", "leather-wallet", "stone-backpack", "fort-socks"],
-  "featured": ["jaguar-tee", "mountain-hoodie", "stone-runners", "chicago-cap", "fortress-shorts", "leather-wallet", "stone-backpack", "fort-socks"]
+  "men": ["air-jordan-6-cool-grey", "nike-dunk-low-reverse-panda", "godspeed-graphic-hoodie", "chicago-script-tee", "essential-zip-hoodie", "nike-air-max-1-premium", "stacked-logo-crewneck", "utility-sling-bag"],
+  "ladies": ["nike-dunk-low-reverse-panda", "godspeed-graphic-hoodie", "chicago-script-tee", "essential-zip-hoodie", "stacked-logo-crewneck"],
+  "hats": ["logo-dad-hat", "la-varsity-cap", "chicago-skyline-beanie"],
+  "footwear": ["air-jordan-6-cool-grey", "nike-dunk-low-reverse-panda", "nike-air-max-1-premium"],
+  "clothing": ["godspeed-graphic-hoodie", "chicago-script-tee", "essential-zip-hoodie", "stacked-logo-crewneck"],
+  "accessories": ["logo-dad-hat", "crew-socks-2pack", "la-varsity-cap", "utility-sling-bag", "chicago-skyline-beanie"],
+  "featured": ["air-jordan-6-cool-grey", "nike-dunk-low-reverse-panda", "godspeed-graphic-hoodie", "crew-socks-2pack", "la-varsity-cap", "essential-zip-hoodie", "utility-sling-bag", "chicago-skyline-beanie"]
 }

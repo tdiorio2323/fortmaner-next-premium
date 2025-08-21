@@ -22,9 +22,9 @@ const Hero = () => {
         {/* Logo */}
         <div className="mb-12">
           <img 
-            src="/lovable-uploads/0d0fabe4-ff06-429d-a388-e30e4e7443ed.png" 
+            src="/src/assets/fort-maner-logo-main.jpg" 
             alt="Fort Maner" 
-            className="h-72 w-auto mx-auto"
+            className="h-72 w-auto mx-auto filter brightness-0 invert"
           />
         </div>
         

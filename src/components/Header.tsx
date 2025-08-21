@@ -10,12 +10,12 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Footwear', href: '/footwear' },
-    { name: 'Clothing', href: '/clothing' },
-    { name: 'Accessories', href: '/accessories' },
-    { name: 'Shop All', href: '/shop' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Men', href: '/men' },
+    { name: 'Ladies', href: '/ladies' },
+    { name: 'Hats', href: '/hats' },
+    { name: 'Shop All', href: '/shop-all' },
+    { name: 'Blog', href: '/blog' },
   ];
 
   return (
@@ -26,9 +26,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src={FortManerLogo} 
+              src="/src/assets/fort-maner-logo-main.jpg" 
               alt="Fort Maner" 
-              className="h-8 w-auto text-brand-white"
+              className="h-10 w-auto filter brightness-0 invert"
             />
           </Link>
 

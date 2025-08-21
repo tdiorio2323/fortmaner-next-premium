@@ -1,146 +1,218 @@
 [
   {
-    "id": "jaguar-tee",
-    "handle": "jaguar-tee", 
-    "title": "JAGUAR Tee",
-    "brand": "Fort Maner",
-    "price": 55,
+    "id": "air-jordan-6-cool-grey",
+    "handle": "air-jordan-6-cool-grey",
+    "title": "Air Jordan 6 Retro Cool Grey",
+    "brand": "Jordan",
+    "price": 240,
     "compareAtPrice": null,
     "images": [
-      "@/assets/jaguar-tee-black.jpg"
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1600"
     ],
-    "sizes": ["S", "M", "L", "XL", "2XL"],
-    "colors": ["Black", "Red", "White", "Orange", "Brown", "Heather Grey"],
-    "category": "clothing",
-    "tags": ["tee", "cotton", "premium", "streetwear"],
-    "badges": ["New"],
+    "sizes": ["8", "9", "10", "11", "12"],
+    "colors": ["Cool Grey"],
+    "category": "footwear",
+    "tags": ["jordan", "retro", "basketball", "premium"],
+    "badges": ["new"],
     "inStock": true,
-    "description": "Premium cotton tee featuring the iconic JAGUAR design. Crafted for the streets with luxury in mind."
+    "description": "Classic AJ6 silhouette in Cool Grey. Premium leather upper, visible Air unit."
   },
   {
-    "id": "mountain-hoodie",
-    "handle": "mountain-hoodie",
-    "title": "Mountain Peak Hoodie",
-    "brand": "Fort Maner", 
-    "price": 120,
-    "compareAtPrice": 150,
-    "images": [
-      "@/assets/mountain-hoodie-black.jpg"
-    ],
-    "sizes": ["S", "M", "L", "XL", "2XL"],
-    "colors": ["Black", "Charcoal", "Stone Grey"],
-    "category": "clothing",
-    "tags": ["hoodie", "premium", "logo", "streetwear"],
-    "badges": ["Best Seller"],
-    "inStock": true,
-    "description": "Signature Fort Maner hoodie with embroidered mountain logo. Premium fleece construction."
-  },
-  {
-    "id": "stone-runners",
-    "handle": "stone-runners",
-    "title": "Stone Runner Sneakers",
-    "brand": "Fort Maner",
-    "price": 200,
+    "id": "nike-dunk-low-reverse-panda",
+    "handle": "nike-dunk-low-reverse-panda",
+    "title": "Nike Dunk Low Reverse Panda",
+    "brand": "Nike",
+    "price": 150,
     "compareAtPrice": null,
     "images": [
-      "@/assets/stone-runners-black.jpg"
+      "https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=1600"
+    ],
+    "sizes": ["7", "8", "9", "10", "11", "12"],
+    "colors": ["White/Black"],
+    "category": "footwear",
+    "tags": ["nike", "dunk", "sneaker", "lifestyle"],
+    "badges": ["bestseller"],
+    "inStock": true,
+    "description": "Leather upper with high contrast Reverse Panda color blocking."
+  },
+  {
+    "id": "godspeed-graphic-hoodie",
+    "handle": "godspeed-graphic-hoodie",
+    "title": "Godspeed Graphic Hoodie",
+    "brand": "Godspeed",
+    "price": 95,
+    "compareAtPrice": null,
+    "images": [
+      "https://images.unsplash.com/photo-1520975922284-9e0ce9b1b4a0?w=1600"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Black"],
+    "category": "clothing",
+    "tags": ["hoodie", "graphic", "streetwear"],
+    "badges": ["new"],
+    "inStock": true,
+    "description": "Heavyweight fleece hoodie with screen printed graphics."
+  },
+  {
+    "id": "chicago-script-tee",
+    "handle": "chicago-script-tee",
+    "title": "Chicago Script Tee",
+    "brand": "Fort Maner",
+    "price": 38,
+    "compareAtPrice": null,
+    "images": [
+      "https://images.unsplash.com/photo-1520975682030-61e4a4854f16?w=1600"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Black", "White"],
+    "category": "clothing",
+    "tags": ["tee", "chicago", "script", "cotton"],
+    "badges": [],
+    "inStock": true,
+    "description": "Ultra soft cotton tee with Chicago script print."
+  },
+  {
+    "id": "logo-dad-hat",
+    "handle": "logo-dad-hat",
+    "title": "Logo Dad Hat",
+    "brand": "Fort Maner",
+    "price": 32,
+    "compareAtPrice": null,
+    "images": [
+      "https://images.unsplash.com/photo-1519068737630-e5db30e12e42?w=1600"
+    ],
+    "sizes": ["OS"],
+    "colors": ["Black", "Navy", "Stone"],
+    "category": "accessories",
+    "tags": ["hat", "cap", "logo", "dad-hat"],
+    "badges": [],
+    "inStock": true,
+    "description": "Curved brim cotton twill cap with embroidered Fort Maner logo."
+  },
+  {
+    "id": "crew-socks-2pack",
+    "handle": "crew-socks-2pack",
+    "title": "Crew Socks 2 Pack",
+    "brand": "Fort Maner",
+    "price": 18,
+    "compareAtPrice": null,
+    "images": [
+      "https://images.unsplash.com/photo-1585386959984-a41552231656?w=1600"
+    ],
+    "sizes": ["OS"],
+    "colors": ["Black", "White"],
+    "category": "accessories",
+    "tags": ["socks", "crew", "basics", "2-pack"],
+    "badges": ["bestseller"],
+    "inStock": true,
+    "description": "Cushioned crew socks with woven logo."
+  },
+  {
+    "id": "la-varsity-cap",
+    "handle": "la-varsity-cap",
+    "title": "LA Varsity Cap",
+    "brand": "New Era",
+    "price": 36,
+    "compareAtPrice": null,
+    "images": [
+      "https://images.unsplash.com/photo-1579338559194-a162d19bf842?w=1600"
+    ],
+    "sizes": ["OS"],
+    "colors": ["Black/White"],
+    "category": "accessories",
+    "tags": ["cap", "varsity", "la", "new-era"],
+    "badges": ["new"],
+    "inStock": true,
+    "description": "Classic fit with raised LA embroidery."
+  },
+  {
+    "id": "essential-zip-hoodie",
+    "handle": "essential-zip-hoodie",
+    "title": "Essential Zip Hoodie",
+    "brand": "Fort Maner",
+    "price": 88,
+    "compareAtPrice": 110,
+    "images": [
+      "https://images.unsplash.com/photo-1516826957135-700dedea698c?w=1600"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Black", "Charcoal", "Stone"],
+    "category": "clothing",
+    "tags": ["hoodie", "zip", "essential", "basics"],
+    "badges": ["sale"],
+    "inStock": true,
+    "description": "Midweight zip hoodie with metal hardware and tonal embroidery."
+  },
+  {
+    "id": "nike-air-max-1-premium",
+    "handle": "nike-air-max-1-premium",
+    "title": "Nike Air Max 1 Premium",
+    "brand": "Nike",
+    "price": 180,
+    "compareAtPrice": null,
+    "images": [
+      "https://images.unsplash.com/photo-1519741497674-611481863552?w=1600"
     ],
     "sizes": ["7", "8", "9", "10", "11", "12", "13"],
-    "colors": ["Black/White", "Stone Grey", "Charcoal"],
+    "colors": ["White/Grey"],
     "category": "footwear",
-    "tags": ["sneakers", "premium", "athletic", "streetwear"],
-    "badges": ["New"],
-    "inStock": true,
-    "description": "Performance meets style in these premium stone-textured runners. Limited edition colorways."
-  },
-  {
-    "id": "chicago-cap",
-    "handle": "chicago-cap",
-    "title": "Chicago Fortress Cap",
-    "brand": "Fort Maner",
-    "price": 45,
-    "compareAtPrice": null,
-    "images": [
-      "@/assets/accessories-category.jpg"
-    ],
-    "sizes": ["One Size"],
-    "colors": ["Black", "Red", "Stone Grey"],
-    "category": "accessories",
-    "tags": ["cap", "hat", "chicago", "premium"],
+    "tags": ["nike", "air-max", "premium", "runner"],
     "badges": [],
     "inStock": true,
-    "description": "Premium snapback featuring the Fort Maner mountain logo. Chicago-made quality."
+    "description": "Premium suede overlays and visible Air cushioning."
   },
   {
-    "id": "fortress-shorts",
-    "handle": "fortress-shorts",
-    "title": "Fortress Training Shorts",
+    "id": "stacked-logo-crewneck",
+    "handle": "stacked-logo-crewneck",
+    "title": "Stacked Logo Crewneck",
     "brand": "Fort Maner",
-    "price": 75,
+    "price": 72,
     "compareAtPrice": null,
     "images": [
-      "@/assets/clothing-category.jpg"
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1600"
     ],
-    "sizes": ["S", "M", "L", "XL", "2XL"],
-    "colors": ["Black", "Charcoal", "Stone Grey"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Black", "Charcoal", "Stone"],
     "category": "clothing",
-    "tags": ["shorts", "athletic", "premium", "training"],
+    "tags": ["crewneck", "logo", "sweatshirt", "fleece"],
     "badges": [],
     "inStock": true,
-    "description": "Technical training shorts built for performance and street style. Moisture-wicking fabric."
+    "description": "Brushed fleece crewneck with stacked brand mark."
   },
   {
-    "id": "leather-wallet",
-    "handle": "leather-wallet",
-    "title": "Premium Leather Wallet",
+    "id": "utility-sling-bag",
+    "handle": "utility-sling-bag",
+    "title": "Utility Sling Bag",
     "brand": "Fort Maner",
-    "price": 85,
+    "price": 48,
     "compareAtPrice": null,
     "images": [
-      "@/assets/accessories-category.jpg"
+      "https://images.unsplash.com/photo-1547949003-9792a18a2601?w=1600"
     ],
-    "sizes": ["One Size"],
-    "colors": ["Black", "Brown"],
+    "sizes": ["OS"],
+    "colors": ["Black", "Stone"],
     "category": "accessories",
-    "tags": ["wallet", "leather", "premium", "luxury"],
-    "badges": [],
+    "tags": ["bag", "sling", "utility", "crossbody"],
+    "badges": ["new"],
     "inStock": true,
-    "description": "Hand-crafted Italian leather wallet with embossed Fort Maner logo. Built to last."
+    "description": "Compact sling with multiple zip pockets and adjustable strap."
   },
   {
-    "id": "stone-backpack",
-    "handle": "stone-backpack", 
-    "title": "Stone Mountain Backpack",
+    "id": "chicago-skyline-beanie",
+    "handle": "chicago-skyline-beanie",
+    "title": "Chicago Skyline Beanie",
     "brand": "Fort Maner",
-    "price": 165,
-    "compareAtPrice": 200,
+    "price": 28,
+    "compareAtPrice": null,
     "images": [
-      "@/assets/accessories-category.jpg"
+      "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=1600"
     ],
-    "sizes": ["One Size"],
+    "sizes": ["OS"],
     "colors": ["Black", "Charcoal"],
     "category": "accessories",
-    "tags": ["backpack", "premium", "utility", "streetwear"],
-    "badges": ["Best Seller"],
-    "inStock": true,
-    "description": "Premium tactical backpack with stone texture details. Perfect for urban adventures."
-  },
-  {
-    "id": "fort-socks",
-    "handle": "fort-socks",
-    "title": "Fort Maner Premium Socks",
-    "brand": "Fort Maner", 
-    "price": 25,
-    "compareAtPrice": null,
-    "images": [
-      "@/assets/accessories-category.jpg"
-    ],
-    "sizes": ["S/M", "L/XL"],
-    "colors": ["Black", "White", "Charcoal"],
-    "category": "accessories",
-    "tags": ["socks", "cotton", "premium", "comfort"],
+    "tags": ["beanie", "chicago", "skyline", "knit"],
     "badges": [],
     "inStock": true,
-    "description": "Premium cotton blend socks with subtle Fort Maner branding. All-day comfort."
+    "description": "Knit beanie with subtle Chicago skyline patch."
   }
 ]
