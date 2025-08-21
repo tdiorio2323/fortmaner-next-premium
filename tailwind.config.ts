@@ -24,9 +24,26 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				
+				// Fort Maner Brand Colors
+				brand: {
+					black: 'hsl(var(--brand-black))',
+					charcoal: 'hsl(var(--brand-charcoal))',
+					white: 'hsl(var(--brand-white))',
+					red: 'hsl(var(--brand-red))',
+				},
+				
+				stone: {
+					dark: 'hsl(var(--stone-dark))',
+					medium: 'hsl(var(--stone-medium))',
+					light: 'hsl(var(--stone-light))',
+				},
+				
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					red: 'hsl(var(--primary-red))',
+					'red-foreground': 'hsl(var(--primary-red-foreground))',
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -50,7 +67,9 @@ export default {
 				},
 				card: {
 					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+					foreground: 'hsl(var(--card-foreground))',
+					dark: 'hsl(var(--card-dark))',
+					'dark-foreground': 'hsl(var(--card-dark-foreground))',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

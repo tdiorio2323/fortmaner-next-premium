@@ -1,0 +1,23 @@
+<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fort Maner Mountain Logo -->
+  <defs>
+    <style>
+      .logo-text { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 4px; }
+    </style>
+  </defs>
+  
+  <!-- Mountain Icon -->
+  <g fill="currentColor">
+    <!-- Left Mountain -->
+    <path d="M40 20 L20 60 L60 60 Z" />
+    <!-- Right Mountain -->
+    <path d="M60 30 L100 20 L140 60 L20 60 Z" />
+    <!-- Center Peak -->
+    <path d="M80 10 L60 40 L100 40 Z" />
+  </g>
+  
+  <!-- Text -->
+  <text x="100" y="80" text-anchor="middle" class="logo-text" fill="currentColor">
+    FT.MANER
+  </text>
+</svg>

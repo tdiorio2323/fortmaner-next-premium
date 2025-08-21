@@ -1,0 +1,35 @@
+{
+  "handle": "_FORTMANER",
+  "posts": [
+    {
+      "id": "1",
+      "image": "/src/assets/instagram-post-1.jpg",
+      "alt": "Fort Maner streetwear styling"
+    },
+    {
+      "id": "2", 
+      "image": "/src/assets/instagram-post-2.jpg",
+      "alt": "Chicago store front"
+    },
+    {
+      "id": "3",
+      "image": "/src/assets/instagram-post-3.jpg", 
+      "alt": "Premium sneaker detail"
+    },
+    {
+      "id": "4",
+      "image": "/src/assets/mountain-hoodie-black.jpg",
+      "alt": "Mountain hoodie lifestyle"
+    },
+    {
+      "id": "5",
+      "image": "/src/assets/jaguar-tee-black.jpg",
+      "alt": "Fort Maner accessories flat lay"
+    },
+    {
+      "id": "6",
+      "image": "/src/assets/stone-runners-black.jpg",
+      "alt": "Street style inspiration"
+    }
+  ]
+}

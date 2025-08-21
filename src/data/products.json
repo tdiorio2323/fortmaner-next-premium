@@ -1,0 +1,146 @@
+[
+  {
+    "id": "jaguar-tee",
+    "handle": "jaguar-tee", 
+    "title": "JAGUAR Tee",
+    "brand": "Fort Maner",
+    "price": 55,
+    "compareAtPrice": null,
+    "images": [
+      "@/assets/jaguar-tee-black.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL", "2XL"],
+    "colors": ["Black", "Red", "White", "Orange", "Brown", "Heather Grey"],
+    "category": "clothing",
+    "tags": ["tee", "cotton", "premium", "streetwear"],
+    "badges": ["New"],
+    "inStock": true,
+    "description": "Premium cotton tee featuring the iconic JAGUAR design. Crafted for the streets with luxury in mind."
+  },
+  {
+    "id": "mountain-hoodie",
+    "handle": "mountain-hoodie",
+    "title": "Mountain Peak Hoodie",
+    "brand": "Fort Maner", 
+    "price": 120,
+    "compareAtPrice": 150,
+    "images": [
+      "@/assets/mountain-hoodie-black.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL", "2XL"],
+    "colors": ["Black", "Charcoal", "Stone Grey"],
+    "category": "clothing",
+    "tags": ["hoodie", "premium", "logo", "streetwear"],
+    "badges": ["Best Seller"],
+    "inStock": true,
+    "description": "Signature Fort Maner hoodie with embroidered mountain logo. Premium fleece construction."
+  },
+  {
+    "id": "stone-runners",
+    "handle": "stone-runners",
+    "title": "Stone Runner Sneakers",
+    "brand": "Fort Maner",
+    "price": 200,
+    "compareAtPrice": null,
+    "images": [
+      "@/assets/stone-runners-black.jpg"
+    ],
+    "sizes": ["7", "8", "9", "10", "11", "12", "13"],
+    "colors": ["Black/White", "Stone Grey", "Charcoal"],
+    "category": "footwear",
+    "tags": ["sneakers", "premium", "athletic", "streetwear"],
+    "badges": ["New"],
+    "inStock": true,
+    "description": "Performance meets style in these premium stone-textured runners. Limited edition colorways."
+  },
+  {
+    "id": "chicago-cap",
+    "handle": "chicago-cap",
+    "title": "Chicago Fortress Cap",
+    "brand": "Fort Maner",
+    "price": 45,
+    "compareAtPrice": null,
+    "images": [
+      "@/assets/accessories-category.jpg"
+    ],
+    "sizes": ["One Size"],
+    "colors": ["Black", "Red", "Stone Grey"],
+    "category": "accessories",
+    "tags": ["cap", "hat", "chicago", "premium"],
+    "badges": [],
+    "inStock": true,
+    "description": "Premium snapback featuring the Fort Maner mountain logo. Chicago-made quality."
+  },
+  {
+    "id": "fortress-shorts",
+    "handle": "fortress-shorts",
+    "title": "Fortress Training Shorts",
+    "brand": "Fort Maner",
+    "price": 75,
+    "compareAtPrice": null,
+    "images": [
+      "@/assets/clothing-category.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL", "2XL"],
+    "colors": ["Black", "Charcoal", "Stone Grey"],
+    "category": "clothing",
+    "tags": ["shorts", "athletic", "premium", "training"],
+    "badges": [],
+    "inStock": true,
+    "description": "Technical training shorts built for performance and street style. Moisture-wicking fabric."
+  },
+  {
+    "id": "leather-wallet",
+    "handle": "leather-wallet",
+    "title": "Premium Leather Wallet",
+    "brand": "Fort Maner",
+    "price": 85,
+    "compareAtPrice": null,
+    "images": [
+      "@/assets/accessories-category.jpg"
+    ],
+    "sizes": ["One Size"],
+    "colors": ["Black", "Brown"],
+    "category": "accessories",
+    "tags": ["wallet", "leather", "premium", "luxury"],
+    "badges": [],
+    "inStock": true,
+    "description": "Hand-crafted Italian leather wallet with embossed Fort Maner logo. Built to last."
+  },
+  {
+    "id": "stone-backpack",
+    "handle": "stone-backpack", 
+    "title": "Stone Mountain Backpack",
+    "brand": "Fort Maner",
+    "price": 165,
+    "compareAtPrice": 200,
+    "images": [
+      "@/assets/accessories-category.jpg"
+    ],
+    "sizes": ["One Size"],
+    "colors": ["Black", "Charcoal"],
+    "category": "accessories",
+    "tags": ["backpack", "premium", "utility", "streetwear"],
+    "badges": ["Best Seller"],
+    "inStock": true,
+    "description": "Premium tactical backpack with stone texture details. Perfect for urban adventures."
+  },
+  {
+    "id": "fort-socks",
+    "handle": "fort-socks",
+    "title": "Fort Maner Premium Socks",
+    "brand": "Fort Maner", 
+    "price": 25,
+    "compareAtPrice": null,
+    "images": [
+      "@/assets/accessories-category.jpg"
+    ],
+    "sizes": ["S/M", "L/XL"],
+    "colors": ["Black", "White", "Charcoal"],
+    "category": "accessories",
+    "tags": ["socks", "cotton", "premium", "comfort"],
+    "badges": [],
+    "inStock": true,
+    "description": "Premium cotton blend socks with subtle Fort Maner branding. All-day comfort."
+  }
+]

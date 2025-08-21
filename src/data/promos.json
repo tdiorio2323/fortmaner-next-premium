@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "Fort Maner",
+    "subtitle": "Luxury Streetwear",
+    "cta": "Shop Now",
+    "backgroundImage": "/images/hero-stone-bg.jpg"
+  },
+  "banner": {
+    "title": "Official Godspeed Retailer",
+    "subtitle": "New Arrivals In Stock",
+    "cta": "Shop Collection",
+    "image": "/images/godspeed-banner.jpg"
+  },
+  "shipping": {
+    "text": "FREE SHIPPING ON ORDERS OVER $100",
+    "enabled": true
+  },
+  "newsletter": {
+    "title": "NEWSLETTER!",
+    "subtitle": "Be the first in the know by getting special deals and offers sent directly to your inbox"
+  }
+}

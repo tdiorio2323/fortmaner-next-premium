@@ -2,26 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Fort Maner Design System - Luxury Streetwear Aesthetic
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    /* Fort Maner Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 11% 4%; /* #0B0B0C */
+    
+    /* Brand Palette */
+    --brand-black: 210 11% 4%; /* #0B0B0C */
+    --brand-charcoal: 214 11% 9%; /* #16181A */
+    --brand-white: 0 0% 100%; /* #FFFFFF */
+    --brand-red: 348 83% 51%; /* #E11D48 */
+    
+    /* Stone Texture & Gradients */
+    --stone-dark: 210 11% 4%;
+    --stone-medium: 214 11% 9%;
+    --stone-light: 220 9% 15%;
+    --gradient-stone: linear-gradient(135deg, hsl(var(--stone-dark)), hsl(var(--stone-medium)));
+    --gradient-hero: linear-gradient(to bottom, hsl(var(--stone-dark) / 0.9), hsl(var(--stone-medium) / 0.95));
+    
+    /* Luxury Effects */
+    --glow-red: 348 83% 51% / 0.3;
+    --shadow-luxury: 0 20px 40px -10px hsl(var(--stone-dark) / 0.5);
+    --shadow-card: 0 10px 30px -5px hsl(var(--stone-dark) / 0.3);
+    
+    /* Transitions */
+    --transition-luxury: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
+    /* Component Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 11% 4%;
+    
+    --card-dark: 214 11% 9%;
+    --card-dark-foreground: 0 0% 100%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 11% 4%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 11% 4%; /* Brand Black */
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-red: 348 83% 51%; /* Brand Red */
+    --primary-red-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 9% 15%; /* Stone Light */
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -56,8 +85,8 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 210 11% 4%; /* Brand Black */
+    --foreground: 0 0% 100%;
 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -101,5 +130,43 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  /* Luxury Utilities */
+  .stone-texture {
+    background: hsl(var(--gradient-stone));
+    position: relative;
+  }
+  
+  .stone-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--stone-light) / 0.1) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, hsl(var(--brand-white) / 0.03) 1px, transparent 1px);
+    background-size: 50px 50px, 100px 100px;
+    pointer-events: none;
+  }
+  
+  .luxury-glow {
+    box-shadow: var(--shadow-luxury);
+    transition: var(--transition-luxury);
+  }
+  
+  .luxury-glow:hover {
+    box-shadow: 0 25px 50px -10px hsl(var(--glow-red));
+    transform: translateY(-2px);
+  }
+  
+  /* Marquee Animation */
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .animate-marquee {
+    animation: marquee 15s linear infinite;
   }
 }
