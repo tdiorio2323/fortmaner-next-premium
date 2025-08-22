@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-import heroImage from '@/assets/hero-stone-bg.jpg';
+const heroImage = '/lovable-uploads/309450cb-8cca-489e-b279-0b4a01d8bdaf.png';
 import FortManerLogo from '@/assets/fort-maner-logo.svg';
 
 const Hero = () => {

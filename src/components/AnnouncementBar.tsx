@@ -11,7 +11,7 @@ const AnnouncementBar = ({ message, className = '' }: AnnouncementBarProps) => {
   if (!isVisible) return null;
 
   return (
-    <div className={`relative bg-brand-red text-brand-white py-2 overflow-hidden ${className}`}>
+    <div className={`relative bg-brand-white text-brand-black py-2 overflow-hidden ${className}`}>
       <div className="flex animate-marquee whitespace-nowrap">
         <span className="mx-4 text-sm font-medium tracking-wide">
           {message}
@@ -29,7 +29,7 @@ const AnnouncementBar = ({ message, className = '' }: AnnouncementBarProps) => {
       
       <button
         onClick={() => setIsVisible(false)}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 text-brand-white/80 hover:text-brand-white"
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 text-brand-black/80 hover:text-brand-black"
       >
         ×
       </button>
