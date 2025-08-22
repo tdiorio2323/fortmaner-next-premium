@@ -53,16 +53,6 @@ const Index = () => {
       {/* Featured Products */}
       <FeaturedProducts />
       
-      {/* Banner Section */}
-      <Banner
-        title={promosData.banner.title}
-        subtitle={promosData.banner.subtitle}
-        cta={promosData.banner.cta}
-        onCtaClick={() => {
-          // Navigate to shop or specific collection
-          window.location.href = '/shop';
-        }}
-      />
       
       {/* Shop by Category */}
       <section className="py-16 bg-stone-light/5">
