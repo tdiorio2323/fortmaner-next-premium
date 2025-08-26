@@ -37,10 +37,10 @@ const Capsules = () => {
       available: true
     },
     {
-      name: 'Logo',
+      name: "Women's Yoga Set",
       slug: 'logo',
-      description: 'Classic Fort Maner branding in timeless designs',
-      image: '/images/capsules/logo-hero.jpg',
+      description: 'Premium activewear collection designed for movement and style',
+      image: '/lovable-uploads/08eda4a5-b70d-4b5d-97e7-eb010302d354.png',
       available: true
     }
   ];
