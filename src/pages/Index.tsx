@@ -5,83 +5,47 @@ import FeaturedProducts from '@/components/FeaturedProducts';
 import CategoryCard from '@/components/CategoryCard';
 import Banner from '@/components/Banner';
 import InstagramGrid from '@/components/InstagramGrid';
-import promosData from '@/data/promos.json';
-import footwearImage from '@/assets/footwear-category.jpg';
-import clothingImage from '@/assets/clothing-category.jpg';
-import accessoriesImage from '@/assets/accessories-category.jpg';
+import LandingHero from "@/components/LandingHero";
 
-const Index = () => {
-  useEffect(() => {
-    // Set page title and meta description
-    document.title = 'Fort Maner - Luxury Streetwear | Premium Urban Fashion';
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Discover Fort Maner\'s luxury streetwear collection. Premium hoodies, tees, sneakers and accessories that unite sophistication with street style.');
-    }
-  }, []);
+const tiles = [
+  { title: "Men", href: "/men" },
+  { title: "Women", href: "/ladies" },
+  { title: "Shop All", href: "/shop-all" },
+];
 
-  const categories = [
-    {
-      title: 'Footwear',
-      href: '/footwear',
-      image: footwearImage,
-      description: 'Premium sneakers and athletic wear'
-    },
-    {
-      title: 'Clothing',
-      href: '/clothing', 
-      image: clothingImage,
-      description: 'Luxury streetwear essentials'
-    },
-    {
-      title: 'Accessories',
-      href: '/accessories',
-      image: accessoriesImage,
-      description: 'Complete your urban look'
-    },
-  ];
-
+export default function Index() {
   return (
-    <div className="min-h-screen">
-      {/* Announcement Bar */}
-      <AnnouncementBar message={promosData.shipping.text} />
-      
-      {/* Hero Section */}
-      <Hero />
-      
-      {/* Featured Products */}
-      <FeaturedProducts />
-      
-      
-      {/* Shop by Category */}
-      <section className="py-16 bg-stone-light/5">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Shop By Category</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Explore our curated collections of premium streetwear, from statement footwear to essential accessories.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {categories.map((category) => (
-              <CategoryCard
-                key={category.title}
-                title={category.title}
-                href={category.href}
-                image={category.image}
-                description={category.description}
+    <main className="bg-white text-black">
+      <LandingHero />
+
+      {/* Category tiles */}
+      <section className="mx-auto w-full max-w-6xl px-6 py-16 md:py-20">
+        <h2 className="text-2xl md:text-3xl font-semibold text-center">Shop by Category</h2>
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          {tiles.map((t) => (
+            <a
+              key={t.title}
+              href={t.href}
+              className="group relative overflow-hidden rounded-2xl border border-neutral-200/70 bg-white"
+            >
+              <img
+                src="/src/assets/white-brick-wall.jpg"
+                alt=""
+                className="h-56 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
               />
-            ))}
-          </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/0" />
+              <div className="absolute inset-0 flex items-end p-4">
+                <div className="text-white">
+                  <h3 className="text-lg font-semibold">{t.title}</h3>
+                  <span className="mt-1 inline-block rounded-full bg-white/15 px-3 py-1 text-xs backdrop-blur">
+                    Shop {t.title}
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
         </div>
       </section>
-      
-      {/* Instagram Section */}
-      <InstagramGrid />
-    </div>
+    </main>
   );
-};
-
-export default Index;
+}

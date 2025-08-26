@@ -8,7 +8,19 @@ import { Product } from '@/lib/types';
 const PRODUCTS = (rawProducts as any[]).map(normalizeProduct);
 
 const Ladies = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const ladiesHero =
+    "https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1600&auto=format&fit=crop";
+
+  const ladiesProducts: Product[] = [
+    { id: "w1", title: "Cropped Hoodie", price: 6299, tag: "New", image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop" },
+    { id: "w2", title: "Ribbed Tank", price: 1999, image: "https://images.unsplash.com/photo-1519741491041-40b3a7a52d4a?q=80&w=1200&auto=format&fit=crop" },
+    { id: "w3", title: "High-Rise Joggers", price: 6499, image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop" },
+    { id: "w4", title: "Overshirt Jacket", price: 10499, image: "https://images.unsplash.com/photo-1455156218388-5e61b5268182?q=80&w=1200&auto=format&fit=crop" },
+    { id: "w5", title: "Everyday Tote", price: 3199, image: "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1200&auto=format&fit=crop" },
+    { id: "w6", title: "Low-Top Sneaker", price: 11999, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop" },
+    { id: "w7", title: "Beanie", price: 1699, image: "https://images.unsplash.com/photo-1484327973588-c31f829103fe?q=80&w=1200&auto=format&fit=crop" },
+    { id: "w8", title: "Minimal Tee Dress", price: 4899, image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" },
+  ];
 
   useEffect(() => {
     // Set page title and meta description
@@ -20,9 +32,6 @@ const Ladies = () => {
     }
 
     // Filter products for ladies collection
-    const ladiesProducts = PRODUCTS.filter(product => 
-      collectionsData.ladies.includes(product.handle || product.slug)
-    );
     setProducts(ladiesProducts);
   }, []);
 
@@ -40,8 +49,8 @@ const Ladies = () => {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {ladiesProducts.map((p) => (
+            <ProductCard key={p.id} p={p} />
           ))}
         </div>
 
