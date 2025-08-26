@@ -50,16 +50,14 @@ const Capsules = () => {
     <div className="min-h-screen py-16 relative">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-90"
+        className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${whiteBrickWall})` }}
       />
-      {/* Overlay for better text visibility */}
-      <div className="absolute inset-0 bg-brand-black/40" />
       
       <div className="container mx-auto px-4 relative z-10">
         <header className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-brand-white drop-shadow-lg">SHOP ALL COLLECTIONS</h1>
-          <p className="text-brand-white/90 max-w-2xl mx-auto text-lg drop-shadow-md">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">SHOP ALL COLLECTIONS</h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Limited edition drops that define our brand. Each capsule tells a unique story 
             through carefully curated pieces that embody Fort Maner's streetwear aesthetic.
           </p>
