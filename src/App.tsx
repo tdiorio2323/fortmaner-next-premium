@@ -18,6 +18,7 @@ import Ladies from "./pages/Ladies";
 import Hats from "./pages/Hats";
 import Lookbook from "./pages/Lookbook";
 import Community from "./pages/Community";
+import Accessories from "./pages/Accessories";
 import About from "./pages/About";
 import AboutUs from "./pages/AboutUs";
 import Blog from "./pages/Blog";

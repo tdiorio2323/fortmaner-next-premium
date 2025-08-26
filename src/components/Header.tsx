@@ -36,7 +36,7 @@ export default function Header() {
           <a href="https://www.instagram.com/_fortmaner/" target="_blank" rel="noreferrer" aria-label="Instagram" className="p-2 rounded-md hover:bg-white/10">
             <Instagram size={18} className="text-white" />
           </a>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="p-2 rounded-md hover:bg-white/10">
+          <a href="https://www.facebook.com/fort.manerwest/" target="_blank" rel="noreferrer" aria-label="Facebook" className="p-2 rounded-md hover:bg-white/10">
             <Facebook size={18} className="text-white" />
           </a>
           {/* Put your real number in the tel: link */}
