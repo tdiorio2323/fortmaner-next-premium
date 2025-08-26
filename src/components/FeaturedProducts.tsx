@@ -3,7 +3,8 @@ import ProductCard from './ProductCard';
 import collectionsData from '@/data/collections.json';
 import jaguarTee from '@/assets/jaguar-tee-black.jpg';
 import mountainHoodie from '@/assets/mountain-hoodie-black.jpg';
-import stoneRunners from '@/assets/stone-runners-black.jpg';
+// Placeholder image for footwear until asset exists
+import stoneRunners from '@/assets/footwear-category.jpg';
 import accessoriesImage from '@/assets/accessories-category.jpg';
 import clothingImage from '@/assets/clothing-category.jpg';
 import { Product } from '@/lib/types';
