@@ -25,8 +25,8 @@ const Capsules = () => {
     {
       name: "S/S '25 Capsule",
       slug: 'skull-head',
-      description: 'Bold graphic collection featuring signature skull artwork',
-      image: '/images/capsules/skull-head-hero.jpg',
+      description: "Shop out Spring and Summer 2025 Collection Below",
+      image: '/lovable-uploads/ed1df015-08be-4feb-b376-31b0f848b269.png',
       available: true
     },
     {
