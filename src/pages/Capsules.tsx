@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import whiteBrickWall from '@/assets/white-brick-wall.jpg';
 
 const Capsules = () => {
   useEffect(() => {
@@ -50,7 +51,7 @@ const Capsules = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-90"
-        style={{ backgroundImage: `url('/lovable-uploads/8638b7b9-a1ce-4755-90a9-1803eb4d6062.png')` }}
+        style={{ backgroundImage: `url(${whiteBrickWall})` }}
       />
       {/* Overlay for better text visibility */}
       <div className="absolute inset-0 bg-brand-black/40" />
