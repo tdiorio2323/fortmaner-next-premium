@@ -83,3 +83,14 @@ export interface StripeSession {
   amount_total: number;
   currency: string;
 }
+
+export type BlogPost = {
+  id: string;
+  kind: 'community' | 'people' | 'fw' | 'ss';
+  title: string;
+  date: string;            // ISO
+  excerpt?: string;
+  image?: string;
+  href: string;            // internal link
+  tags?: string[];
+};

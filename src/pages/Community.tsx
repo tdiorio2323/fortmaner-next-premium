@@ -85,7 +85,7 @@ const Community = () => {
         {/* Community Items Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
-            <Card key={item.id} className="overflow-hidden border-stone-medium/20 luxury-glow group">
+            <Card key={item.id} id={item.id} className="overflow-hidden border-stone-medium/20 luxury-glow group">
               {item.mediaUrl && (
                 <div className="aspect-video overflow-hidden">
                   <img

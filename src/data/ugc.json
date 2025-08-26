@@ -1,4 +1,6 @@
 [
+  {"id":"u1","mediaUrl":"/images/ugc-1.jpg","platform":"ig","caption":"Street fit","productIds":["skull-tee"],"approved":true},
+  {"id":"u2","mediaUrl":"/images/ugc-2.jpg","platform":"ig","caption":"Weekend set","productIds":["jogger-set-black"],"approved":true},
   {
     "id": "ig-post-001",
     "mediaUrl": "/images/ugc/ig-post-jogging-suit.jpg",
@@ -33,24 +35,6 @@
     "caption": "Mini me rocking Fort Maner 👶🏽 #fortmanerkids #streetwearkids",
     "productIds": ["kids-logo-hoodie-black"],
     "author": "@mom_of_streetwear",
-    "approved": true
-  },
-  {
-    "id": "ig-post-004",
-    "mediaUrl": "/images/ugc/ig-post-signature-cap.jpg",
-    "platform": "ig",
-    "caption": "Signature cap on repeat 🧢 Clean embroidery work @fortmaner",
-    "productIds": ["signature-cap-black"],
-    "author": "@headwear_collector",
-    "approved": true
-  },
-  {
-    "id": "ig-post-005",
-    "mediaUrl": "/images/ugc/ig-post-outfit-complete.jpg",
-    "platform": "ig",
-    "caption": "Complete the look ✨ Head to toe Fort Maner for the block party",
-    "productIds": ["skull-head-hoodie-black", "signature-cap-black"],
-    "author": "@chicago_fits",
     "approved": true
   }
 ]

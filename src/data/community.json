@@ -1,4 +1,6 @@
 [
+  {"id":"c1","kind":"event","title":"Kids Skate Jam — Weekend Session","date":"2025-08-20","mediaUrl":"/images/community/skate-jam.jpg","excerpt":"All-ages session at the block.","tags":["kids","skateboarding"],"location":"Chicago"},
+  {"id":"c2","kind":"post","title":"Neighborhood Clean-up + Tee Drop","date":"2025-08-10","mediaUrl":"/images/community/cleanup.jpg","excerpt":"Gloves by us. Energy by you.","tags":["community"]},
   {
     "id": "chicago-skate-jam-2024",
     "kind": "event",
@@ -42,27 +44,5 @@
     "tags": ["community", "cleanup", "environment"],
     "location": "Wicker Park",
     "author": "Fort Maner Community"
-  },
-  {
-    "id": "local-artist-spotlight-rivera",
-    "kind": "post",
-    "title": "Local Artist Spotlight: Sofia Rivera",
-    "date": "2024-08-25T12:00:00Z",
-    "mediaUrl": "/images/community/artist-spotlight-rivera.jpg",
-    "excerpt": "Chicago artist Sofia Rivera talks about her latest mural and collaboration with Fort Maner.",
-    "tags": ["art", "mural", "collaboration"],
-    "location": "Pilsen",
-    "author": "Sofia Rivera"
-  },
-  {
-    "id": "summer-basketball-tournament",
-    "kind": "event",
-    "title": "Summer Basketball Tournament",
-    "date": "2024-08-30T18:00:00Z",
-    "mediaUrl": "/images/community/basketball-tournament.jpg",
-    "excerpt": "3v3 basketball tournament with prizes sponsored by Fort Maner. Registration open now.",
-    "tags": ["basketball", "tournament", "summer"],
-    "location": "Garfield Park",
-    "author": "Chicago Hoops League"
   }
 ]
