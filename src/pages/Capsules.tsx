@@ -19,7 +19,7 @@ const Capsules = () => {
       name: 'Jogging Suit',
       slug: 'jogging-suit',
       description: 'Premium matching sets for the modern streetwear enthusiast',
-      image: '/images/capsules/jogging-suit-hero.jpg',
+      image: '/lovable-uploads/28c2b9f0-895f-472a-b2dc-19d51b3c3614.png',
       available: true
     },
     {
@@ -41,13 +41,6 @@ const Capsules = () => {
       slug: 'logo',
       description: 'Classic Fort Maner branding in timeless designs',
       image: '/images/capsules/logo-hero.jpg',
-      available: true
-    },
-    {
-      name: 'Signature',
-      slug: 'signature',
-      description: 'Refined pieces featuring signature embroidered details',
-      image: '/images/capsules/signature-hero.jpg',
       available: true
     }
   ];
