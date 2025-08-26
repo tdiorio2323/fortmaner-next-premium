@@ -23,7 +23,7 @@ const Capsules = () => {
       available: true
     },
     {
-      name: 'Skull Head',
+      name: "S/S '25 Capsule",
       slug: 'skull-head',
       description: 'Bold graphic collection featuring signature skull artwork',
       image: '/images/capsules/skull-head-hero.jpg',
