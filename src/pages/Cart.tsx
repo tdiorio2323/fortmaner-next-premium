@@ -60,7 +60,7 @@ const Cart = () => {
             {/* Cart Items */}
             <div className="lg:col-span-2 space-y-4">
               {state.items.map((item) => {
-                const itemPrice = item.variant.price || item.product.price;
+                const itemPrice = item.product.price;
                 const itemTotal = itemPrice * item.quantity;
                 
                 return (

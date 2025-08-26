@@ -102,7 +102,7 @@ const Checkout = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {state.items.map((item) => {
-                    const itemPrice = item.variant.price || item.product.price;
+                    const itemPrice = item.product.price;
                     return (
                       <div key={`${item.productId}-${item.variantId}`} className="flex space-x-4">
                         <div className="w-16 h-16 rounded-lg overflow-hidden bg-stone-light/5">

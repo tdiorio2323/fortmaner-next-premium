@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductCard from '@/components/ProductCard';
 import { Product } from '@/lib/types';
-import productsData from '@/data/products-complete.json';
+import rawProducts from '@/data/products-complete.json';
+import { normalizeProduct } from '@/lib/normalize';
+
+const PRODUCTS = (rawProducts as any[]).map(normalizeProduct);
 
 const CapsuleDetail = () => {
   const { capsule } = useParams<{ capsule: string }>();
@@ -13,8 +16,9 @@ const CapsuleDetail = () => {
     if (!capsule) return;
 
     // Filter products for specific capsule
-    const capsuleProducts = productsData.filter(product => product.capsule === capsule);
-    setProducts(capsuleProducts as Product[]);
+    const key = (capsule || '').toLowerCase();
+    const capsuleProducts = PRODUCTS.filter(p => (p.capsule ?? '').toLowerCase().replace(/\s+/g,'-') === key);
+    setProducts(capsuleProducts);
 
     // Set capsule info based on slug
     const capsuleInfoMap: Record<string, { name: string; description: string }> = {

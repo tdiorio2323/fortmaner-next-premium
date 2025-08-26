@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '@/components/ProductCard';
 import { Product } from '@/lib/types';
-import productsData from '@/data/products-complete.json';
+import rawProducts from '@/data/products-complete.json';
+import { normalizeProduct } from '@/lib/normalize';
+
+const PRODUCTS = (rawProducts as any[]).map(normalizeProduct);
 
 const Kids = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -15,10 +18,8 @@ const Kids = () => {
     }
 
     // Filter products for kids
-    const kidsProducts = productsData.filter(product => 
-      product.ageRange === 'kids' || product.collections.includes('kids')
-    );
-    setProducts(kidsProducts as Product[]);
+    const kidsProducts = PRODUCTS.filter(p => p.ageRange === 'kids' || p.collections.includes('kids'));
+    setProducts(kidsProducts);
   }, []);
 
   return (

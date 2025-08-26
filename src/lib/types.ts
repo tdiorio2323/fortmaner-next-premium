@@ -1,40 +1,58 @@
 // Fort Maner Storefront Types
-export interface Product {
+export type Season = 'FW' | 'SS' | null;
+export type AgeRange = 'kids' | 'adult' | null;
+
+export type ProductVariant = {
+  id: string; 
+  sku: string; 
+  color?: string; 
+  size?: string; 
+  stock: number;
+};
+
+export type Product = {
   id: string;
-  handle: string;
+  handle?: string;
   slug: string;
   title: string;
-  brand: string;
+  brand?: string;
   price: number;
-  compareAtPrice?: number;
+  compareAtPrice?: number | null;
   images: string[];
   badges: string[];
   inStock: boolean;
   description?: string;
-  options?: {
-    color: string[];
-    size: string[];
-  };
-  variants?: ProductVariant[];
-  collections?: string[];
-  tags?: string[];
-  season?: 'FW' | 'SS' | null;
+  options?: { color?: string[]; size?: string[] };
+  variants: ProductVariant[];
+  collections: string[];
+  tags: string[];
+  season: Season;
   capsule?: string | null;
-  ageRange?: 'kids' | 'adult' | null;
-  seo?: {
-    title: string;
-    description: string;
-  };
-}
+  ageRange: AgeRange;
+  seo?: { title?: string; desc?: string };
+};
 
-export interface ProductVariant {
+export type UGCPost = {
   id: string;
-  sku: string;
-  color: string;
-  size: string;
-  stock: number;
-  price?: number; // variant-specific pricing
-}
+  mediaUrl: string;
+  platform: 'ig' | 'fb';
+  caption?: string;
+  productIds: string[];
+  author?: string;
+  approved: boolean;
+};
+
+export type CommunityItem = {
+  id: string;
+  kind: 'event' | 'post' | 'video';
+  title: string;
+  date: string;
+  mediaUrl?: string;
+  excerpt?: string;
+  tags?: string[];
+  location?: string;
+  author?: string;
+};
 
 export interface CartItem {
   productId: string;
@@ -42,28 +60,6 @@ export interface CartItem {
   quantity: number;
   product: Product;
   variant: ProductVariant;
-}
-
-export interface UGCPost {
-  id: string;
-  mediaUrl: string;
-  platform: 'ig' | 'fb';
-  caption: string;
-  productIds: string[];
-  author?: string;
-  approved: boolean;
-}
-
-export interface CommunityItem {
-  id: string;
-  kind: 'event' | 'post' | 'video';
-  title: string;
-  date: string; // ISO string
-  mediaUrl?: string;
-  excerpt?: string;
-  tags: string[];
-  location?: string;
-  author?: string;
 }
 
 export interface CartState {

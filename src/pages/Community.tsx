@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { CalendarDays, MapPin, User, Filter } from 'lucide-react';
 import { CommunityItem } from '@/lib/types';
-import communityData from '@/data/community.json';
+import rawCommunity from '@/data/community.json';
+import { normalizeCommunity } from '@/lib/normalize';
 
 const Community = () => {
   const [items, setItems] = useState<CommunityItem[]>([]);
@@ -18,7 +19,7 @@ const Community = () => {
       metaDescription.setAttribute('content', 'Connect with the Fort Maner community in Chicago. Local events, street culture, and neighborhood activities for streetwear enthusiasts.');
     }
 
-    setItems(communityData as CommunityItem[]);
+    setItems((rawCommunity as any[]).map(normalizeCommunity));
   }, []);
 
   const filteredItems = items.filter(item => {

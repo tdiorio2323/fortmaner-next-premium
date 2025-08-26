@@ -12,7 +12,7 @@ const CartContext = createContext<{
 
 const calculateTotal = (items: CartItem[]): number => {
   return items.reduce((total, item) => {
-    const price = item.variant.price || item.product.price;
+    const price = item.product.price;
     return total + (price * item.quantity);
   }, 0);
 };
@@ -137,7 +137,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     
     // Track Meta Pixel AddToCart event
     if (typeof window !== 'undefined' && (window as any).fbq) {
-      const price = variant.price || product.price;
+      const price = product.price;
       (window as any).fbq('track', 'AddToCart', {
         value: price * quantity,
         currency: 'USD',

@@ -4,7 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Heart, Share2 } from 'lucide-react';
 import { UGCPost } from '@/lib/types';
-import ugcData from '@/data/ugc.json';
+import rawUGC from '@/data/ugc.json';
+import { normalizeUGC } from '@/lib/normalize';
 
 const Lookbook = () => {
   const [posts, setPosts] = useState<UGCPost[]>([]);
@@ -18,8 +19,9 @@ const Lookbook = () => {
     }
 
     // Load approved UGC posts
-    const approvedPosts = ugcData.filter(post => post.approved);
-    setPosts(approvedPosts as UGCPost[]);
+    const normalizedPosts = (rawUGC as any[]).map(normalizeUGC);
+    const approvedPosts = normalizedPosts.filter(post => post.approved);
+    setPosts(approvedPosts);
   }, []);
 
   const handleProductClick = (productId: string) => {

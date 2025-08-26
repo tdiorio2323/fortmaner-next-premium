@@ -1,19 +1,11 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '@/components/ProductCard';
-import productsData from '@/data/products.json';
+import rawProducts from '@/data/products-complete.json';
 import collectionsData from '@/data/collections.json';
+import { normalizeProduct } from '@/lib/normalize';
+import { Product } from '@/lib/types';
 
-interface Product {
-  id: string;
-  handle: string;
-  title: string;
-  brand: string;
-  price: number;
-  compareAtPrice?: number;
-  images: string[];
-  badges: string[];
-  inStock: boolean;
-}
+const PRODUCTS = (rawProducts as any[]).map(normalizeProduct);
 
 const Ladies = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -28,8 +20,8 @@ const Ladies = () => {
     }
 
     // Filter products for ladies collection
-    const ladiesProducts = productsData.filter(product => 
-      collectionsData.ladies.includes(product.handle)
+    const ladiesProducts = PRODUCTS.filter(product => 
+      collectionsData.ladies.includes(product.handle || product.slug)
     );
     setProducts(ladiesProducts);
   }, []);

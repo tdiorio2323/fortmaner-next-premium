@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '@/components/ProductCard';
 import { Product } from '@/lib/types';
-import productsData from '@/data/products-complete.json';
+import rawProducts from '@/data/products-complete.json';
+import { normalizeProduct } from '@/lib/normalize';
+
+const PRODUCTS = (rawProducts as any[]).map(normalizeProduct);
 
 const ShopSS = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -15,10 +18,8 @@ const ShopSS = () => {
     }
 
     // Filter products for S/S season
-    const ssProducts = productsData.filter(product => 
-      product.season === 'SS' || product.collections.includes('ss')
-    );
-    setProducts(ssProducts as Product[]);
+    const ssProducts = PRODUCTS.filter(p => p.season === 'SS' || p.collections.includes('ss'));
+    setProducts(ssProducts);
   }, []);
 
   return (

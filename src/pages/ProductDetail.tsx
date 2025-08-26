@@ -8,7 +8,10 @@ import { useCart } from '@/context/CartContext';
 import { Product, ProductVariant } from '@/lib/types';
 import { trackViewContent } from '@/components/MetaPixel';
 import { useToast } from '@/hooks/use-toast';
-import productsData from '@/data/products-complete.json';
+import rawProducts from '@/data/products-complete.json';
+import { normalizeProduct } from '@/lib/normalize';
+
+const PRODUCTS = (rawProducts as any[]).map(normalizeProduct);
 
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -24,9 +27,9 @@ const ProductDetail = () => {
     if (!slug) return;
 
     // Find product by slug or handle
-    const foundProduct = productsData.find(p => p.handle === slug || p.id === slug);
+    const foundProduct = PRODUCTS.find(p => p.slug === slug || p.handle === slug);
     if (foundProduct) {
-      setProduct(foundProduct as Product);
+      setProduct(foundProduct);
       
       // Set default selections
       if (foundProduct.images?.length > 0) setSelectedImage(0);
