@@ -30,10 +30,10 @@ const Capsules = () => {
       available: true
     },
     {
-      name: 'Triangle',
+      name: "Fort Maner Classics",
       slug: 'triangle',
-      description: 'Geometric minimalism meets street culture',
-      image: '/images/capsules/triangle-hero.jpg',
+      description: "Click below to shop our entire collection",
+      image: '/lovable-uploads/9a433ac6-ed28-4904-aee9-083c80bcd123.png',
       available: true
     },
     {
