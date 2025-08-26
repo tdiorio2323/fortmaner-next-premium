@@ -55,12 +55,8 @@ const Capsules = () => {
       />
       
       <div className="container mx-auto px-4 relative z-10">
-        <header className="text-center mb-16">
+        <header className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">SHOP ALL COLLECTIONS</h1>
-          <p className="text-black font-bold max-w-2xl mx-auto text-lg">
-            Limited edition drops that define our brand. Each capsule tells a unique story 
-            through carefully curated pieces that embody Fort Maner's streetwear aesthetic.
-          </p>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
