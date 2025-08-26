@@ -8,7 +8,8 @@ export default function BlogFeed({ posts }: { posts: BlogPost[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
       {posts.map((p) => {
-        const dt = Number.isFinite(Date.parse(p.date)) ? new Date(p.date) : null;
+        const dt = new Date(p.date);
+        const dateLabel = isNaN(+dt) ? '' : dt.toLocaleDateString();
         return (
           <article id={p.id} key={p.id} className="border rounded-xl overflow-hidden">
             <a
@@ -29,11 +30,11 @@ export default function BlogFeed({ posts }: { posts: BlogPost[] }) {
               )}
               <div className="p-4">
                 <div className="text-xs text-muted-foreground mb-1">
-                  {dt && <time dateTime={p.date}>{dt.toLocaleDateString()}</time>}
+                  {dateLabel && <time dateTime={p.date}>{dateLabel}</time>}
                   {p.tags?.length ? ` • ${p.tags[0]}` : ''}
                 </div>
                 <h2 className="font-semibold">{p.title}</h2>
-                {p.excerpt && <p className="text-sm text-muted-foreground mt-2 line-clamp-3">{p.excerpt}</p>}
+                {p.excerpt && <p className="text-sm text-muted-foreground mt-2">{p.excerpt}</p>}
                 {!!p.tags?.length && (
                   <div className="flex flex-wrap gap-2 mt-3">
                     {p.tags.map((t) => (
