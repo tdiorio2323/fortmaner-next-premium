@@ -18,7 +18,7 @@ const ShopFW = () => {
     const fwProducts = productsData.filter(product => 
       product.season === 'FW' || product.collections.includes('fw')
     );
-    setProducts(fwProducts);
+    setProducts(fwProducts as Product[]);
   }, []);
 
   return (

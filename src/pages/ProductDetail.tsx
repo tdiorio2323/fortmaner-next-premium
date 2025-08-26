@@ -26,7 +26,7 @@ const ProductDetail = () => {
     // Find product by slug or handle
     const foundProduct = productsData.find(p => p.handle === slug || p.id === slug);
     if (foundProduct) {
-      setProduct(foundProduct);
+      setProduct(foundProduct as Product);
       
       // Set default selections
       if (foundProduct.images?.length > 0) setSelectedImage(0);
@@ -169,7 +169,7 @@ const ProductDetail = () => {
                 size="lg"
                 onClick={handleAddToCart}
                 disabled={!isInStock}
-                variant="black"
+                variant="default"
               >
                 {isInStock ? 'Add to Cart' : 'Out of Stock'}
               </Button>

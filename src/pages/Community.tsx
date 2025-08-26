@@ -18,7 +18,7 @@ const Community = () => {
       metaDescription.setAttribute('content', 'Connect with the Fort Maner community in Chicago. Local events, street culture, and neighborhood activities for streetwear enthusiasts.');
     }
 
-    setItems(communityData);
+    setItems(communityData as CommunityItem[]);
   }, []);
 
   const filteredItems = items.filter(item => {

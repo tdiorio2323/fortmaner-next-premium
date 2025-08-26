@@ -18,7 +18,7 @@ const Kids = () => {
     const kidsProducts = productsData.filter(product => 
       product.ageRange === 'kids' || product.collections.includes('kids')
     );
-    setProducts(kidsProducts);
+    setProducts(kidsProducts as Product[]);
   }, []);
 
   return (

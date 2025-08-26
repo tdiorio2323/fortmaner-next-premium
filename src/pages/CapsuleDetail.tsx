@@ -14,7 +14,7 @@ const CapsuleDetail = () => {
 
     // Filter products for specific capsule
     const capsuleProducts = productsData.filter(product => product.capsule === capsule);
-    setProducts(capsuleProducts);
+    setProducts(capsuleProducts as Product[]);
 
     // Set capsule info based on slug
     const capsuleInfoMap: Record<string, { name: string; description: string }> = {

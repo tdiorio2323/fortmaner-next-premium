@@ -19,7 +19,7 @@ const Lookbook = () => {
 
     // Load approved UGC posts
     const approvedPosts = ugcData.filter(post => post.approved);
-    setPosts(approvedPosts);
+    setPosts(approvedPosts as UGCPost[]);
   }, []);
 
   const handleProductClick = (productId: string) => {
