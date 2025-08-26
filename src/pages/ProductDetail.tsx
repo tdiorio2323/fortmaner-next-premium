@@ -8,7 +8,7 @@ import { useCart } from '@/context/CartContext';
 import { Product, ProductVariant } from '@/lib/types';
 import { trackViewContent } from '@/components/MetaPixel';
 import { useToast } from '@/hooks/use-toast';
-import productsData from '@/data/products.json';
+import productsData from '@/data/products-complete.json';
 
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();

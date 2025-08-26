@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '@/components/ProductCard';
 import { Product } from '@/lib/types';
-import productsData from '@/data/products.json';
+import productsData from '@/data/products-complete.json';
 
 const Kids = () => {
   const [products, setProducts] = useState<Product[]>([]);

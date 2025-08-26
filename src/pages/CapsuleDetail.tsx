@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductCard from '@/components/ProductCard';
 import { Product } from '@/lib/types';
-import productsData from '@/data/products.json';
+import productsData from '@/data/products-complete.json';
 
 const CapsuleDetail = () => {
   const { capsule } = useParams<{ capsule: string }>();
