@@ -1,0 +1,56 @@
+[
+  {
+    "id": "ig-post-001",
+    "mediaUrl": "/images/ugc/ig-post-jogging-suit.jpg",
+    "platform": "ig",
+    "caption": "Fresh fit for the Chicago streets 🔥 @fortmaner #fortmaner #streetwear",
+    "productIds": ["fort-maner-jogging-suit-black"],
+    "author": "@chicago_streetstyle",
+    "approved": true
+  },
+  {
+    "id": "ig-post-002",
+    "mediaUrl": "/images/ugc/ig-post-skull-hoodie.jpg",
+    "platform": "ig",
+    "caption": "Skull head hoodie hits different 💀 #fortmaner #skullhead",
+    "productIds": ["skull-head-hoodie-black"],
+    "author": "@skaterdude_chi",
+    "approved": true
+  },
+  {
+    "id": "fb-post-001",
+    "mediaUrl": "/images/ugc/fb-post-triangle-tee.jpg",
+    "platform": "fb",
+    "caption": "Love the clean geometric design on this Fort Maner tee. Perfect for summer.",
+    "productIds": ["logo-triangle-tee-white"],
+    "author": "Sarah Johnson",
+    "approved": true
+  },
+  {
+    "id": "ig-post-003",
+    "mediaUrl": "/images/ugc/ig-post-kids-hoodie.jpg",
+    "platform": "ig",
+    "caption": "Mini me rocking Fort Maner 👶🏽 #fortmanerkids #streetwearkids",
+    "productIds": ["kids-logo-hoodie-black"],
+    "author": "@mom_of_streetwear",
+    "approved": true
+  },
+  {
+    "id": "ig-post-004",
+    "mediaUrl": "/images/ugc/ig-post-signature-cap.jpg",
+    "platform": "ig",
+    "caption": "Signature cap on repeat 🧢 Clean embroidery work @fortmaner",
+    "productIds": ["signature-cap-black"],
+    "author": "@headwear_collector",
+    "approved": true
+  },
+  {
+    "id": "ig-post-005",
+    "mediaUrl": "/images/ugc/ig-post-outfit-complete.jpg",
+    "platform": "ig",
+    "caption": "Complete the look ✨ Head to toe Fort Maner for the block party",
+    "productIds": ["skull-head-hoodie-black", "signature-cap-black"],
+    "author": "@chicago_fits",
+    "approved": true
+  }
+]

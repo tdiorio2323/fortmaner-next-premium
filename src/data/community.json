@@ -1,0 +1,68 @@
+[
+  {
+    "id": "chicago-skate-jam-2024",
+    "kind": "event",
+    "title": "Chicago Skate Jam 2024",
+    "date": "2024-09-15T14:00:00Z",
+    "mediaUrl": "/images/community/skate-jam-chicago.jpg",
+    "excerpt": "Annual skateboarding event in Grant Park featuring local talent and Fort Maner gear showcase.",
+    "tags": ["skateboarding", "event", "chicago"],
+    "location": "Grant Park, Chicago",
+    "author": "Fort Maner Team"
+  },
+  {
+    "id": "streetwear-photography-workshop",
+    "kind": "post",
+    "title": "Streetwear Photography Workshop",
+    "date": "2024-08-20T10:00:00Z",
+    "mediaUrl": "/images/community/photography-workshop.jpg",
+    "excerpt": "Learn how to capture the perfect streetwear shots with Chicago photographer Marcus Johnson.",
+    "tags": ["photography", "workshop", "streetwear"],
+    "location": "West Loop, Chicago",
+    "author": "Marcus Johnson"
+  },
+  {
+    "id": "kids-breakdancing-class",
+    "kind": "video",
+    "title": "Kids Breakdancing Classes",
+    "date": "2024-09-01T16:00:00Z",
+    "mediaUrl": "/images/community/kids-breakdancing.mp4",
+    "excerpt": "Youth breaking classes every Saturday at the community center. Open to ages 8-16.",
+    "tags": ["kids", "breakdancing", "youth"],
+    "location": "Logan Square Community Center",
+    "author": "B-Boy Carlos"
+  },
+  {
+    "id": "neighborhood-cleanup-day",
+    "kind": "event",
+    "title": "Neighborhood Cleanup Day",
+    "date": "2024-09-10T09:00:00Z",
+    "mediaUrl": "/images/community/cleanup-day.jpg",
+    "excerpt": "Join the Fort Maner community for a neighborhood cleanup and block party.",
+    "tags": ["community", "cleanup", "environment"],
+    "location": "Wicker Park",
+    "author": "Fort Maner Community"
+  },
+  {
+    "id": "local-artist-spotlight-rivera",
+    "kind": "post",
+    "title": "Local Artist Spotlight: Sofia Rivera",
+    "date": "2024-08-25T12:00:00Z",
+    "mediaUrl": "/images/community/artist-spotlight-rivera.jpg",
+    "excerpt": "Chicago artist Sofia Rivera talks about her latest mural and collaboration with Fort Maner.",
+    "tags": ["art", "mural", "collaboration"],
+    "location": "Pilsen",
+    "author": "Sofia Rivera"
+  },
+  {
+    "id": "summer-basketball-tournament",
+    "kind": "event",
+    "title": "Summer Basketball Tournament",
+    "date": "2024-08-30T18:00:00Z",
+    "mediaUrl": "/images/community/basketball-tournament.jpg",
+    "excerpt": "3v3 basketball tournament with prizes sponsored by Fort Maner. Registration open now.",
+    "tags": ["basketball", "tournament", "summer"],
+    "location": "Garfield Park",
+    "author": "Chicago Hoops League"
+  }
+]
