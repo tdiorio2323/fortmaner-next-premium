@@ -13,8 +13,14 @@ import ShopSS from "./pages/ShopSS";
 import Capsules from "./pages/Capsules";
 import CapsuleDetail from "./pages/CapsuleDetail";
 import Kids from "./pages/Kids";
+import Men from "./pages/Men";
+import Ladies from "./pages/Ladies";
+import Hats from "./pages/Hats";
 import Lookbook from "./pages/Lookbook";
 import Community from "./pages/Community";
+import About from "./pages/About";
+import AboutUs from "./pages/AboutUs";
+import Blog from "./pages/Blog";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
@@ -41,8 +47,14 @@ const App = () => (
               <Route path="/shop/capsules" element={<Capsules />} />
               <Route path="/shop/capsules/:capsule" element={<CapsuleDetail />} />
               <Route path="/kids" element={<Kids />} />
+              <Route path="/men" element={<Men />} />
+              <Route path="/ladies" element={<Ladies />} />
+              <Route path="/hats" element={<Hats />} />
               <Route path="/lookbook" element={<Lookbook />} />
               <Route path="/community" element={<Community />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="/product/:slug" element={<ProductDetail />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
