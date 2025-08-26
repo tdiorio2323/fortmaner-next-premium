@@ -86,11 +86,10 @@ export interface StripeSession {
 
 export type BlogPost = {
   id: string;
-  kind: 'community' | 'people' | 'fw' | 'ss';
   title: string;
-  date: string;            // ISO
+  date: string;       // ISO
   excerpt?: string;
   image?: string;
-  href: string;            // internal link
+  href: string;       // internal link
   tags?: string[];
 };
