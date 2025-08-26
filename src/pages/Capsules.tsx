@@ -47,7 +47,26 @@ const Capsules = () => {
   ];
 
   return (
-    <div className="min-h-screen py-16 relative">
+    <div className="min-h-screen">
+      {/* Marquee Section */}
+      <div className="bg-black text-white py-2 overflow-hidden">
+        <div className="animate-marquee whitespace-nowrap">
+          <span className="text-sm font-medium mx-4">
+            FREE SHIPPING ON ORDERS $100+ OR MORE
+          </span>
+          <span className="text-sm font-medium mx-4">
+            FREE SHIPPING ON ORDERS $100+ OR MORE
+          </span>
+          <span className="text-sm font-medium mx-4">
+            FREE SHIPPING ON ORDERS $100+ OR MORE
+          </span>
+          <span className="text-sm font-medium mx-4">
+            FREE SHIPPING ON ORDERS $100+ OR MORE
+          </span>
+        </div>
+      </div>
+
+      <div className="py-16 relative">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
@@ -99,6 +118,7 @@ const Capsules = () => {
             </Card>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );
