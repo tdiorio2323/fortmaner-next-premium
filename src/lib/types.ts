@@ -87,9 +87,9 @@ export interface StripeSession {
 export type BlogPost = {
   id: string;
   title: string;
-  date: string;       // ISO
+  date: string;
   excerpt?: string;
   image?: string;
-  href: string;       // internal link
+  href: string;
   tags?: string[];
 };
