@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import HeroPinned from "@/components/HeroPinned";
 import AlternatingShowcase from "@/components/AlternatingShowcase";
+import FullBleedDualImageRows from "@/components/FullBleedDualImageRows";
+import SocialFeed from "@/components/SocialFeed";
 
 const tiles = [
   { title: "Men", href: "/men" },
@@ -13,6 +15,8 @@ export default function Index() {
     <main className="bg-white text-black">
       <HeroPinned />
       <AlternatingShowcase />
+      <FullBleedDualImageRows />
+      <SocialFeed />
     </main>
   );
 }

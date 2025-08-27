@@ -37,7 +37,7 @@ export default function HeroPinned() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.15 }}
-            className="h-20 w-auto md:h-28 drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
+            className="h-40 w-auto md:h-56 drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
           />
         </div>
       </motion.div>
