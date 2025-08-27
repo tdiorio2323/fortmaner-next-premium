@@ -12,7 +12,7 @@ const tiles = [
 
 export default function Index() {
   return (
-    <main className="bg-white text-black">
+    <main className="text-black">
       <HeroPinned />
       <AlternatingShowcase />
       <BrickDuos />

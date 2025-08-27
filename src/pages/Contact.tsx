@@ -18,7 +18,7 @@ export default function Contact() {
     };
 
     return (
-        <main className="bg-white min-h-screen">
+        <main className="min-h-screen">
             <div className="mx-auto w-full max-w-4xl px-4 md:px-6 py-8 md:py-10">
                 <div className="flex flex-col items-center mb-8">
                     <img src="/fort-maner-logo-main.jpg" alt="Fort Maner Logo" className="h-24 w-auto mb-4" />

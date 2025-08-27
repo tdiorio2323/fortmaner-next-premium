@@ -19,7 +19,7 @@ const menProducts: Product[] = [
 
 export default function Men() {
   return (
-    <main className="bg-white text-black">
+    <main className="text-black">
       <div className="mx-auto w-full max-w-6xl px-6 py-8 md:py-10">
         <CatalogHero
           title="Men’s Collection"
