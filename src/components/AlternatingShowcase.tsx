@@ -34,29 +34,29 @@ const rows: Row[] = [
 
 export default function AlternatingShowcase() {
   return (
-    <section className="mx-auto w-full max-w-6xl px-6 py-14 md:py-20">
+    <section className="mx-auto w-full max-w-6xl py-14 md:py-20">
       <div className="space-y-12 md:space-y-16">
         {rows.map((row, i) => (
           <div
             key={i}
-            className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center`}
+            className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch`}
           >
             {/* Image */}
-            <div className={`${row.reverse ? 'md:order-2' : ''}`}>
-              <div className="relative overflow-hidden rounded-2xl border border-neutral-200/60 bg-white shadow-sm">
+            <div className={`${row.reverse ? 'md:order-2' : ''} h-full`}>
+              <div className="relative h-full min-h-[360px] md:min-h-[420px] overflow-hidden rounded-2xl border border-neutral-200/60 bg-white shadow-sm">
                 <img
                   src={row.image}
                   alt={row.title}
-                  className="h-72 w-full object-cover md:h-[420px]"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
             </div>
 
             {/* Text/CTA */}
-            <div className={`${row.reverse ? 'md:order-1' : ''}`}>
-              <div className="rounded-2xl border border-neutral-200/60 bg-white p-8 md:p-10 shadow-sm">
+            <div className={`${row.reverse ? 'md:order-1' : ''} h-full`}>
+              <div className="h-full rounded-2xl border border-neutral-200/60 bg-white/90 backdrop-blur p-8 md:p-10 shadow-sm flex flex-col justify-center">
                 <h2 className="text-2xl md:text-3xl font-semibold">{row.title}</h2>
-                <p className="mt-3 text-neutral-600">{row.body}</p>
+                <p className="mt-3 text-black">{row.body}</p>
                 <a
                   href={row.cta.href}
                   className="mt-6 inline-flex items-center rounded-full bg-black px-5 py-3 text-sm font-medium text-white hover:bg-black/90"
@@ -75,4 +75,3 @@ export default function AlternatingShowcase() {
     </section>
   );
 }
-

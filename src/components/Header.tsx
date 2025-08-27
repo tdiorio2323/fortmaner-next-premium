@@ -36,7 +36,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-black/5 bg-black text-white">
-      <div className="mx-auto h-36 max-w-6xl px-4">
+      <div className="mx-auto h-36 max-w-7xl px-6">
         <div className="grid grid-cols-3 items-center h-full">
           {/* Left: Logo */}
           <div className="flex items-center justify-start">
@@ -50,7 +50,7 @@ export default function Header() {
           </div>
 
           {/* Center: Nav */}
-          <nav className="flex items-center justify-center gap-8 text-xl md:text-2xl">
+          <nav className="flex items-center justify-center gap-6 text-xl">
             {navigation.map((n) => (
               <Link
                 key={n.href}
@@ -63,13 +63,13 @@ export default function Header() {
           </nav>
 
           {/* Right: Search + Social + Phone */}
-          <div className="flex items-center justify-end gap-3">
+          <div className="flex items-center justify-end gap-2">
             <Link
               to="/search"
               aria-label="Search"
               className="p-2 rounded-md hover:bg-white/10"
             >
-              <Search size={36} className="text-white" />
+              <Search size={30} className="text-white" />
             </Link>
             <a
               href="https://www.instagram.com/_fortmaner/"
@@ -78,7 +78,7 @@ export default function Header() {
               aria-label="Instagram"
               className="p-2 rounded-md hover:bg-white/10"
             >
-              <Instagram size={36} className="text-white" />
+              <Instagram size={30} className="text-white" />
             </a>
             <a
               href="https://www.facebook.com/fort.manerwest/"
@@ -87,14 +87,14 @@ export default function Header() {
               aria-label="Facebook"
               className="p-2 rounded-md hover:bg-white/10"
             >
-              <Facebook size={36} className="text-white" />
+              <Facebook size={30} className="text-white" />
             </a>
             <a
               href="tel:+13125550123"
               aria-label="Call Fort Maner"
               className="p-2 rounded-md hover:bg-white/10"
             >
-              <Phone size={36} className="text-white" />
+              <Phone size={30} className="text-white" />
             </a>
           </div>
         </div>
