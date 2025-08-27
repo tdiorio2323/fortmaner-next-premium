@@ -123,14 +123,21 @@ All colors MUST be HSL.
   }
 }
 
+@supports (-webkit-touch-callout: none) { .h-screen { height: 100svh; } }
+html { scroll-behavior: smooth; }
+
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-image: url('/brick-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
   }
   
   /* Luxury Utilities */
