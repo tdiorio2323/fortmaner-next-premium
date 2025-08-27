@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Search, Instagram, Facebook, Phone } from "lucide-react";
-import logo from "@/assets/fort-maner-logo.svg";
+// Using public asset path for the logo
 import { Product } from '@/lib/types';
 
 const navigation = [
@@ -23,7 +23,7 @@ export default function Header() {
           <div className="flex items-center justify-start">
             <Link to="/" className="flex items-center gap-2">
               <img
-                src={logo}
+                src="/fort-maner-logo-white.png"
                 alt="Fort Maner"
                 className="h-28 w-auto rounded-[6px] object-contain"
               />
