@@ -92,4 +92,5 @@ export type BlogPost = {
   image?: string;
   href: string;
   tags?: string[];
+  body?: string;
 };

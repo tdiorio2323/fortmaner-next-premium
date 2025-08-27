@@ -1,6 +1,7 @@
 
 import CatalogHero from "@/components/CatalogHero";
-import ProductCard, { Product } from "@/components/ProductCard";
+import ProductCard from "@/components/ProductCard";
+import type { Product } from "@/lib/types";
 
 const menHero =
   "https://images.unsplash.com/photo-1516826957135-700dedea6988?q=80&w=1600&auto=format&fit=crop";

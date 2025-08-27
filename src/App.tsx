@@ -8,6 +8,7 @@ import { MetaPixel } from "./components/MetaPixel";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
+import ErrorBoundary from "./components/ErrorBoundary";
 import ShopFW from "./pages/ShopFW";
 import ShopSS from "./pages/ShopSS";
 import Capsules from "./pages/Capsules";
@@ -40,6 +41,7 @@ const App = () => (
         <BrowserRouter>
           <MetaPixel pixelId={import.meta.env.VITE_FACEBOOK_PIXEL_ID || ''} />
           <Header />
+          <ErrorBoundary>
           <main className="min-h-screen">
             <Routes>
               <Route path="/" element={<Index />} />
@@ -66,6 +68,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
+          </ErrorBoundary>
           <Footer />
         </BrowserRouter>
       </TooltipProvider>
