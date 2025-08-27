@@ -21,18 +21,18 @@ export default function BlogFeed({ posts }: { posts: BlogPost[] }) {
               alt={p.title}
               loading="lazy"
               decoding="async"
-              className="w-full h-[320px] object-cover"
+              className="w-full h-[420px] object-cover"
             />
           </div>
         )}
         <div className="p-8">
-          <div className="text-base text-muted-foreground mb-2">
+          <div className="text-lg md:text-xl text-muted-foreground mb-3">
             {dateLabel && <time dateTime={p.date}>{dateLabel}</time>}
           </div>
-          <h2 className="font-bold text-2xl mb-4">{p.title}</h2>
-          {p.excerpt && <p className="text-lg text-muted-foreground mb-2">{p.excerpt}</p>}
+          <h2 className="font-bold text-4xl md:text-5xl mb-5">{p.title}</h2>
+          {p.excerpt && <p className="text-2xl text-neutral-700 mb-3">{p.excerpt}</p>}
           {p.body && (
-            <div className="prose prose-lg max-w-none mt-6 text-black">
+            <div className="prose prose-xl max-w-none mt-6 text-black">
               {p.body.split('\n').map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
