@@ -3,21 +3,11 @@ import ProductCard from './ProductCard';
 import collectionsData from '@/data/collections.json';
 import jaguarTee from '@/assets/jaguar-tee-black.jpg';
 import mountainHoodie from '@/assets/mountain-hoodie-black.jpg';
-import stoneRunners from '@/assets/stone-runners-black.jpg';
+// Placeholder image for footwear until asset exists
+import stoneRunners from '@/assets/footwear-category.jpg';
 import accessoriesImage from '@/assets/accessories-category.jpg';
 import clothingImage from '@/assets/clothing-category.jpg';
-
-interface Product {
-  id: string;
-  handle: string;
-  title: string;
-  brand: string; 
-  price: number;
-  compareAtPrice?: number | null;
-  images: string[];
-  badges?: string[];
-  inStock: boolean;
-}
+import { Product } from '@/lib/types';
 
 const FeaturedProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -28,6 +18,7 @@ const FeaturedProducts = () => {
       {
         id: "jaguar-tee",
         handle: "jaguar-tee",
+        slug: "jaguar-tee",
         title: "JAGUAR Tee",
         brand: "Fort Maner",
         price: 55,
@@ -35,10 +26,16 @@ const FeaturedProducts = () => {
         images: [jaguarTee],
         badges: ["New"],
         inStock: true,
+        variants: [],
+        collections: [],
+        tags: [],
+        season: null,
+        ageRange: null,
       },
       {
         id: "mountain-hoodie",
         handle: "mountain-hoodie",
+        slug: "mountain-hoodie",
         title: "Mountain Peak Hoodie",
         brand: "Fort Maner",
         price: 120,
@@ -46,10 +43,16 @@ const FeaturedProducts = () => {
         images: [mountainHoodie],
         badges: ["Best Seller"],
         inStock: true,
+        variants: [],
+        collections: [],
+        tags: [],
+        season: null,
+        ageRange: null,
       },
       {
         id: "stone-runners",
         handle: "stone-runners",
+        slug: "stone-runners",
         title: "Stone Runner Sneakers",
         brand: "Fort Maner",
         price: 200,
@@ -57,10 +60,16 @@ const FeaturedProducts = () => {
         images: [stoneRunners],
         badges: ["New"],
         inStock: true,
+        variants: [],
+        collections: [],
+        tags: [],
+        season: null,
+        ageRange: null,
       },
       {
         id: "chicago-cap",
         handle: "chicago-cap",
+        slug: "chicago-cap",
         title: "Chicago Fortress Cap",
         brand: "Fort Maner",
         price: 45,
@@ -68,10 +77,16 @@ const FeaturedProducts = () => {
         images: [accessoriesImage],
         badges: [],
         inStock: true,
+        variants: [],
+        collections: [],
+        tags: [],
+        season: null,
+        ageRange: null,
       },
       {
         id: "fortress-shorts",
         handle: "fortress-shorts",
+        slug: "fortress-shorts",
         title: "Fortress Training Shorts",
         brand: "Fort Maner",
         price: 75,
@@ -79,10 +94,16 @@ const FeaturedProducts = () => {
         images: [clothingImage],
         badges: [],
         inStock: true,
+        variants: [],
+        collections: [],
+        tags: [],
+        season: null,
+        ageRange: null,
       },
       {
         id: "leather-wallet",
         handle: "leather-wallet",
+        slug: "leather-wallet",
         title: "Premium Leather Wallet",
         brand: "Fort Maner",
         price: 85,
@@ -90,10 +111,16 @@ const FeaturedProducts = () => {
         images: [accessoriesImage],
         badges: [],
         inStock: true,
+        variants: [],
+        collections: [],
+        tags: [],
+        season: null,
+        ageRange: null,
       },
       {
         id: "stone-backpack",
         handle: "stone-backpack",
+        slug: "stone-backpack",
         title: "Stone Mountain Backpack",
         brand: "Fort Maner",
         price: 165,
@@ -101,10 +128,16 @@ const FeaturedProducts = () => {
         images: [accessoriesImage],
         badges: ["Best Seller"],
         inStock: true,
+        variants: [],
+        collections: [],
+        tags: [],
+        season: null,
+        ageRange: null,
       },
       {
         id: "fort-socks",
         handle: "fort-socks",
+        slug: "fort-socks",
         title: "Fort Maner Premium Socks",
         brand: "Fort Maner",
         price: 25,
@@ -112,6 +145,11 @@ const FeaturedProducts = () => {
         images: [accessoriesImage],
         badges: [],
         inStock: true,
+        variants: [],
+        collections: [],
+        tags: [],
+        season: null,
+        ageRange: null,
       },
     ];
     

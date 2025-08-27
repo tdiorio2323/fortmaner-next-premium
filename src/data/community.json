@@ -1,0 +1,48 @@
+[
+  {"id":"c1","kind":"event","title":"Kids Skate Jam — Weekend Session","date":"2025-08-20","mediaUrl":"/images/community/skate-jam.jpg","excerpt":"All-ages session at the block.","tags":["kids","skateboarding"],"location":"Chicago"},
+  {"id":"c2","kind":"post","title":"Neighborhood Clean-up + Tee Drop","date":"2025-08-10","mediaUrl":"/images/community/cleanup.jpg","excerpt":"Gloves by us. Energy by you.","tags":["community"]},
+  {
+    "id": "chicago-skate-jam-2024",
+    "kind": "event",
+    "title": "Chicago Skate Jam 2024",
+    "date": "2024-09-15T14:00:00Z",
+    "mediaUrl": "/images/community/skate-jam-chicago.jpg",
+    "excerpt": "Annual skateboarding event in Grant Park featuring local talent and Fort Maner gear showcase.",
+    "tags": ["skateboarding", "event", "chicago"],
+    "location": "Grant Park, Chicago",
+    "author": "Fort Maner Team"
+  },
+  {
+    "id": "streetwear-photography-workshop",
+    "kind": "post",
+    "title": "Streetwear Photography Workshop",
+    "date": "2024-08-20T10:00:00Z",
+    "mediaUrl": "/images/community/photography-workshop.jpg",
+    "excerpt": "Learn how to capture the perfect streetwear shots with Chicago photographer Marcus Johnson.",
+    "tags": ["photography", "workshop", "streetwear"],
+    "location": "West Loop, Chicago",
+    "author": "Marcus Johnson"
+  },
+  {
+    "id": "kids-breakdancing-class",
+    "kind": "video",
+    "title": "Kids Breakdancing Classes",
+    "date": "2024-09-01T16:00:00Z",
+    "mediaUrl": "/images/community/kids-breakdancing.mp4",
+    "excerpt": "Youth breaking classes every Saturday at the community center. Open to ages 8-16.",
+    "tags": ["kids", "breakdancing", "youth"],
+    "location": "Logan Square Community Center",
+    "author": "B-Boy Carlos"
+  },
+  {
+    "id": "neighborhood-cleanup-day",
+    "kind": "event",
+    "title": "Neighborhood Cleanup Day",
+    "date": "2024-09-10T09:00:00Z",
+    "mediaUrl": "/images/community/cleanup-day.jpg",
+    "excerpt": "Join the Fort Maner community for a neighborhood cleanup and block party.",
+    "tags": ["community", "cleanup", "environment"],
+    "location": "Wicker Park",
+    "author": "Fort Maner Community"
+  }
+]

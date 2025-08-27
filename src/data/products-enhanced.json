@@ -1,0 +1,154 @@
+[
+  {
+    "id": "fort-maner-jogging-suit-black",
+    "handle": "fort-maner-jogging-suit-black",
+    "slug": "fort-maner-jogging-suit-black",
+    "title": "Fort Maner Jogging Suit",
+    "brand": "Fort Maner",
+    "price": 199.99,
+    "compareAtPrice": 249.99,
+    "images": [
+      "/lovable-uploads/3ca44808-e39b-438d-8382-5f9a69f10479.png",
+      "/images/jogging-suit-black-2.jpg"
+    ],
+    "description": "Premium jogging suit crafted from heavyweight cotton blend. Features embroidered Fort Maner logo and signature stone texture details.",
+    "options": {
+      "color": ["Black", "Stone Gray"],
+      "size": ["S", "M", "L", "XL", "XXL"]
+    },
+    "variants": [
+      { "id": "js-black-s", "sku": "FM-JS-BLK-S", "color": "Black", "size": "S", "stock": 12 },
+      { "id": "js-black-m", "sku": "FM-JS-BLK-M", "color": "Black", "size": "M", "stock": 15 },
+      { "id": "js-black-l", "sku": "FM-JS-BLK-L", "color": "Black", "size": "L", "stock": 8 },
+      { "id": "js-black-xl", "sku": "FM-JS-BLK-XL", "color": "Black", "size": "XL", "stock": 6 },
+      { "id": "js-black-xxl", "sku": "FM-JS-BLK-XXL", "color": "Black", "size": "XXL", "stock": 3 }
+    ],
+    "badges": ["New", "Premium"],
+    "inStock": true,
+    "collections": ["fw", "capsules"],
+    "tags": ["jogging", "set", "premium", "cotton"],
+    "season": "FW",
+    "capsule": "jogging-suit",
+    "ageRange": "adult",
+    "seo": {
+      "title": "Fort Maner Jogging Suit - Premium Black Streetwear Set",
+      "description": "Luxury jogging suit in black with embroidered Fort Maner logo. Premium cotton blend construction for ultimate comfort and style."
+    }
+  },
+  {
+    "id": "skull-head-hoodie-black",
+    "slug": "skull-head-hoodie-black",
+    "title": "Skull Head Hoodie",
+    "price": 149.99,
+    "images": [
+      "/images/skull-head-hoodie-black-1.jpg",
+      "/images/skull-head-hoodie-black-2.jpg"
+    ],
+    "description": "Heavyweight hoodie featuring signature skull head graphic. Crafted from premium cotton fleece with ribbed cuffs and hem.",
+    "options": {
+      "color": ["Black", "Charcoal"],
+      "size": ["S", "M", "L", "XL", "XXL"]
+    },
+    "variants": [
+      { "id": "sh-black-s", "sku": "FM-SH-BLK-S", "color": "Black", "size": "S", "stock": 20 },
+      { "id": "sh-black-m", "sku": "FM-SH-BLK-M", "color": "Black", "size": "M", "stock": 25 },
+      { "id": "sh-black-l", "sku": "FM-SH-BLK-L", "color": "Black", "size": "L", "stock": 18 },
+      { "id": "sh-black-xl", "sku": "FM-SH-BLK-XL", "color": "Black", "size": "XL", "stock": 12 },
+      { "id": "sh-black-xxl", "sku": "FM-SH-BLK-XXL", "color": "Black", "size": "XXL", "stock": 8 }
+    ],
+    "collections": ["fw", "capsules"],
+    "tags": ["hoodie", "skull", "graphic", "premium"],
+    "season": "FW",
+    "capsule": "skull-head",
+    "ageRange": "adult",
+    "seo": {
+      "title": "Skull Head Hoodie - Fort Maner Black Premium Streetwear",
+      "description": "Premium skull head graphic hoodie in black. Heavyweight cotton fleece construction with signature Fort Maner styling."
+    }
+  },
+  {
+    "id": "logo-triangle-tee-white",
+    "slug": "logo-triangle-tee-white",
+    "title": "Logo Triangle Tee",
+    "price": 59.99,
+    "images": [
+      "/images/logo-triangle-tee-white-1.jpg"
+    ],
+    "description": "Essential tee featuring geometric triangle logo design. Soft cotton construction with modern streetwear fit.",
+    "options": {
+      "color": ["White", "Black"],
+      "size": ["S", "M", "L", "XL", "XXL"]
+    },
+    "variants": [
+      { "id": "lt-white-s", "sku": "FM-LT-WHT-S", "color": "White", "size": "S", "stock": 30 },
+      { "id": "lt-white-m", "sku": "FM-LT-WHT-M", "color": "White", "size": "M", "stock": 35 },
+      { "id": "lt-white-l", "sku": "FM-LT-WHT-L", "color": "White", "size": "L", "stock": 28 },
+      { "id": "lt-white-xl", "sku": "FM-LT-WHT-XL", "color": "White", "size": "XL", "stock": 22 },
+      { "id": "lt-white-xxl", "sku": "FM-LT-WHT-XXL", "color": "White", "size": "XXL", "stock": 15 }
+    ],
+    "collections": ["ss", "capsules"],
+    "tags": ["tee", "logo", "triangle", "essential"],
+    "season": "SS",
+    "capsule": "triangle",
+    "ageRange": "adult",
+    "seo": {
+      "title": "Logo Triangle Tee - Fort Maner White Essential Streetwear",
+      "description": "Essential white tee with geometric triangle logo. Soft cotton construction perfect for layering or standalone wear."
+    }
+  },
+  {
+    "id": "signature-cap-black",
+    "slug": "signature-cap-black",
+    "title": "Signature Cap",
+    "price": 49.99,
+    "images": [
+      "/images/signature-cap-black-1.jpg"
+    ],
+    "description": "Classic six-panel cap with embroidered Fort Maner signature logo. Adjustable back strap for perfect fit.",
+    "options": {
+      "color": ["Black", "Stone Gray"],
+      "size": ["One Size"]
+    },
+    "variants": [
+      { "id": "sc-black-os", "sku": "FM-SC-BLK-OS", "color": "Black", "size": "One Size", "stock": 45 }
+    ],
+    "collections": ["fw", "ss", "capsules"],
+    "tags": ["cap", "signature", "embroidered", "adjustable"],
+    "season": null,
+    "capsule": "signature",
+    "ageRange": "adult",
+    "seo": {
+      "title": "Signature Cap - Fort Maner Black Embroidered Streetwear Hat",
+      "description": "Classic black cap with embroidered Fort Maner signature logo. Premium construction with adjustable fit."
+    }
+  },
+  {
+    "id": "kids-logo-hoodie-black",
+    "slug": "kids-logo-hoodie-black",
+    "title": "Kids Logo Hoodie",
+    "price": 79.99,
+    "images": [
+      "/images/kids-logo-hoodie-black-1.jpg"
+    ],
+    "description": "Youth-sized hoodie featuring classic Fort Maner logo. Soft cotton blend perfect for young streetwear enthusiasts.",
+    "options": {
+      "color": ["Black"],
+      "size": ["XS", "S", "M", "L"]
+    },
+    "variants": [
+      { "id": "kh-black-xs", "sku": "FM-KH-BLK-XS", "color": "Black", "size": "XS", "stock": 25 },
+      { "id": "kh-black-s", "sku": "FM-KH-BLK-S", "color": "Black", "size": "S", "stock": 30 },
+      { "id": "kh-black-m", "sku": "FM-KH-BLK-M", "color": "Black", "size": "M", "stock": 28 },
+      { "id": "kh-black-l", "sku": "FM-KH-BLK-L", "color": "Black", "size": "L", "stock": 20 }
+    ],
+    "collections": ["kids", "fw"],
+    "tags": ["kids", "hoodie", "logo", "youth"],
+    "season": "FW",
+    "capsule": "logo",
+    "ageRange": "kids",
+    "seo": {
+      "title": "Kids Logo Hoodie - Fort Maner Black Youth Streetwear",
+      "description": "Youth-sized black hoodie with classic Fort Maner logo. Soft cotton blend construction for young streetwear fans."
+    }
+  }
+]

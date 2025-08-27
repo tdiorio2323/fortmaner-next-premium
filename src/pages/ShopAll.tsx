@@ -1,18 +1,10 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '@/components/ProductCard';
-import productsData from '@/data/products.json';
+import rawProducts from '@/data/products-complete.json';
+import { normalizeProduct } from '@/lib/normalize';
+import { Product } from '@/lib/types';
 
-interface Product {
-  id: string;
-  handle: string;
-  title: string;
-  brand: string;
-  price: number;
-  compareAtPrice?: number;
-  images: string[];
-  badges: string[];
-  inStock: boolean;
-}
+const PRODUCTS = (rawProducts as any[]).map(normalizeProduct);
 
 const ShopAll = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -27,7 +19,7 @@ const ShopAll = () => {
     }
 
     // Show all products
-    setProducts(productsData);
+    setProducts(PRODUCTS);
   }, []);
 
   return (
@@ -50,8 +42,8 @@ const ShopAll = () => {
         </div>
 
         {products.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-muted-foreground text-lg">No products found.</p>
+          <div className="text-center py-16 bg-red-600 text-white rounded-lg mt-8">
+            <p className="text-lg">No products found.</p>
           </div>
         )}
       </div>

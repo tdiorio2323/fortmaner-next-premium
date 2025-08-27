@@ -1,0 +1,40 @@
+[
+  {"id":"u1","mediaUrl":"/images/ugc-1.jpg","platform":"ig","caption":"Street fit","productIds":["skull-tee"],"approved":true},
+  {"id":"u2","mediaUrl":"/images/ugc-2.jpg","platform":"ig","caption":"Weekend set","productIds":["jogger-set-black"],"approved":true},
+  {
+    "id": "ig-post-001",
+    "mediaUrl": "/images/ugc/ig-post-jogging-suit.jpg",
+    "platform": "ig",
+    "caption": "Fresh fit for the Chicago streets 🔥 @fortmaner #fortmaner #streetwear",
+    "productIds": ["fort-maner-jogging-suit-black"],
+    "author": "@chicago_streetstyle",
+    "approved": true
+  },
+  {
+    "id": "ig-post-002",
+    "mediaUrl": "/images/ugc/ig-post-skull-hoodie.jpg",
+    "platform": "ig",
+    "caption": "Skull head hoodie hits different 💀 #fortmaner #skullhead",
+    "productIds": ["skull-head-hoodie-black"],
+    "author": "@skaterdude_chi",
+    "approved": true
+  },
+  {
+    "id": "fb-post-001",
+    "mediaUrl": "/images/ugc/fb-post-triangle-tee.jpg",
+    "platform": "fb",
+    "caption": "Love the clean geometric design on this Fort Maner tee. Perfect for summer.",
+    "productIds": ["logo-triangle-tee-white"],
+    "author": "Sarah Johnson",
+    "approved": true
+  },
+  {
+    "id": "ig-post-003",
+    "mediaUrl": "/images/ugc/ig-post-kids-hoodie.jpg",
+    "platform": "ig",
+    "caption": "Mini me rocking Fort Maner 👶🏽 #fortmanerkids #streetwearkids",
+    "productIds": ["kids-logo-hoodie-black"],
+    "author": "@mom_of_streetwear",
+    "approved": true
+  }
+]

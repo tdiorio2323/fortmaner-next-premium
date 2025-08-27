@@ -5,7 +5,8 @@ import instagramPost2 from '@/assets/instagram-post-2.jpg';
 import instagramPost3 from '@/assets/instagram-post-3.jpg';
 import mountainHoodie from '@/assets/mountain-hoodie-black.jpg';
 import jaguarTee from '@/assets/jaguar-tee-black.jpg';
-import stoneRunners from '@/assets/stone-runners-black.jpg';
+// Placeholder until stone-runners asset is added
+import stoneRunners from '@/assets/footwear-category.jpg';
 
 const InstagramGrid = () => {
   const handle = "_FORTMANER";

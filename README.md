@@ -47,8 +47,8 @@ src/
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or yarn
+- Node.js 18+
+- npm (lockfile included)
 
 ### Installation
 
@@ -69,6 +69,18 @@ npm run dev
 ```
 
 4. Open [http://localhost:8080](http://localhost:8080) in your browser.
+
+### Environment
+
+Copy `.env.example` to `.env` and set values as needed:
+
+```
+VITE_SUPABASE_URL
+VITE_SUPABASE_PUBLISHABLE_KEY
+VITE_FACEBOOK_PIXEL_ID
+```
+
+Supabase keys are only required if using Supabase-powered features; the app still runs without them.
 
 ## 📦 Build & Deploy
 
@@ -158,7 +170,7 @@ All images should be:
 
 ## 🔧 Environment Variables
 
-Currently no environment variables are required for basic functionality.
+See `ENV_VARS.md` for details and examples. Never commit real secrets.
 
 ## 📈 Performance
 

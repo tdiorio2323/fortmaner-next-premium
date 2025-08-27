@@ -1,0 +1,219 @@
+[
+  {
+    "id": "1",
+    "handle": "jaguar-tee",
+    "slug": "jaguar-tee",
+    "title": "Jaguar Tee",
+    "brand": "Fort Maner",
+    "price": 45,
+    "compareAtPrice": 60,
+    "images": ["/src/assets/jaguar-tee-black.jpg"],
+    "badges": ["New"],
+    "inStock": true,
+    "description": "Premium cotton tee featuring our signature jaguar graphic. Cut for a modern fit with attention to detail in every stitch.",
+    "options": {
+      "color": ["Black", "White"],
+      "size": ["XS", "S", "M", "L", "XL"]
+    },
+    "variants": [
+      {
+        "id": "1-black-m",
+        "sku": "JAG-TEE-BLK-M",
+        "color": "Black",
+        "size": "M",
+        "stock": 10
+      },
+      {
+        "id": "1-white-m",
+        "sku": "JAG-TEE-WHT-M",
+        "color": "White",
+        "size": "M",
+        "stock": 8
+      }
+    ],
+    "collections": ["fw-24"],
+    "tags": ["streetwear", "graphics"],
+    "season": "FW",
+    "capsule": null,
+    "ageRange": "adult",
+    "seo": {
+      "title": "Jaguar Tee - Premium Streetwear | Fort Maner",
+      "description": "Shop the iconic Jaguar Tee from Fort Maner. Premium cotton construction with signature graphics."
+    }
+  },
+  {
+    "id": "2",
+    "handle": "mountain-hoodie",
+    "slug": "mountain-hoodie",
+    "title": "Mountain Hoodie",
+    "brand": "Fort Maner",
+    "price": 85,
+    "compareAtPrice": 120,
+    "images": ["/src/assets/mountain-hoodie-black.jpg"],
+    "badges": ["Best Seller"],
+    "inStock": true,
+    "description": "Heavyweight hoodie designed for urban exploration. Features our mountain graphic and premium fleece interior.",
+    "options": {
+      "color": ["Black", "Grey"],
+      "size": ["S", "M", "L", "XL"]
+    },
+    "variants": [
+      {
+        "id": "2-black-l",
+        "sku": "MTN-HOD-BLK-L",
+        "color": "Black",
+        "size": "L",
+        "stock": 15
+      }
+    ],
+    "collections": ["fw-24"],
+    "tags": ["outdoor", "comfort"],
+    "season": "FW",
+    "capsule": null,
+    "ageRange": "adult",
+    "seo": {
+      "title": "Mountain Hoodie - Premium Streetwear | Fort Maner",
+      "description": "Stay warm in style with the Mountain Hoodie. Heavyweight construction with signature graphics."
+    }
+  },
+  {
+    "id": "3",
+    "handle": "stone-runners",
+    "slug": "stone-runners",
+    "title": "Stone Runners",
+    "brand": "Fort Maner",
+    "price": 150,
+    "compareAtPrice": 200,
+    "images": ["/src/assets/footwear-category.jpg"],
+    "badges": ["Limited"],
+    "inStock": true,
+    "description": "Minimalist runners crafted for the streets. Premium materials meet modern silhouette in our signature colorways.",
+    "options": {
+      "color": ["Black", "Stone"],
+      "size": ["7", "8", "9", "10", "11", "12"]
+    },
+    "variants": [
+      {
+        "id": "3-black-10",
+        "sku": "STN-RUN-BLK-10",
+        "color": "Black",
+        "size": "10",
+        "stock": 8
+      }
+    ],
+    "collections": ["fw-24", "footwear"],
+    "tags": ["sneakers", "lifestyle"],
+    "season": "FW",
+    "capsule": null,
+    "ageRange": "adult",
+    "seo": {
+      "title": "Stone Runners - Premium Sneakers | Fort Maner",
+      "description": "Step into style with Stone Runners. Minimalist design meets premium comfort."
+    }
+  },
+  {
+    "id": "4",
+    "handle": "skull-head-hoodie",
+    "slug": "skull-head-hoodie",
+    "title": "Skull Head Hoodie",
+    "brand": "Fort Maner",
+    "price": 95,
+    "compareAtPrice": null,
+    "images": ["/src/assets/mountain-hoodie-black.jpg"],
+    "badges": ["Capsule"],
+    "inStock": true,
+    "description": "Bold skull graphic on premium heavyweight hoodie. Part of our signature Skull Head capsule collection.",
+    "options": {
+      "color": ["Black", "Stone"],
+      "size": ["S", "M", "L", "XL", "XXL"]
+    },
+    "variants": [
+      {
+        "id": "4-black-l",
+        "sku": "SKL-HOD-BLK-L",
+        "color": "Black",
+        "size": "L",
+        "stock": 12
+      }
+    ],
+    "collections": ["capsules"],
+    "tags": ["capsule", "skull", "graphics"],
+    "season": "FW",
+    "capsule": "skull-head",
+    "ageRange": "adult",
+    "seo": {
+      "title": "Skull Head Hoodie - Capsule Collection | Fort Maner",
+      "description": "Bold skull graphics define this premium hoodie from our Skull Head capsule collection."
+    }
+  },
+  {
+    "id": "5",
+    "handle": "kids-logo-hoodie",
+    "slug": "kids-logo-hoodie",
+    "title": "Kids Logo Hoodie",
+    "brand": "Fort Maner",
+    "price": 55,
+    "compareAtPrice": null,
+    "images": ["/src/assets/mountain-hoodie-black.jpg"],
+    "badges": ["Kids"],
+    "inStock": true,
+    "description": "Smaller version of our classic logo hoodie, designed specifically for young streetwear enthusiasts.",
+    "options": {
+      "color": ["Black", "Grey"],
+      "size": ["XS", "S", "M", "L"]
+    },
+    "variants": [
+      {
+        "id": "5-black-s",
+        "sku": "KDS-HOD-BLK-S",
+        "color": "Black",
+        "size": "S",
+        "stock": 20
+      }
+    ],
+    "collections": ["kids"],
+    "tags": ["kids", "logo", "youth"],
+    "season": null,
+    "capsule": null,
+    "ageRange": "kids",
+    "seo": {
+      "title": "Kids Logo Hoodie - Youth Streetwear | Fort Maner",
+      "description": "Premium kids hoodie with Fort Maner logo. Perfect for young streetwear fans."
+    }
+  },
+  {
+    "id": "6",
+    "handle": "summer-capsule-tee",
+    "slug": "summer-capsule-tee",
+    "title": "Summer Capsule Tee",
+    "brand": "Fort Maner",
+    "price": 42,
+    "compareAtPrice": null,
+    "images": ["/src/assets/jaguar-tee-black.jpg"],
+    "badges": ["SS24"],
+    "inStock": true,
+    "description": "Lightweight cotton tee with summer-inspired graphics. Part of our Spring/Summer collection.",
+    "options": {
+      "color": ["White", "Stone", "Navy"],
+      "size": ["S", "M", "L", "XL"]
+    },
+    "variants": [
+      {
+        "id": "6-white-m",
+        "sku": "SUM-TEE-WHT-M",
+        "color": "White",
+        "size": "M",
+        "stock": 25
+      }
+    ],
+    "collections": ["ss-24"],
+    "tags": ["summer", "lightweight", "casual"],
+    "season": "SS",
+    "capsule": null,
+    "ageRange": "adult",
+    "seo": {
+      "title": "Summer Capsule Tee - SS24 Collection | Fort Maner",
+      "description": "Lightweight summer tee with seasonal graphics from our Spring/Summer collection."
+    }
+  }
+]

@@ -3,18 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ShoppingBag, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-interface Product {
-  id: string;
-  handle: string;
-  title: string;
-  brand: string;
-  price: number;
-  compareAtPrice?: number | null;
-  images: string[];
-  badges?: string[];
-  inStock: boolean;
-}
+import { Product } from '@/lib/types';
 
 interface ProductCardProps {
   product: Product;
@@ -29,7 +18,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
     <Card className="group relative overflow-hidden border-stone-medium/20 bg-card hover:bg-card-dark transition-all duration-300 luxury-glow">
       <div className="aspect-square relative overflow-hidden">
         {/* Product Image */}
-        <Link to={`/product/${product.handle}`}>
+        <Link to={`/product/${product.slug}`}>
           <img
             src={product.images[0]}
             alt={product.title}
@@ -87,7 +76,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <p className="text-sm text-muted-foreground font-medium">{product.brand}</p>
         
         {/* Title */}
-        <Link to={`/product/${product.handle}`}>
+        <Link to={`/product/${product.slug}`}>
           <h3 className="font-semibold text-base hover:text-brand-red transition-colors line-clamp-2">
             {product.title}
           </h3>

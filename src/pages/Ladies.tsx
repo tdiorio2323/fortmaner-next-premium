@@ -1,66 +1,47 @@
-import { useEffect, useState } from 'react';
+import CatalogHero from '@/components/CatalogHero';
 import ProductCard from '@/components/ProductCard';
-import productsData from '@/data/products.json';
-import collectionsData from '@/data/collections.json';
+import { Product } from '@/lib/types';
+import imgA from '@/assets/clothing-category.jpg';
+import imgB from '@/assets/instagram-post-1.jpg';
+import imgC from '@/assets/instagram-post-2.jpg';
+import imgD from '@/assets/instagram-post-3.jpg';
 
-interface Product {
-  id: string;
-  handle: string;
-  title: string;
-  brand: string;
-  price: number;
-  compareAtPrice?: number;
-  images: string[];
-  badges: string[];
-  inStock: boolean;
-}
+const ladiesHero = imgA;
 
-const Ladies = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+const ladiesProducts: Product[] = [
+  { id: 'w1', slug: 'cropped-hoodie', title: 'Cropped Hoodie', price: 6299, compareAtPrice: null, images: [imgA], badges: ['New'], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'SS', ageRange: 'adult' },
+  { id: 'w2', slug: 'ribbed-tank', title: 'Ribbed Tank', price: 1999, compareAtPrice: null, images: [imgB], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'SS', ageRange: 'adult' },
+  { id: 'w3', slug: 'high-rise-joggers', title: 'High-Rise Joggers', price: 6499, compareAtPrice: null, images: [imgC], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'FW', ageRange: 'adult' },
+  { id: 'w4', slug: 'overshirt-jacket', title: 'Overshirt Jacket', price: 10499, compareAtPrice: null, images: [imgD], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'FW', ageRange: 'adult' },
+  { id: 'w5', slug: 'everyday-tote', title: 'Everyday Tote', price: 3199, compareAtPrice: null, images: [imgB], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'SS', ageRange: 'adult' },
+  { id: 'w6', slug: 'low-top-sneaker', title: 'Low-Top Sneaker', price: 11999, compareAtPrice: null, images: [imgC], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'SS', ageRange: 'adult' },
+  { id: 'w7', slug: 'beanie', title: 'Beanie', price: 1699, compareAtPrice: null, images: [imgD], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'FW', ageRange: 'adult' },
+  { id: 'w8', slug: 'minimal-tee-dress', title: 'Minimal Tee Dress', price: 4899, compareAtPrice: null, images: [imgA], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'SS', ageRange: 'adult' },
+];
 
-  useEffect(() => {
-    // Set page title and meta description
-    document.title = 'Ladies Collection - Fort Maner | Luxury Streetwear';
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Shop Fort Maner\'s ladies collection of luxury streetwear. Premium hoodies, tees, and accessories designed for the modern urban woman.');
-    }
-
-    // Filter products for ladies collection
-    const ladiesProducts = productsData.filter(product => 
-      collectionsData.ladies.includes(product.handle)
-    );
-    setProducts(ladiesProducts);
-  }, []);
-
+export default function Ladies() {
   return (
-    <div className="min-h-screen py-16">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Ladies Collection</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Explore our ladies luxury streetwear collection featuring premium hoodies, 
-            tees, and accessories designed for the modern urban woman.
-          </p>
-        </div>
+    <main className="text-black">
+      <div className="mx-auto w-full max-w-6xl px-6 py-8 md:py-10">
+        <CatalogHero
+          title="Ladies’ Collection"
+          subtitle="Luxury streetwear for the modern woman. Premium hoodies, tees, and accessories."
+          bg={ladiesHero}
+        />
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-
-        {products.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-muted-foreground text-lg">No products found in the ladies collection.</p>
+        <section className="mt-8 md:mt-10">
+          <div className="mb-6 flex items-end justify-between">
+            <h2 className="text-2xl md:text-3xl font-semibold">Featured</h2>
+            <a className="text-sm text-neutral-600 hover:text-black" href="/shop-all">Shop All</a>
           </div>
-        )}
-      </div>
-    </div>
-  );
-};
 
-export default Ladies;
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {ladiesProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}

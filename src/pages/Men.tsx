@@ -1,66 +1,47 @@
-import { useEffect, useState } from 'react';
-import ProductCard from '@/components/ProductCard';
-import productsData from '@/data/products.json';
-import collectionsData from '@/data/collections.json';
 
-interface Product {
-  id: string;
-  handle: string;
-  title: string;
-  brand: string;
-  price: number;
-  compareAtPrice?: number;
-  images: string[];
-  badges: string[];
-  inStock: boolean;
-}
+import CatalogHero from "@/components/CatalogHero";
+import ProductCard from "@/components/ProductCard";
+import type { Product } from "@/lib/types";
+import imgA from "@/assets/mountain-hoodie-black.jpg";
+import imgB from "@/assets/jaguar-tee-black.jpg";
+import imgC from "@/assets/footwear-category.jpg";
 
-const Men = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+const menHero = imgC;
 
-  useEffect(() => {
-    // Set page title and meta description
-    document.title = 'Men\'s Collection - Fort Maner | Luxury Streetwear';
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Shop Fort Maner\'s men\'s collection of luxury streetwear. Premium hoodies, tees, sneakers, and accessories designed for the modern urban lifestyle.');
-    }
+const menProducts: Product[] = [
+  { id: "m1", slug: "city-hoodie", title: "City Hoodie", price: 5999, compareAtPrice: null, images: [imgA], badges: ["New"], brand: "Fort Maner", inStock: true, variants: [], collections: ["men"], tags: [], season: "FW", ageRange: "adult" },
+  { id: "m2", slug: "minimal-tee", title: "Minimal Tee", price: 2499, compareAtPrice: null, images: [imgB], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["men"], tags: [], season: "SS", ageRange: "adult" },
+  { id: "m3", slug: "tapered-joggers", title: "Tapered Joggers", price: 6499, compareAtPrice: null, images: [imgC], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["men"], tags: [], season: "FW", ageRange: "adult" },
+  { id: "m4", slug: "layered-jacket", title: "Layered Jacket", price: 10999, compareAtPrice: null, images: [imgA], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["men"], tags: [], season: "FW", ageRange: "adult" },
+  { id: "m5", slug: "everyday-cap", title: "Everyday Cap", price: 1999, compareAtPrice: null, images: [imgB], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["men"], tags: [], season: "SS", ageRange: "adult" },
+  { id: "m6", slug: "utility-tote", title: "Utility Tote", price: 3299, compareAtPrice: null, images: [imgC], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["men"], tags: [], season: "SS", ageRange: "adult" },
+  { id: "m7", slug: "trail-sneaker", title: "Trail Sneaker", price: 12999, compareAtPrice: null, images: [imgA], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["men"], tags: [], season: "FW", ageRange: "adult" },
+  { id: "m8", slug: "waffle-beanie", title: "Waffle Beanie", price: 1799, compareAtPrice: null, images: [imgB], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["men"], tags: [], season: "SS", ageRange: "adult" },
+];
 
-    // Filter products for men's collection
-    const menProducts = productsData.filter(product => 
-      collectionsData.men.includes(product.handle)
-    );
-    setProducts(menProducts);
-  }, []);
-
+export default function Men() {
   return (
-    <div className="min-h-screen py-16">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Men's Collection</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Discover our men's luxury streetwear collection featuring premium hoodies, 
-            tees, sneakers, and accessories crafted for the modern urban lifestyle.
-          </p>
-        </div>
+    <main className="text-black">
+      <div className="mx-auto w-full max-w-6xl px-6 py-8 md:py-10">
+        <CatalogHero
+          title="Men’s Collection"
+          subtitle="Premium streetwear essentials built for everyday city life."
+          bg={menHero}
+        />
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-
-        {products.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-muted-foreground text-lg">No products found in the men's collection.</p>
+        <section className="mt-8 md:mt-10">
+          <div className="mb-6 flex items-end justify-between">
+            <h2 className="text-2xl md:text-3xl font-semibold">Featured</h2>
+            <a className="text-sm text-neutral-600 hover:text-black" href="/shop-all">Shop All</a>
           </div>
-        )}
-      </div>
-    </div>
-  );
-};
 
-export default Men;
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {menProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}
