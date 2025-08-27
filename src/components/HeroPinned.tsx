@@ -22,6 +22,7 @@ export default function HeroPinned() {
         <video
           className="absolute inset-0 h-full w-full object-cover"
           src="/hero.mp4"
+          preload="auto"
           autoPlay
           muted
           loop
