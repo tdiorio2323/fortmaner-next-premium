@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import HeroPinned from "@/components/HeroPinned";
 import AlternatingShowcase from "@/components/AlternatingShowcase";
+import BrickDuos from "@/components/BrickDuos";
 import FullBleedDualImageRows from "@/components/FullBleedDualImageRows";
 import SocialFeed from "@/components/SocialFeed";
 
@@ -15,6 +16,7 @@ export default function Index() {
     <main className="bg-white text-black">
       <HeroPinned />
       <AlternatingShowcase />
+      <BrickDuos />
       <FullBleedDualImageRows />
       <SocialFeed />
     </main>

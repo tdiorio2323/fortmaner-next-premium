@@ -36,10 +36,9 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-black/5 bg-black text-white">
-      <div className="mx-auto flex h-36 max-w-6xl items-center justify-between px-4">
-        {/* Logo and Nav in one line, spaced apart */}
-        <div className="flex items-center w-full justify-between">
-          {/* Logo aligned left with minimal gap */}
+      <div className="mx-auto h-36 max-w-6xl px-4">
+        <div className="grid grid-cols-3 items-center h-full">
+          {/* Left: Logo */}
           <div className="flex items-center justify-start">
             <Link to="/" className="flex items-center gap-2">
               <img
@@ -49,19 +48,22 @@ export default function Header() {
               />
             </Link>
           </div>
-          <nav className="flex items-center gap-10 text-2xl">
+
+          {/* Center: Nav */}
+          <nav className="flex items-center justify-center gap-8 text-xl md:text-2xl">
             {navigation.map((n) => (
               <Link
                 key={n.href}
                 to={n.href}
-                className="hover:text-white/80"
+                className="hover:text-white/80 whitespace-nowrap"
               >
                 {n.label}
               </Link>
             ))}
           </nav>
+
           {/* Right: Search + Social + Phone */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center justify-end gap-3">
             <Link
               to="/search"
               aria-label="Search"
@@ -87,7 +89,6 @@ export default function Header() {
             >
               <Facebook size={36} className="text-white" />
             </a>
-            {/* Put your real number in the tel: link */}
             <a
               href="tel:+13125550123"
               aria-label="Call Fort Maner"

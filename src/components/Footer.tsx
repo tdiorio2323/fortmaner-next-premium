@@ -25,9 +25,9 @@ const Footer = () => {
 
   return (
     <div>
-      <div className="flex flex-col items-center justify-center py-8 bg-black text-white">
-        <p className="text-lg font-semibold mb-4">FOLLOW US ON SOCIAL MEDIA</p>
-        <div className="flex space-x-4">
+      <div className="flex flex-col items-center justify-center py-10 bg-black text-white">
+        <p className="text-2xl font-semibold mb-5 tracking-wide">FOLLOW US ON SOCIAL MEDIA</p>
+        <div className="flex space-x-6">
           <a
             href="https://www.facebook.com/fort.manerwest/"
             target="_blank"
@@ -35,7 +35,7 @@ const Footer = () => {
             aria-label="Facebook"
             className="text-white hover:text-gray-300"
           >
-            <Facebook size={24} />
+            <Facebook size={36} />
           </a>
           <a
             href="https://www.instagram.com/_fortmaner/"
@@ -44,7 +44,7 @@ const Footer = () => {
             aria-label="Instagram"
             className="text-white hover:text-gray-300"
           >
-            <Instagram size={24} />
+            <Instagram size={36} />
           </a>
         </div>
       </div>
@@ -71,7 +71,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-brand-white/60 hover:text-brand-red transition-colors"
                 >
-                  <Instagram className="h-10 w-10" />
+                  <Instagram className="h-12 w-12" />
                 </a>
                 <a
                   href="https://www.facebook.com/fort.manerwest/"
@@ -79,14 +79,14 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-brand-white/60 hover:text-brand-red transition-colors"
                 >
-                  <Facebook className="h-10 w-10" />
+                  <Facebook className="h-12 w-12" />
                 </a>
                 <a
                   href="tel:+13125550123"
                   aria-label="Call Fort Maner"
                   className="text-brand-white/60 hover:text-brand-red transition-colors"
                 >
-                  <Phone className="h-10 w-10" />
+                  <Phone className="h-12 w-12" />
                 </a>
               </div>
             </div>
