@@ -46,8 +46,8 @@ const Hats = () => {
         </div>
 
         {products.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-muted-foreground text-lg">No products found in the hats collection.</p>
+          <div className="text-center py-16 bg-red-600 text-white rounded-lg mt-8">
+            <p className="text-lg">No products found in the hats collection.</p>
           </div>
         )}
       </div>

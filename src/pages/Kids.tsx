@@ -46,9 +46,9 @@ const Kids = () => {
         </div>
 
         {products.length === 0 && (
-          <div className="text-center py-16">
+          <div className="text-center py-16 bg-red-600 text-white rounded-lg mt-8">
             <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-lg">
               Our kids collection is expanding. Check back soon for new youth streetwear drops.
             </p>
           </div>

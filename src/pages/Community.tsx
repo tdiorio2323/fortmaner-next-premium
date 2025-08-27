@@ -146,9 +146,9 @@ const Community = () => {
         </div>
 
         {filteredItems.length === 0 && (
-          <div className="text-center py-16">
+          <div className="text-center py-16 bg-red-600 text-white rounded-lg mt-8">
             <h3 className="text-xl font-semibold mb-2">No community items found</h3>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-lg">
               {filter === 'all' 
                 ? 'Check back soon for community updates and events.'
                 : `No items found for "${filter}". Try selecting a different filter.`
