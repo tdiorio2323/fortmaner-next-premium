@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import HeroPinned from "@/components/HeroPinned";
 import AlternatingShowcase from "@/components/AlternatingShowcase";
-import BrickDuos from "@/components/BrickDuos";
+import FullWidthCollections from "@/components/FullWidthCollections";
 // Removed full-bleed and social feed per latest request
 
 const tiles = [
@@ -16,8 +16,9 @@ export default function Index() {
       <HeroPinned />
       <div className="px-6 md:px-10 lg:px-12 py-8 md:py-12">
         <AlternatingShowcase />
-        <BrickDuos />
       </div>
+      {/* Full-width 2x2 grid section (image/text then reversed) */}
+      <FullWidthCollections />
     </main>
   );
 }
