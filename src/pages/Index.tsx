@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import HeroPinned from "@/components/HeroPinned";
-import FortManerFrame from "@/components/FortManerFrame";
+import AlternatingShowcase from "@/components/AlternatingShowcase";
 
 const tiles = [
   { title: "Men", href: "/men" },
@@ -12,9 +12,7 @@ export default function Index() {
   return (
     <main className="bg-white text-black">
       <HeroPinned />
-
-      {/* Stacked sticky frames that overlap on scroll */}
-      <FortManerFrame topOffset={0} />
+      <AlternatingShowcase />
     </main>
   );
 }
