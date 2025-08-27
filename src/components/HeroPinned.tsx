@@ -13,8 +13,8 @@ export default function HeroPinned() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
 
   return (
-    // 200svh gives scroll room while the inner hero stays stuck
-    <section ref={ref} className="relative h-[200svh]">
+    // Provide scroll room while the inner hero stays stuck
+    <section ref={ref} className="relative h-[130svh]">
       <motion.div
         style={{ opacity: fade, scale, y }}
         className="sticky top-0 h-screen w-full overflow-hidden"
@@ -27,6 +27,18 @@ export default function HeroPinned() {
           loop
           playsInline
         />
+
+        {/* Centered logo overlay with fade-in on load */}
+        <div className="absolute inset-0 z-10 flex items-center justify-center">
+          <motion.img
+            src="/fort-maner-logo-white.png"
+            alt="Fort Maner"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.15 }}
+            className="h-20 w-auto md:h-28 drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
+          />
+        </div>
       </motion.div>
     </section>
   );
