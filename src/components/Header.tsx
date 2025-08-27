@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Search, Instagram, Facebook, Phone } from "lucide-react";
 // Using public asset path for the logo
 import { Product } from '@/lib/types';
@@ -14,6 +15,25 @@ const navigation = [
 ];
 
 export default function Header() {
+  const location = useLocation();
+  const [hideOnHero, setHideOnHero] = useState(false);
+
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      setHideOnHero(false);
+      return;
+    }
+    const onScroll = () => {
+      const shouldHide = window.scrollY < window.innerHeight - 1;
+      setHideOnHero(shouldHide);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true } as AddEventListenerOptions);
+    return () => window.removeEventListener("scroll", onScroll as any);
+  }, [location.pathname]);
+
+  if (hideOnHero) return null;
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-black/5 bg-black text-white">
       <div className="mx-auto flex h-36 max-w-6xl items-center justify-between px-4">
