@@ -1,7 +1,6 @@
-import logo from "@/assets/ftmaner-logo.png";
-import img1 from "@/assets/ftm-1.jpg";
-import img2 from "@/assets/ftm-2.jpg";
-import img3 from "@/assets/ftm-3.jpg";
+import img1 from "@/assets/mountain-hoodie-black.jpg";
+import img2 from "@/assets/jaguar-tee-black.jpg";
+import img3 from "@/assets/clothing-category.jpg";
 
 type Panel = {
     id: string;
@@ -69,14 +68,7 @@ export default function FortManerFrame({ topOffset = 88 }: { topOffset?: number 
                                 aria-hidden
                             />
 
-                            {/* logo */}
-                            <div className="absolute left-4 top-4 sm:left-6 sm:top-6">
-                                <img
-                                    src={logo}
-                                    alt="Fort Maner"
-                                    className="h-8 sm:h-10 drop-shadow-[0_2px_8px_rgba(255,255,255,0.25)]"
-                                />
-                            </div>
+                            {/* optional logo removed for cleaner viewport */}
 
                             {/* content */}
                             <div className="relative z-10 flex h-full items-end md:items-center">
