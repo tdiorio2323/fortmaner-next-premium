@@ -10,18 +10,24 @@ export default function BlogPage() {
 
   return (
     <div className="w-full">
-      {/* Blog hero */}
+      {/* Blog hero (image only, no overlay text) */}
       <section className="relative w-full h-64 md:h-96 overflow-hidden">
         <img src="/blog-hero.jpg" alt="Fort Maner Blog" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 flex items-center justify-center h-full">
-          <h1 className="text-white font-bold text-5xl md:text-8xl tracking-tight">Blog</h1>
-        </div>
+        <div className="absolute inset-0 bg-black/30" aria-hidden />
       </section>
 
-      <div className="py-10">
+      <div className="py-10 px-6 md:px-10">
         <BlogFeed posts={postsWithHref} />
       </div>
+
+      {/* Full-width feature image below post */}
+      <section className="w-full">
+        <img
+          src="/blog-skateboards.png"
+          alt="Fort Maner Skateboards"
+          className="w-full h-auto"
+        />
+      </section>
     </div>
   );
 }

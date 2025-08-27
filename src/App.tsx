@@ -41,6 +41,11 @@ const App = () => (
         <BrowserRouter>
           <MetaPixel pixelId={import.meta.env.VITE_FACEBOOK_PIXEL_ID || ''} />
           <Header />
+          {/* Global fixed background layer (reliable on iOS) */}
+          <div
+            className="fixed inset-0 -z-10 bg-[url('/brick-bg.jpg')] bg-no-repeat bg-cover bg-center"
+            aria-hidden
+          />
           <ErrorBoundary>
           <main className="min-h-screen">
             <Routes>

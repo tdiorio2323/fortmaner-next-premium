@@ -1,14 +1,19 @@
 import CatalogHero from '@/components/CatalogHero';
+import imgA from '@/assets/accessories-category.jpg';
+import imgB from '@/assets/clothing-category.jpg';
+import imgC from '@/assets/jaguar-tee-black.jpg';
+import imgD from '@/assets/mountain-hoodie-black.jpg';
+
 const items = [
-    { id: "ac1", title: "Minimal Cap", price: 1999, img: "https://images.unsplash.com/photo-1520975682031-7f61d4dc18c5?w=1200&q=80", tag: "New" },
-    { id: "ac2", title: "Utility Tote", price: 3299, img: "https://images.unsplash.com/photo-1533636721434-0e2d61030955?w=1200&q=80" },
-    { id: "ac3", title: "Daily Socks (3-Pack)", price: 1499, img: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d2d?w=1200&q=80" },
-    { id: "ac4", title: "Logo Beanie", price: 2499, img: "https://images.unsplash.com/photo-1516826957135-700dedea698c?w=1200&q=80" },
-    { id: "ac5", title: "Card Holder", price: 2199, img: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1200&q=80" },
-    { id: "ac6", title: "Sling Bag", price: 4499, img: "https://images.unsplash.com/photo-1533681018184-68bd1d883546?w=1200&q=80" },
+    { id: "ac1", title: "Minimal Cap", price: 1999, img: imgA, tag: "New" },
+    { id: "ac2", title: "Utility Tote", price: 3299, img: imgB },
+    { id: "ac3", title: "Daily Socks (3-Pack)", price: 1499, img: imgC },
+    { id: "ac4", title: "Logo Beanie", price: 2499, img: imgD },
+    { id: "ac5", title: "Card Holder", price: 2199, img: imgB },
+    { id: "ac6", title: "Sling Bag", price: 4499, img: imgA },
 ];
 
-const accHero = "https://images.unsplash.com/photo-1516826957135-700dedea6988?q=80&w=1600&auto=format&fit=crop";
+const accHero = imgA;
 
 export default function Accessories() {
     return (
@@ -25,7 +30,7 @@ export default function Accessories() {
                     {items.map(it => (
                         <a key={it.id} href="#" className="group block overflow-hidden rounded-2xl border border-neutral-200/70 bg-white hover:shadow-lg transition-shadow">
                             <div className="relative aspect-[4/5] w-full">
-                                <img src={it.img} alt={it.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                                <img src={it.img} alt={it.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" loading="lazy" decoding="async" />
                                 {it.tag && <span className="absolute left-3 top-3 rounded-full bg-black/80 px-2.5 py-1 text-[10px] font-medium text-white">{it.tag}</span>}
                             </div>
                             <div className="flex items-center justify-between p-4">

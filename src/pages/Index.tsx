@@ -2,6 +2,14 @@ import { useEffect } from 'react';
 import HeroPinned from "@/components/HeroPinned";
 import AlternatingShowcase from "@/components/AlternatingShowcase";
 import FullWidthCollections from "@/components/FullWidthCollections";
+import { USPStrip } from "@/components/sections/USPStrip";
+import { NewArrivalsGrid } from "@/components/sections/NewArrivalsGrid";
+import { BestSellersRow } from "@/components/sections/BestSellersRow";
+import { ReviewsStrip } from "@/components/sections/ReviewsStrip";
+import { EmailSignup } from "@/components/sections/EmailSignup";
+import { FAQ } from "@/components/sections/FAQ";
+import { PressMarquee } from "@/components/sections/PressMarquee";
+import { InstagramGrid } from "@/components/sections/InstagramGrid";
 // Removed full-bleed and social feed per latest request
 
 const tiles = [
@@ -19,6 +27,14 @@ export default function Index() {
       </div>
       {/* Full-width 2x2 grid section (image/text then reversed) */}
       <FullWidthCollections />
+      <USPStrip />
+      <NewArrivalsGrid />
+      <BestSellersRow />
+      <PressMarquee />
+      <ReviewsStrip />
+      <EmailSignup />
+      <FAQ />
+      <InstagramGrid />
     </main>
   );
 }

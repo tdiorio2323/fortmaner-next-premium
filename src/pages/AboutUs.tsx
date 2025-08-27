@@ -1,6 +1,5 @@
 import { MapPin, Clock, Mail, Phone } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import BlackLogo from '@/assets/fort-maner-logo.svg';
 
 const AboutUs = () => {
   return (
@@ -8,7 +7,7 @@ const AboutUs = () => {
       <div className="container mx-auto px-4">
         {/* Header with logo above text */}
         <div className="text-center mb-16 flex flex-col items-center">
-          <img src={BlackLogo} alt="Fort Maner Logo" className="h-32 w-auto mb-6" />
+          <img src="/fort-maner-logo-white.png" alt="Fort Maner Logo" className="h-32 w-auto mb-6 invert" />
           <h1 className="text-5xl md:text-7xl font-bold mb-6">About Fort Maner</h1>
           <p className="text-black max-w-3xl mx-auto text-lg">
             Born in Chicago, Fort Maner represents the intersection of luxury and streetwear.
@@ -21,7 +20,7 @@ const AboutUs = () => {
           <div className="flex flex-col items-center lg:items-start">
             {/* Glass card wrapper for Our Story */}
             <div className="w-full rounded-2xl border border-white/40 bg-white/30 backdrop-blur-md p-6 md:p-8 shadow-lg">
-              <img src={BlackLogo} alt="Fort Maner Logo" className="h-24 w-auto mb-4" />
+              <img src="/fort-maner-logo-white.png" alt="Fort Maner Logo" className="h-24 w-auto mb-4 invert" />
               <h2 className="text-4xl font-bold mb-6">Our Story</h2>
               <div className="space-y-4 text-black">
                 <p>

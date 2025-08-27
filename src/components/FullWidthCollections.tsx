@@ -1,14 +1,14 @@
-import manerImg from '@/assets/clothing-category.jpg';
+// second row image provided by user (public path)
 
 export default function FullWidthCollections() {
   return (
     <section className="w-full">
       {/* Row 1: Image left, text right */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 w-full">
-        <div className="relative">
-          <img src="/black-fort-set.png" alt="FORT MANER LADIES JOGGING SET" className="h-[60vh] w-full object-cover" />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 w-full">
+        <div className="relative min-h-[50vh] lg:min-h-[60vh]">
+          <img src="/black-fort-set.png" alt="FORT MANER LADIES JOGGING SET" className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />
         </div>
-        <div className="flex items-center justify-center bg-black/90 text-white border border-white/20 px-8 py-12 md:py-0 min-h-[60vh]">
+        <div className="flex items-center justify-center bg-black/90 text-white border border-white/20 backdrop-blur-sm px-6 py-10 lg:px-8 lg:py-0 min-h-[50vh] lg:min-h-[60vh]">
           <div className="max-w-xl">
             <h2 className="text-3xl md:text-4xl font-semibold">FORT MANER LADIES JOGGING SET</h2>
             <p className="mt-3 text-white text-base md:text-lg">
@@ -26,8 +26,8 @@ export default function FullWidthCollections() {
       </div>
 
       {/* Row 2: Text left, Image right */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 w-full">
-        <div className="flex items-center justify-center order-2 md:order-1 bg-black/90 text-white border border-white/20 px-8 py-12 md:py-0 min-h-[60vh]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 w-full">
+        <div className="flex items-center justify-center order-2 lg:order-1 bg-black/90 text-white border border-white/20 backdrop-blur-sm px-6 py-10 lg:px-8 lg:py-0 min-h-[50vh] lg:min-h-[60vh]">
           <div className="max-w-xl">
             <h2 className="text-3xl md:text-4xl font-semibold">Fort Maner Collection</h2>
             <p className="mt-3 text-white text-base md:text-lg">
@@ -42,8 +42,8 @@ export default function FullWidthCollections() {
             </a>
           </div>
         </div>
-        <div className="relative order-1 md:order-2">
-          <img src={manerImg} alt="Fort Maner Collection" className="h-[60vh] w-full object-cover" />
+        <div className="relative order-1 lg:order-2 min-h-[50vh] lg:min-h-[60vh]">
+          <img src="/fort-maner-collection.png" alt="Fort Maner Collection" className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>

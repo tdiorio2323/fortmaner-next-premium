@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import HeroPinned from '@/components/HeroPinned';
 
 const heroImg = "/fort-maner-logo-main.jpg";
 
 export default function Contact() {
-    const [form, setForm] = useState({ name: '', email: '', message: '' });
+    const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
     const [submitted, setSubmitted] = useState(false);
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -11,76 +12,100 @@ export default function Contact() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!form.name.trim() || !form.email.trim() || !form.message.trim()) return;
-        const subject = encodeURIComponent(`Website Contact: ${form.name}`);
-        const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
+        const subjectLine = form.subject?.trim() ? form.subject.trim() : `Website Contact: ${form.name}`;
+        const subject = encodeURIComponent(subjectLine);
+        const body = encodeURIComponent(
+          `Name: ${form.name}\nEmail: ${form.email}${form.phone ? `\nPhone: ${form.phone}` : ''}\n\nMessage:\n${form.message}`
+        );
         window.location.href = `mailto:info@fortmaner.shop?subject=${subject}&body=${body}`;
         setSubmitted(true);
     };
 
     return (
         <main className="min-h-screen">
-            <div className="mx-auto w-full max-w-4xl px-4 md:px-6 py-8 md:py-10">
-                <div className="flex flex-col items-center mb-8">
-                    <img src="/fort-maner-logo-main.jpg" alt="Fort Maner Logo" className="h-24 w-auto mb-4" />
-                    <h1 className="text-3xl md:text-5xl font-bold text-black mb-2">Contact Fort Maner</h1>
-                    {submitted && (
-                      <div className="mt-4 w-full max-w-md rounded-lg bg-green-100 text-green-900 px-4 py-2 text-sm text-center">
-                        Your email client should have opened. If not, email us at info@fortmaner.shop.
-                      </div>
-                    )}
-                </div>
-            </div>
-            <section className="flex justify-center items-center pb-16 md:pb-24">
-                <div className="w-full max-w-md">
-                    <form
-                        onSubmit={handleSubmit}
-                        className="backdrop-blur-lg bg-black/80 border border-white/10 shadow-xl rounded-2xl p-6 flex flex-col gap-6 kawaii-card"
-                    >
-                        <h2 className="text-white text-2xl font-bold mb-2 text-center">Get in Touch</h2>
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Your Name"
-                            value={form.name}
-                            onChange={handleChange}
-                            className="w-full rounded-lg bg-black/40 border border-pink-300 px-4 py-3 text-white placeholder-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-300 text-base shadow-kawaii"
-                            required
-                        />
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Your Email"
-                            value={form.email}
-                            onChange={handleChange}
-                            className="w-full rounded-lg bg-black/40 border border-pink-300 px-4 py-3 text-white placeholder-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-300 text-base shadow-kawaii"
-                            required
-                        />
-                        <textarea
-                            name="message"
-                            placeholder="Your Message"
-                            value={form.message}
-                            onChange={handleChange}
-                            className="w-full rounded-lg bg-black/40 border border-pink-300 px-4 py-3 text-white placeholder-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-300 min-h-[100px] text-base shadow-kawaii"
-                            required
-                        />
-                        <button
-                            type="submit"
-                            className="w-full rounded-lg bg-pink-300 text-black font-semibold py-3 mt-2 hover:bg-pink-400 transition text-base shadow-kawaii"
-                        >
-                            Send Message
-                        </button>
+            {/* Same hero video as home */}
+            <HeroPinned />
+
+            {/* Mock contact form below hero */}
+            <section id="form" className="mx-auto w-full max-w-5xl px-6 md:px-10 pb-16 md:pb-24" aria-label="Contact form">
+                <div className="rounded-2xl bg-white/90 backdrop-blur border border-neutral-200 p-6 md:p-10 shadow-xl">
+                    <div className="mb-6 text-center">
+                        <h1 className="text-3xl md:text-5xl font-bold text-black">Contact Fort Maner</h1>
+                        {submitted && (
+                            <div className="mt-4 mx-auto max-w-md rounded-lg bg-green-100 text-green-900 px-4 py-2 text-sm">
+                                Your email client should have opened. If not, email us at info@fortmaner.shop.
+                            </div>
+                        )}
+                    </div>
+                    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                        <div className="md:col-span-1">
+                            <label className="block text-sm font-medium text-neutral-700 mb-1">Name</label>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your Name"
+                                value={form.name}
+                                onChange={handleChange}
+                                className="w-full rounded-lg border border-neutral-300 px-4 py-3 text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-black/20"
+                                required
+                            />
+                        </div>
+                        <div className="md:col-span-1">
+                            <label className="block text-sm font-medium text-neutral-700 mb-1">Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="your@email.com"
+                                value={form.email}
+                                onChange={handleChange}
+                                className="w-full rounded-lg border border-neutral-300 px-4 py-3 text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-black/20"
+                                required
+                            />
+                        </div>
+                        <div className="md:col-span-1">
+                            <label className="block text-sm font-medium text-neutral-700 mb-1">Phone (optional)</label>
+                            <input
+                                type="tel"
+                                name="phone"
+                                placeholder="(555) 555-5555"
+                                value={form.phone}
+                                onChange={handleChange}
+                                className="w-full rounded-lg border border-neutral-300 px-4 py-3 text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-black/20"
+                            />
+                        </div>
+                        <div className="md:col-span-1">
+                            <label className="block text-sm font-medium text-neutral-700 mb-1">Subject (optional)</label>
+                            <input
+                                type="text"
+                                name="subject"
+                                placeholder="How can we help?"
+                                value={form.subject}
+                                onChange={handleChange}
+                                className="w-full rounded-lg border border-neutral-300 px-4 py-3 text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-black/20"
+                            />
+                        </div>
+                        <div className="md:col-span-2">
+                            <label className="block text-sm font-medium text-neutral-700 mb-1">Message</label>
+                            <textarea
+                                name="message"
+                                placeholder="Tell us a bit about what you need..."
+                                value={form.message}
+                                onChange={handleChange}
+                                className="w-full rounded-lg border border-neutral-300 px-4 py-3 text-black placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-black/20 min-h-[120px]"
+                                required
+                            />
+                        </div>
+                        <div className="md:col-span-2 flex justify-center">
+                            <button
+                                type="submit"
+                                className="inline-flex items-center justify-center rounded-full bg-black text-white px-6 py-3 font-semibold hover:bg-black/90 transition"
+                            >
+                                Send Message
+                            </button>
+                        </div>
                     </form>
                 </div>
             </section>
-            <style>{`
-                .kawaii-card {
-                    box-shadow: 0 8px 32px 0 rgba(255, 192, 203, 0.25), 0 1.5px 6px 0 rgba(255, 192, 203, 0.15);
-                    border-radius: 1.5rem;
-                }
-                .shadow-kawaii {
-                    box-shadow: 0 2px 8px 0 rgba(255, 192, 203, 0.15);
-                }
-            `}</style>
         </main>
     );
 }

@@ -13,9 +13,9 @@ export default function BlogFeed({ posts }: { posts: BlogPost[] }) {
   const dateLabel = isNaN(+dt) ? p.date : dt.toLocaleDateString();
   return (
     <div className="w-full">
-      <article id={p.id} className="w-full rounded-xl overflow-hidden shadow-lg bg-white">
+      <article id={p.id} className="mx-auto w-full max-w-4xl rounded-2xl overflow-hidden border border-white/40 bg-white/30 backdrop-blur-md shadow-xl">
         {/* Intentionally removing the post image per request */}
-        <div className="p-8">
+        <div className="p-6 md:p-8">
           <div className="text-lg md:text-xl text-black mb-3">
             {dateLabel && <time dateTime={p.date}>{dateLabel}</time>}
           </div>

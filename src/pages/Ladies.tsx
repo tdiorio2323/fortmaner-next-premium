@@ -1,18 +1,22 @@
 import CatalogHero from '@/components/CatalogHero';
 import ProductCard from '@/components/ProductCard';
 import { Product } from '@/lib/types';
+import imgA from '@/assets/clothing-category.jpg';
+import imgB from '@/assets/instagram-post-1.jpg';
+import imgC from '@/assets/instagram-post-2.jpg';
+import imgD from '@/assets/instagram-post-3.jpg';
 
-const ladiesHero = "https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1600&auto=format&fit=crop";
+const ladiesHero = imgA;
 
 const ladiesProducts: Product[] = [
-  { id: "w1", slug: "cropped-hoodie", title: "Cropped Hoodie", price: 6299, compareAtPrice: null, images: ["https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop"], badges: ["New"], brand: "Fort Maner", inStock: true, variants: [], collections: ["ladies"], tags: [], season: null, ageRange: "adult" },
-  { id: "w2", slug: "ribbed-tank", title: "Ribbed Tank", price: 1999, compareAtPrice: null, images: ["https://images.unsplash.com/photo-1519741491041-40b3a7a52d4a?q=80&w=1200&auto=format&fit=crop"], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["ladies"], tags: [], season: null, ageRange: "adult" },
-  { id: "w3", slug: "high-rise-joggers", title: "High-Rise Joggers", price: 6499, compareAtPrice: null, images: ["https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop"], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["ladies"], tags: [], season: null, ageRange: "adult" },
-  { id: "w4", slug: "overshirt-jacket", title: "Overshirt Jacket", price: 10499, compareAtPrice: null, images: ["https://images.unsplash.com/photo-1455156218388-5e61b5268182?q=80&w=1200&auto=format&fit=crop"], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["ladies"], tags: [], season: null, ageRange: "adult" },
-  { id: "w5", slug: "everyday-tote", title: "Everyday Tote", price: 3199, compareAtPrice: null, images: ["https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1200&auto=format&fit=crop"], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["ladies"], tags: [], season: null, ageRange: "adult" },
-  { id: "w6", slug: "low-top-sneaker", title: "Low-Top Sneaker", price: 11999, compareAtPrice: null, images: ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop"], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["ladies"], tags: [], season: null, ageRange: "adult" },
-  { id: "w7", slug: "beanie", title: "Beanie", price: 1699, compareAtPrice: null, images: ["https://images.unsplash.com/photo-1484327973588-c31f829103fe?q=80&w=1200&auto=format&fit=crop"], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["ladies"], tags: [], season: null, ageRange: "adult" },
-  { id: "w8", slug: "minimal-tee-dress", title: "Minimal Tee Dress", price: 4899, compareAtPrice: null, images: ["https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"], badges: [], brand: "Fort Maner", inStock: true, variants: [], collections: ["ladies"], tags: [], season: null, ageRange: "adult" },
+  { id: 'w1', slug: 'cropped-hoodie', title: 'Cropped Hoodie', price: 6299, compareAtPrice: null, images: [imgA], badges: ['New'], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'SS', ageRange: 'adult' },
+  { id: 'w2', slug: 'ribbed-tank', title: 'Ribbed Tank', price: 1999, compareAtPrice: null, images: [imgB], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'SS', ageRange: 'adult' },
+  { id: 'w3', slug: 'high-rise-joggers', title: 'High-Rise Joggers', price: 6499, compareAtPrice: null, images: [imgC], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'FW', ageRange: 'adult' },
+  { id: 'w4', slug: 'overshirt-jacket', title: 'Overshirt Jacket', price: 10499, compareAtPrice: null, images: [imgD], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'FW', ageRange: 'adult' },
+  { id: 'w5', slug: 'everyday-tote', title: 'Everyday Tote', price: 3199, compareAtPrice: null, images: [imgB], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'SS', ageRange: 'adult' },
+  { id: 'w6', slug: 'low-top-sneaker', title: 'Low-Top Sneaker', price: 11999, compareAtPrice: null, images: [imgC], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'SS', ageRange: 'adult' },
+  { id: 'w7', slug: 'beanie', title: 'Beanie', price: 1699, compareAtPrice: null, images: [imgD], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'FW', ageRange: 'adult' },
+  { id: 'w8', slug: 'minimal-tee-dress', title: 'Minimal Tee Dress', price: 4899, compareAtPrice: null, images: [imgA], badges: [], brand: 'Fort Maner', inStock: true, variants: [], collections: ['ladies'], tags: [], season: 'SS', ageRange: 'adult' },
 ];
 
 export default function Ladies() {
