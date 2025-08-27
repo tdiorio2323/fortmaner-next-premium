@@ -14,8 +14,10 @@ export default function Index() {
   return (
     <main className="text-black">
       <HeroPinned />
-      <AlternatingShowcase />
-      <BrickDuos />
+      <div className="px-6 md:px-10 lg:px-12 py-8 md:py-12">
+        <AlternatingShowcase />
+        <BrickDuos />
+      </div>
     </main>
   );
 }
