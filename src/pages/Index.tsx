@@ -2,8 +2,7 @@ import { useEffect } from 'react';
 import HeroPinned from "@/components/HeroPinned";
 import AlternatingShowcase from "@/components/AlternatingShowcase";
 import BrickDuos from "@/components/BrickDuos";
-import FullBleedDualImageRows from "@/components/FullBleedDualImageRows";
-import SocialFeed from "@/components/SocialFeed";
+// Removed full-bleed and social feed per latest request
 
 const tiles = [
   { title: "Men", href: "/men" },
@@ -17,8 +16,6 @@ export default function Index() {
       <HeroPinned />
       <AlternatingShowcase />
       <BrickDuos />
-      <FullBleedDualImageRows />
-      <SocialFeed />
     </main>
   );
 }
