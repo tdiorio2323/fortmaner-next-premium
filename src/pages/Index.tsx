@@ -14,7 +14,7 @@ export default function Index() {
   return (
     <main className="text-black">
       <HeroPinned />
-      <div className="px-6 md:px-10 lg:px-12 py-8 md:py-12">
+      <div className="px-6 md:px-10 lg:px-12 pt-2 md:pt-3 pb-12">
         <AlternatingShowcase />
       </div>
       {/* Full-width 2x2 grid section (image/text then reversed) */}

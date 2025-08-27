@@ -34,7 +34,7 @@ const rows: Row[] = [
 
 export default function AlternatingShowcase() {
   return (
-    <section className="mx-auto w-full max-w-6xl py-14 md:py-20">
+    <section className="mx-auto w-full max-w-6xl pt-6 md:pt-8 pb-14 md:pb-20">
       <div className="space-y-12 md:space-y-16">
         {rows.map((row, i) => (
           <div

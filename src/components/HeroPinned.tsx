@@ -8,13 +8,14 @@ export default function HeroPinned() {
     offset: ["start start", "end start"], // pin until section end
   });
 
-  const fade = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.98]);
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
+  // Keep the hero visible longer and shorten the pin to reduce blank gap
+  const fade = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.55], [1, 0.985]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "6%"]);
 
   return (
     // Provide scroll room while the inner hero stays stuck
-    <section ref={ref} className="relative h-[130svh]">
+    <section ref={ref} className="relative h-[110svh]">
       <motion.div
         style={{ opacity: fade, scale, y }}
         className="sticky top-0 h-screen w-full overflow-hidden"
