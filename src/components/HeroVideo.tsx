@@ -7,9 +7,7 @@ export default function HeroVideo() {
   useEffect(() => {
     const v = ref.current;
     if (!v) return;
-    // Ensure muted before attempting autoplay (required by iOS/Chrome)
-    v.muted = true;
-    // Attempt autoplay after mount; ignore promise rejection
+    v.muted = true; // required for autoplay on mobile
     const id = requestAnimationFrame(() => v.play().catch(() => {}));
     return () => cancelAnimationFrame(id);
   }, []);
@@ -23,18 +21,20 @@ export default function HeroVideo() {
         muted
         loop
         playsInline
-        // @ts-expect-error: iOS hint
+        // @ts-expect-error iOS hint
         webkit-playsinline="true"
         preload="metadata"
         poster="/video/hero-poster.jpg"
       >
+        {/* prefer smaller first for mobile */}
         <source src="/video/hero-720.webm" type="video/webm" />
         <source src="/video/hero-720.mp4" type="video/mp4" />
+        {/* desktop fallback */}
         <source src="/video/hero-1080.mp4" type="video/mp4" />
       </video>
       <style>{`
-        @media (prefers-reduced-data: reduce) { video{display:none} }
-        @media (prefers-reduced-motion: reduce) { video{animation:none} }
+        @media (prefers-reduced-data: reduce) { video { display:none } }
+        @media (prefers-reduced-motion: reduce) { video { animation:none } }
       `}</style>
     </div>
   );
