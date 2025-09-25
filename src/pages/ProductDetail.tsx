@@ -11,6 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 import rawProducts from '@/data/products-complete.json';
 import { normalizeProduct } from '@/lib/normalize';
 import { getDataSource } from '@/lib/datasource';
+import { addToCart as addToCartService } from '@/lib/cartService';
 // NOTE: non-invasive: use existing local JSON by default; switches when feature flag is true
 
 const PRODUCTS = (rawProducts as any[]).map(normalizeProduct);
@@ -20,9 +21,11 @@ const ProductDetail = () => {
   const { addToCart } = useCart();
   const { toast } = useToast();
   const [product, setProduct] = useState<Product | null>(null);
+  const [adapterProduct, setAdapterProduct] = useState<any>(null);
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedColor, setSelectedColor] = useState<string>('');
   const [selectedSize, setSelectedSize] = useState<string>('');
+  const [selectedVariantId, setSelectedVariantId] = useState<string>('');
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
@@ -35,6 +38,9 @@ const ProductDetail = () => {
     ds.getProductByHandle(slug).then((p) => {
       if (!alive) return;
       if (p) {
+        // Store both adapter product and converted product
+        setAdapterProduct(p);
+
         // Convert adapter product to existing Product interface
         const adaptedProduct = {
           id: p.id,
@@ -52,6 +58,13 @@ const ProductDetail = () => {
 
         // Set default selections
         if (adaptedProduct.images?.length > 0) setSelectedImage(0);
+
+        // Set default variant selection
+        if (p.variants && p.variants.length > 0) {
+          const firstAvailable = p.variants.find(v => v.inStock) || p.variants[0];
+          setSelectedSize(firstAvailable.size);
+          setSelectedVariantId(firstAvailable.id);
+        }
 
         document.title = `${adaptedProduct.title} - Fort Maner`;
 
@@ -87,24 +100,42 @@ const ProductDetail = () => {
     return () => { alive = false; };
   }, [slug]);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     if (!product) return;
 
-    // For products without variants, create a default variant
-    const variant: ProductVariant = {
-      id: `${product.id}-default`,
-      sku: product.id.toUpperCase(),
-      color: selectedColor || 'Default',
-      size: selectedSize || 'One Size',
-      stock: 10 // Default stock
-    };
+    try {
+      // Use cart service if we have adapter product data
+      if (adapterProduct && selectedVariantId) {
+        await addToCartService(product.id, selectedVariantId, quantity);
+        toast({
+          title: "Added to cart",
+          description: `${product.title} (${selectedSize}) has been added to your cart.`,
+        });
+      } else {
+        // Fallback to existing cart system
+        const variant: ProductVariant = {
+          id: `${product.id}-default`,
+          sku: product.id.toUpperCase(),
+          color: selectedColor || 'Default',
+          size: selectedSize || 'One Size',
+          stock: 10 // Default stock
+        };
 
-    addToCart(product, variant, quantity);
-    
-    toast({
-      title: "Added to cart",
-      description: `${product.title} has been added to your cart.`,
-    });
+        addToCart(product, variant, quantity);
+
+        toast({
+          title: "Added to cart",
+          description: `${product.title} has been added to your cart.`,
+        });
+      }
+    } catch (error) {
+      console.error('Add to cart failed:', error);
+      toast({
+        title: "Error",
+        description: "Failed to add item to cart. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   if (!product) {
@@ -179,6 +210,46 @@ const ProductDetail = () => {
                 )}
               </div>
             </div>
+
+            {/* Size Selector */}
+            {adapterProduct?.variants && adapterProduct.variants.length > 0 && (
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium mb-2">Size</label>
+                  <div className="flex flex-wrap gap-2">
+                    {adapterProduct.variants.map((variant: any) => (
+                      <Button
+                        key={variant.id}
+                        variant={selectedVariantId === variant.id ? "default" : "outline"}
+                        size="sm"
+                        disabled={!variant.inStock}
+                        onClick={() => {
+                          setSelectedVariantId(variant.id);
+                          setSelectedSize(variant.size);
+                        }}
+                        className="min-w-[44px]"
+                      >
+                        {variant.size}
+                        {variant.stockLevel && variant.stockLevel <= 5 && (
+                          <span className="ml-1 text-xs">({variant.stockLevel})</span>
+                        )}
+                      </Button>
+                    ))}
+                  </div>
+                  {selectedVariantId && (
+                    <p className="text-sm text-muted-foreground mt-2">
+                      {(() => {
+                        const variant = adapterProduct.variants.find((v: any) => v.id === selectedVariantId);
+                        if (!variant) return '';
+                        if (!variant.inStock) return 'Out of stock';
+                        if (variant.stockLevel && variant.stockLevel <= 5) return `Only ${variant.stockLevel} left`;
+                        return 'In stock';
+                      })()}
+                    </p>
+                  )}
+                </div>
+              </div>
+            )}
 
             {/* Quantity Selector */}
             <div className="space-y-4">
