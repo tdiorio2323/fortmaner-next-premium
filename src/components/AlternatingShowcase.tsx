@@ -47,9 +47,9 @@ export default function AlternatingShowcase() {
                 <img
                   src={row.image}
                   alt={row.title}
-                  className={`${i === 1 ? 'object-contain p-4' : 'object-cover'} absolute inset-0 h-full w-full`}
-                  loading="lazy"
+                  loading={i === 0 ? "eager" : "lazy"}
                   decoding="async"
+                  className={`${i === 1 ? 'object-contain p-4' : 'object-cover'} absolute inset-0 h-full w-full`}
                 />
               </div>
             </div>
