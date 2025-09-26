@@ -91,28 +91,28 @@ const AboutUs = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="bg-muted/20 rounded-lg p-8">
+        <div className="p-8">
           <h2 className="text-3xl font-bold text-center mb-8">Visit Our Store</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-            <div className="flex flex-col items-center">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg border border-white/40 flex flex-col items-center">
               <MapPin className="h-8 w-8 mb-2 text-accent-red" />
               <h3 className="font-semibold mb-1">Address</h3>
-              <p className="text-muted-foreground text-sm">2819 W Harrison</p>
+              <p className="text-gray-700 text-sm">2819 W Harrison</p>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg border border-white/40 flex flex-col items-center">
               <Phone className="h-8 w-8 mb-2 text-accent-red" />
               <h3 className="font-semibold mb-1">Phone</h3>
-              <p className="text-muted-foreground text-sm">773-801-0498</p>
+              <p className="text-gray-700 text-sm">773-801-0498</p>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg border border-white/40 flex flex-col items-center">
               <Mail className="h-8 w-8 mb-2 text-accent-red" />
               <h3 className="font-semibold mb-1">Email</h3>
-              <p className="text-muted-foreground text-sm">fortmanerwes@yahoo.com</p>
+              <p className="text-gray-700 text-sm">fortmanerwes@yahoo.com</p>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg border border-white/40 flex flex-col items-center">
               <Clock className="h-8 w-8 mb-2 text-accent-red" />
               <h3 className="font-semibold mb-1">Hours</h3>
-              <p className="text-muted-foreground text-sm">Mon-Sat 10AM-8PM</p>
+              <p className="text-gray-700 text-sm">Mon-Sat 10AM-8PM</p>
             </div>
           </div>
         </div>

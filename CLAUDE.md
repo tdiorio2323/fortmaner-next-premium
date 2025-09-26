@@ -30,23 +30,33 @@ Always run these commands before committing:
 - **Build Tool**: Vite with React SWC plugin
 - **Frontend**: React 18 + TypeScript
 - **Styling**: Tailwind CSS with custom design tokens
-- **UI Components**: shadcn/ui components
+- **UI Components**: shadcn/ui components (includes Radix UI primitives)
 - **Routing**: React Router v6 with client-side routing
 - **State Management**: TanStack Query for server state, React Context for cart
 - **Icons**: Lucide React
 - **Analytics**: Meta Pixel integration
-- **Backend**: Supabase (optional integration)
+- **Animations**: Framer Motion
+- **Forms**: React Hook Form with Zod validation
+- **Payment**: Stripe integration
+- **Backend**: Supabase (optional), Shopify Storefront API (optional)
+- **Data Layer**: Adapter pattern with feature flag switching
 
 ### Project Structure
 ```
 src/
-├── assets/           # Images and static assets
-├── components/       # React components
-│   ├── ui/          # shadcn/ui base components
-│   ├── sections/    # Page section components
-│   └── [others]     # Custom components (Header, Footer, etc.)
+├── adapters/        # Data source adapters (IDataSource, LocalJson, Shopify)
+├── assets/          # Images and static assets
+├── components/      # React components
+│   ├── ui/         # shadcn/ui base components
+│   ├── sections/   # Page section components
+│   └── [others]    # Custom components (Header, Footer, etc.)
 ├── context/         # React Context providers (CartContext)
 ├── data/           # JSON data files (products, collections, etc.)
+├── hooks/          # Custom React hooks (useDataSource, useMobile, useToast)
+├── integrations/   # External service integrations (Supabase)
+├── lib/            # Utility libraries and services
+│   ├── shopify/    # Shopify-specific utilities
+│   └── [others]    # Utils, types, config, cart service
 ├── pages/          # Route components
 └── App.tsx         # Main application with routing
 ```
@@ -63,6 +73,7 @@ src/
 - **CartContext**: Global shopping cart state management
 - **ErrorBoundary**: Catches React errors gracefully
 - **MetaPixel**: Facebook/Meta analytics tracking
+- **Data Source Adapters**: Abstract data layer supporting both local JSON and Shopify backends
 
 ### Routing
 Uses React Router v6 with routes for:
@@ -74,19 +85,39 @@ Uses React Router v6 with routes for:
 
 ## Environment Variables
 
-Required for full functionality:
+### Required for full functionality:
 - `VITE_SUPABASE_URL` - Supabase project URL
 - `VITE_SUPABASE_PUBLISHABLE_KEY` - Supabase public key
 - `VITE_FACEBOOK_PIXEL_ID` - Meta Pixel tracking ID
 
-The app works without these variables but with reduced functionality.
+### Feature Flags:
+- `VITE_FEATURE_SHOPIFY` - Enable Shopify backend ('true' to enable, defaults to false)
+
+### Shopify Integration (when feature flag enabled):
+- `VITE_SHOPIFY_STORE_DOMAIN` - Your Shopify store domain
+- `VITE_SHOPIFY_STOREFRONT_TOKEN` - Shopify Storefront API access token
+
+The app works without these variables but with reduced functionality. When Shopify feature flag is disabled, the app uses local JSON data.
 
 ## Data Management
 
+### Data Source Architecture
+- **Adapter Pattern**: Uses `IDataSource` interface to abstract data layer
+- **LocalJsonDataSource**: Default implementation using local JSON files
+- **ShopifyDataSource**: Shopify Storefront API implementation
+- **Feature Flag Switching**: Automatically switches between sources via `VITE_FEATURE_SHOPIFY`
+- **Singleton Pattern**: Single data source instance managed by `getDataSource()`
+
 ### Product Data
-- Products stored in JSON files in `src/data/`
+- Products stored in JSON files in `src/data/` (when using local source)
 - Multiple product files: `products.json`, `products-enhanced.json`, `products-complete.json`
 - Product schema includes: id, handle, title, price, images, category, badges, inStock
+- Shopify integration fetches live product data when enabled
+
+### Cart Management
+- **Local Mode**: In-memory cart state via CartContext
+- **Shopify Mode**: Server-side cart management via Shopify Cart API
+- **Service Layer**: `cartService.ts` provides unified cart operations
 
 ### Static Assets
 - All images imported as ES6 modules from `src/assets/`
@@ -101,18 +132,27 @@ The app works without these variables but with reduced functionality.
 - Follow existing shadcn/ui patterns for new components
 - Use Tailwind classes for styling
 - Maintain mobile-first responsive design
+- Implement data access through adapter pattern (never directly import data sources)
 
 ### Component Patterns
 - Functional components with TypeScript
-- Custom hooks for complex state logic
+- Custom hooks for complex state logic (see `src/hooks/`)
 - Error boundaries for robust error handling
 - Context providers for global state
+- Form validation with React Hook Form + Zod schemas
+
+### Data Layer Patterns
+- Use `getDataSource()` for all data operations
+- Implement new backends via `IDataSource` interface
+- Feature flags control data source selection
+- Cart operations go through `cartService.ts`
 
 ### Styling
 - Tailwind CSS with custom design tokens
 - Brand colors via CSS custom properties
 - Mobile-first responsive breakpoints
 - shadcn/ui component variants for consistency
+- Framer Motion for animations and transitions
 
 ## Deployment
 

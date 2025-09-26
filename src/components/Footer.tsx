@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, MapPin, Clock, Phone, Mail } from 'lucide-react';
+import FooterLegal from '@/components/FooterLegal'
 // Logo uses a public asset path
 
 const Footer = () => {
@@ -173,6 +174,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+              <FooterLegal />
       </footer>
     </div>
   );
