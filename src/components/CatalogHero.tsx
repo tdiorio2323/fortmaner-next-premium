@@ -13,8 +13,10 @@ export default function CatalogHero({
         <section className="relative h-56 md:h-72 w-full overflow-hidden rounded-2xl">
             <img
                 src={bg}
-                alt=""
+                alt={title}
                 className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+                decoding="async"
                 onError={(e) => ((e.currentTarget.src = "/src/assets/white-brick-wall.jpg"))}
             />
             <div className="absolute inset-0 bg-black/40" />

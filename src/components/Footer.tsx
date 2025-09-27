@@ -10,18 +10,18 @@ const Footer = () => {
     { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
     { name: 'Size Guide', href: '/size-guide' },
-    { name: 'Shipping Info', href: '/policies/shipping' },
-    { name: 'Returns', href: '/policies/returns' },
-    { name: 'Privacy Policy', href: '/policies/privacy' },
+    { name: 'Shipping Info', href: '/shipping' },
+    { name: 'Returns', href: '/returns' },
+    { name: 'Privacy Policy', href: '/privacy' },
   ];
 
   const categories = [
-    { name: 'Footwear', href: '/footwear' },
-    { name: 'Clothing', href: '/clothing' },
+    { name: 'Men', href: '/men' },
+    { name: 'Women', href: '/ladies' },
+    { name: 'Kids', href: '/kids' },
     { name: 'Accessories', href: '/accessories' },
-    { name: 'New Arrivals', href: '/new' },
-    { name: 'Best Sellers', href: '/best-sellers' },
-    { name: 'Sale', href: '/sale' },
+    { name: 'Shop All', href: '/shop-all' },
+    { name: 'Capsules', href: '/shop/capsules' },
   ];
 
   return (
@@ -162,12 +162,15 @@ const Footer = () => {
                 <p className="text-sm text-neutral-600">
                   © {currentYear} Fort Maner. All rights reserved.
                 </p>
-                <div className="flex space-x-6 text-sm">
-                  <Link to="/policies/privacy" className="text-neutral-600 hover:text-black transition-colors">
+                <div className="flex flex-wrap gap-4 text-sm">
+                  <Link to="/privacy" className="text-neutral-600 hover:text-black transition-colors">
                     Privacy Policy
                   </Link>
-                  <Link to="/policies/terms" className="text-neutral-600 hover:text-black transition-colors">
-                    Terms of Service
+                  <Link to="/returns" className="text-neutral-600 hover:text-black transition-colors">
+                    Returns
+                  </Link>
+                  <Link to="/shipping" className="text-neutral-600 hover:text-black transition-colors">
+                    Shipping
                   </Link>
                 </div>
               </div>

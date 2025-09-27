@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState, type KeyboardEvent } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -8,22 +8,47 @@ import { useCart } from '@/context/CartContext';
 import { Product, ProductVariant } from '@/lib/types';
 import { trackViewContent } from '@/components/MetaPixel';
 import { useToast } from '@/hooks/use-toast';
-import rawProducts from '@/data/products-complete.json';
-import { normalizeProduct } from '@/lib/normalize';
-import { getDataSource } from '@/lib/datasource';
+import { fetchProductByHandle, fetchProducts } from '@/lib/catalog';
 import { addToCart as addToCartService } from '@/lib/cartService';
+import { formatCurrency } from '@/lib/utils';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 // NOTE: non-invasive: use existing local JSON by default; switches when feature flag is true
 
-const PRODUCTS = (rawProducts as any[]).map(normalizeProduct);
+const ProductDetailSkeleton = () => (
+  <div className="min-h-screen py-16">
+    <div className="container mx-auto px-4">
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 animate-pulse">
+        <div className="space-y-4">
+          <div className="aspect-square rounded-lg bg-muted" />
+          <div className="flex space-x-4">
+            {Array.from({ length: 4 }).map((_, index) => (
+              <div key={index} className="h-20 w-20 rounded-lg bg-muted" />
+            ))}
+          </div>
+        </div>
+        <div className="space-y-4">
+          <div className="h-8 w-2/3 rounded bg-muted" />
+          <div className="h-4 w-1/3 rounded bg-muted" />
+          <div className="h-6 w-1/4 rounded bg-muted" />
+          <div className="h-12 w-full rounded bg-muted" />
+          <div className="h-12 w-full rounded bg-muted" />
+          <div className="space-y-2">
+            <div className="h-10 w-full rounded bg-muted" />
+            <div className="h-10 w-full rounded bg-muted" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const { addToCart } = useCart();
   const { toast } = useToast();
   const [product, setProduct] = useState<Product | null>(null);
-  const [adapterProduct, setAdapterProduct] = useState<any>(null);
+  const [isLoadingProduct, setIsLoadingProduct] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
-  const [selectedColor, setSelectedColor] = useState<string>('');
   const [selectedSize, setSelectedSize] = useState<string>('');
   const [selectedVariantId, setSelectedVariantId] = useState<string>('');
   const [quantity, setQuantity] = useState(1);
@@ -32,91 +57,102 @@ const ProductDetail = () => {
     if (!slug) return;
 
     let alive = true;
-    const ds = getDataSource();
+    setIsLoadingProduct(true);
+    setProduct(null);
 
-    // Try adapter first, fallback to existing behavior
-    ds.getProductByHandle(slug).then((p) => {
-      if (!alive) return;
-      if (p) {
-        // Store both adapter product and converted product
-        setAdapterProduct(p);
+    const hydrate = async () => {
+      try {
+        const matched = await fetchProductByHandle(slug);
+        if (alive && matched) {
+          setProduct(matched);
+          setSelectedImage(0);
 
-        // Convert adapter product to existing Product interface
-        const adaptedProduct = {
-          id: p.id,
-          slug: p.handle,
-          handle: p.handle,
-          title: p.title,
-          description: p.description || '',
-          price: p.price || 0,
-          images: p.images || [],
-          inStock: p.variants?.some(v => v.inStock) || true,
-          badges: p.tags || [],
-          brand: 'Fort Maner',
-        };
-        setProduct(adaptedProduct as Product);
+          if (matched.variants.length) {
+            const firstAvailable = matched.variants.find((variant) => variant.stock > 0) ?? matched.variants[0];
+            setSelectedVariantId(firstAvailable.id);
+            setSelectedSize(firstAvailable.size ?? 'OS');
+          } else {
+            setSelectedVariantId('');
+            setSelectedSize('OS');
+          }
 
-        // Set default selections
-        if (adaptedProduct.images?.length > 0) setSelectedImage(0);
-
-        // Set default variant selection
-        if (p.variants && p.variants.length > 0) {
-          const firstAvailable = p.variants.find(v => v.inStock) || p.variants[0];
-          setSelectedSize(firstAvailable.size);
-          setSelectedVariantId(firstAvailable.id);
-        }
-
-        document.title = `${adaptedProduct.title} - Fort Maner`;
-
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-          metaDescription.setAttribute('content', `${adaptedProduct.title} - Premium streetwear from Fort Maner. $${adaptedProduct.price}`);
-        }
-
-        // Track Meta Pixel ViewContent
-        trackViewContent(adaptedProduct.id, 'product', adaptedProduct.price);
-      } else {
-        // Fallback: existing behavior
-        const foundProduct = PRODUCTS.find(p => p.slug === slug || p.handle === slug);
-        if (foundProduct) {
-          setProduct(foundProduct);
-
-          // Set default selections
-          if (foundProduct.images?.length > 0) setSelectedImage(0);
-
-          document.title = `${foundProduct.title} - Fort Maner`;
+          document.title = `${matched.title} - Fort Maner`;
 
           const metaDescription = document.querySelector('meta[name="description"]');
           if (metaDescription) {
-            metaDescription.setAttribute('content', `${foundProduct.title} - Premium streetwear from Fort Maner. $${foundProduct.price}`);
+            metaDescription.setAttribute('content', `${matched.title} - Premium streetwear from Fort Maner. $${matched.price}`);
           }
 
-          // Track Meta Pixel ViewContent
-          trackViewContent(foundProduct.id, 'product', foundProduct.price);
+          trackViewContent(matched.id, 'product', matched.price);
+          setIsLoadingProduct(false);
+          return;
         }
+      } catch (error) {
+        console.error('Primary product lookup failed', error);
       }
-    }).catch(console.error);
 
-    return () => { alive = false; };
+      try {
+        const catalog = await fetchProducts();
+        if (!alive) return;
+        const fallbackProduct = catalog.find((item) => item.slug === slug || item.handle === slug);
+        if (fallbackProduct) {
+          setProduct(fallbackProduct);
+          setSelectedImage(0);
+
+          if (fallbackProduct.variants.length) {
+            const firstAvailable = fallbackProduct.variants.find((variant) => variant.stock > 0) ?? fallbackProduct.variants[0];
+            setSelectedVariantId(firstAvailable.id);
+            setSelectedSize(firstAvailable.size ?? 'OS');
+          } else {
+            setSelectedVariantId('');
+            setSelectedSize('OS');
+          }
+
+          document.title = `${fallbackProduct.title} - Fort Maner`;
+
+          const metaDescription = document.querySelector('meta[name="description"]');
+          if (metaDescription) {
+            metaDescription.setAttribute('content', `${fallbackProduct.title} - Premium streetwear from Fort Maner. $${fallbackProduct.price}`);
+          }
+
+          trackViewContent(fallbackProduct.id, 'product', fallbackProduct.price);
+          setIsLoadingProduct(false);
+          return;
+        } else {
+          setProduct(null);
+        }
+      } catch (error) {
+        console.error('Fallback product lookup failed', error);
+      }
+
+      setIsLoadingProduct(false);
+    };
+
+    hydrate();
+
+    return () => {
+      alive = false;
+    };
   }, [slug]);
 
   const handleAddToCart = async () => {
     if (!product) return;
 
+    const variants = product.variants ?? [];
+    const activeVariant = variants.find((variant) => variant.id === selectedVariantId);
+
     try {
-      // Use cart service if we have adapter product data
-      if (adapterProduct && selectedVariantId) {
-        await addToCartService(product.id, selectedVariantId, quantity);
+      if (activeVariant) {
+        await addToCartService(product.id, activeVariant.id, quantity);
         toast({
           title: "Added to cart",
-          description: `${product.title} (${selectedSize}) has been added to your cart.`,
+          description: `${product.title} (${activeVariant.size ?? 'OS'}) has been added to your cart.`,
         });
       } else {
         // Fallback to existing cart system
         const variant: ProductVariant = {
           id: `${product.id}-default`,
           sku: product.id.toUpperCase(),
-          color: selectedColor || 'Default',
           size: selectedSize || 'One Size',
           stock: 10 // Default stock
         };
@@ -138,6 +174,21 @@ const ProductDetail = () => {
     }
   };
 
+  const handleGalleryKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (!product?.images.length) return;
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      setSelectedImage((prev) => Math.min(prev + 1, product.images.length - 1));
+    } else if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      setSelectedImage((prev) => Math.max(prev - 1, 0));
+    }
+  };
+
+  if (isLoadingProduct) {
+    return <ProductDetailSkeleton />;
+  }
+
   if (!product) {
     return (
       <div className="min-h-screen py-16">
@@ -149,20 +200,50 @@ const ProductDetail = () => {
     );
   }
 
-  const isInStock = product.inStock;
+  const variants = product.variants ?? [];
+  const activeVariant = variants.find((variant) => variant.id === selectedVariantId);
+  const isInStock = product.inStock || variants.some((variant) => variant.stock > 0);
   const currentPrice = product.price;
   const comparePrice = product.compareAtPrice;
 
   return (
     <div className="min-h-screen py-16">
       <div className="container mx-auto px-4">
+        <Breadcrumb className="mb-6 text-sm text-muted-foreground">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/shop-all">Shop All</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{product.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product Images */}
           <div className="space-y-4">
-            <div className="aspect-square overflow-hidden rounded-lg bg-stone-light/5">
+            <div
+              className="aspect-square overflow-hidden rounded-lg bg-stone-light/5"
+              role="group"
+              tabIndex={0}
+              aria-label="Product gallery"
+              onKeyDown={handleGalleryKeyDown}
+            >
               <img
                 src={product.images[selectedImage]}
                 alt={product.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -173,13 +254,17 @@ const ProductDetail = () => {
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
+                    aria-pressed={selectedImage === index}
+                    aria-label={`${product.title} image ${index + 1}`}
                     className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors ${
                       selectedImage === index ? 'border-brand-black' : 'border-transparent'
                     }`}
                   >
                     <img
                       src={image}
-                      alt={`${product.title} ${index + 1}`}
+                      alt={`${product.title} alternate ${index + 1}`}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </button>
@@ -202,36 +287,36 @@ const ProductDetail = () => {
               <p className="text-sm text-muted-foreground mb-4">{product.brand}</p>
               
               <div className="flex items-center space-x-4 mb-6">
-                <span className="text-2xl font-bold">${currentPrice}</span>
+                <span className="text-2xl font-bold">{formatCurrency(currentPrice)}</span>
                 {comparePrice && comparePrice > currentPrice && (
                   <span className="text-lg text-muted-foreground line-through">
-                    ${comparePrice}
+                    {formatCurrency(comparePrice)}
                   </span>
                 )}
               </div>
             </div>
 
             {/* Size Selector */}
-            {adapterProduct?.variants && adapterProduct.variants.length > 0 && (
+            {product.variants && product.variants.length > 0 && (
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium mb-2">Size</label>
                   <div className="flex flex-wrap gap-2">
-                    {adapterProduct.variants.map((variant: any) => (
+                    {product.variants.map((variant) => (
                       <Button
                         key={variant.id}
                         variant={selectedVariantId === variant.id ? "default" : "outline"}
                         size="sm"
-                        disabled={!variant.inStock}
+                        disabled={variant.stock <= 0}
                         onClick={() => {
                           setSelectedVariantId(variant.id);
-                          setSelectedSize(variant.size);
+                          setSelectedSize(variant.size ?? 'OS');
                         }}
                         className="min-w-[44px]"
                       >
                         {variant.size}
-                        {variant.stockLevel && variant.stockLevel <= 5 && (
-                          <span className="ml-1 text-xs">({variant.stockLevel})</span>
+                        {variant.stock > 0 && variant.stock <= 5 && (
+                          <span className="ml-1 text-xs">({variant.stock})</span>
                         )}
                       </Button>
                     ))}
@@ -239,10 +324,10 @@ const ProductDetail = () => {
                   {selectedVariantId && (
                     <p className="text-sm text-muted-foreground mt-2">
                       {(() => {
-                        const variant = adapterProduct.variants.find((v: any) => v.id === selectedVariantId);
+                        const variant = product.variants.find((v) => v.id === selectedVariantId);
                         if (!variant) return '';
-                        if (!variant.inStock) return 'Out of stock';
-                        if (variant.stockLevel && variant.stockLevel <= 5) return `Only ${variant.stockLevel} left`;
+                        if (variant.stock <= 0) return 'Out of stock';
+                        if (variant.stock <= 5) return `Only ${variant.stock} left`;
                         return 'In stock';
                       })()}
                     </p>
@@ -283,7 +368,7 @@ const ProductDetail = () => {
                 className="w-full"
                 size="lg"
                 onClick={handleAddToCart}
-                disabled={!isInStock}
+                disabled={!isInStock || (variants.length > 0 && (!activeVariant || activeVariant.stock <= 0))}
                 variant="default"
               >
                 {isInStock ? 'Add to Cart' : 'Out of Stock'}

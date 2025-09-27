@@ -26,6 +26,9 @@ const Accessories = lazy(() => import("./pages/Accessories"));
 const About = lazy(() => import("./pages/About"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
 const Blog = lazy(() => import("./pages/Blog"));
+const SearchPage = lazy(() => import('./pages/Search'));
+const ShopAll = lazy(() => import('./pages/ShopAll'));
+const DemoPage = lazy(() => import('./pages/Demo'));
 const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Checkout = lazy(() => import("./pages/Checkout"));
@@ -37,6 +40,7 @@ const SizeGuide = lazy(() => import('./pages/SizeGuide'));
 const Shipping = lazy(() => import('./pages/Shipping'));
 const Returns = lazy(() => import('./pages/Returns'));
 const Privacy = lazy(() => import('./pages/Privacy'));
+const ServerError = lazy(() => import('./pages/ServerError'));
 
 // Loading component for suspense fallback
 const PageLoader = () => (
@@ -70,6 +74,9 @@ const App = () => (
                 <Route path="/shop/ss" element={<ShopSS />} />
                 <Route path="/shop/capsules" element={<Capsules />} />
                 <Route path="/shop/capsules/:capsule" element={<CapsuleDetail />} />
+                <Route path="/shop-all" element={<ShopAll />} />
+                <Route path="/demo" element={<DemoPage />} />
+                <Route path="/search" element={<SearchPage />} />
                 <Route path="/kids" element={<Kids />} />
                 <Route path="/men" element={<Men />} />
                 <Route path="/ladies" element={<Ladies />} />
@@ -90,6 +97,7 @@ const App = () => (
                 <Route path="/shipping" element={<Shipping />} />
                 <Route path="/returns" element={<Returns />} />
                 <Route path="/privacy" element={<Privacy />} />
+                <Route path="/500" element={<ServerError />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>

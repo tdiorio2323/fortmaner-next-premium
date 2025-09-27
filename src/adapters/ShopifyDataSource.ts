@@ -1,4 +1,5 @@
-import type { Cart, CartLineInput, IDataSource, Product, ProductVariant } from './IDataSource';
+import type { Cart, CartLineInput, CollectionSummary, IDataSource } from './IDataSource';
+import type { Product, ProductVariant } from '@/lib/types';
 import { sfetch } from '@/lib/shopify/client';
 import { SF_CART_CREATE, SF_CART_LINES_ADD, SF_PRODUCT_BY_HANDLE, SF_PRODUCTS } from '@/lib/shopify/queries';
 import type { SfProduct, SfCart } from '@/lib/shopify/types';
@@ -16,9 +17,32 @@ export class ShopifyDataSource implements IDataSource {
     return data.products.nodes.map(mapSfProduct);
   }
 
+  async getCollections(): Promise<CollectionSummary[]> {
+    // Collection queries are not implemented; return empty list so consumers fall back gracefully.
+    return [];
+  }
+
+  async getCollectionByHandle(_handle: string): Promise<CollectionSummary | null> {
+    return null;
+  }
+
+  async getProductsByCollection(_handle: string): Promise<Product[]> {
+    // Without collection metadata, return all products for now.
+    return this.getProducts();
+  }
+
   async getProductByHandle(handle: string): Promise<Product | null> {
     const data = await sfetch<{ product: SfProduct | null }>(SF_PRODUCT_BY_HANDLE, { handle });
     return data.product ? mapSfProduct(data.product) : null;
+  }
+
+  async searchProducts(query: string): Promise<Product[]> {
+    const products = await this.getProducts();
+    const q = query.trim().toLowerCase();
+    if (!q) return products;
+    return products.filter((product) =>
+      product.title.toLowerCase().includes(q) || product.tags.some((tag) => tag.toLowerCase().includes(q))
+    );
   }
 
   async createCart(): Promise<Cart> {
@@ -48,21 +72,42 @@ export class ShopifyDataSource implements IDataSource {
 }
 
 function mapSfProduct(p: SfProduct): Product {
+  const variants: ProductVariant[] = (p.variants?.nodes ?? []).map((v) => ({
+    id: v.id,
+    size: sizeFromTitle(v.title),
+    sku: v.sku ?? '',
+    color: undefined,
+    stock: v.availableForSale ? Math.max(1, Number(v.quantityAvailable ?? 0)) : 0,
+  }));
+
   return {
     id: p.id,
     handle: p.handle,
+    slug: p.handle,
     title: p.title,
-    description: p.description,
-    images: p.images?.nodes?.map((n) => n.url) ?? [],
+    brand: p.vendor ?? 'Fort Maner',
     price: Number(p.variants?.nodes?.[0]?.price?.amount ?? 0),
-    variants: (p.variants?.nodes ?? []).map((v) => ({
-      id: v.id,
-      size: sizeFromTitle(v.title),
-      sku: v.sku,
-      inStock: v.availableForSale,
-      stockLevel: undefined,
-      price: Number(v.price?.amount ?? 0),
-    })),
-    tags: [],
+    compareAtPrice:
+      p.variants?.nodes?.[0]?.compareAtPrice?.amount != null
+        ? Number(p.variants.nodes[0].compareAtPrice.amount)
+        : null,
+    images: p.images?.nodes?.map((node) => node.url) ?? [],
+    badges: [],
+    inStock: variants.some((variant) => variant.stock > 0),
+    description: p.description ?? '',
+    options: {
+      size: p.options?.find((option) => option.name.toLowerCase() === 'size')?.values ?? [],
+      color: p.options?.find((option) => option.name.toLowerCase() === 'color')?.values ?? [],
+    },
+    variants,
+    collections: p.collections?.nodes?.map((collection) => collection.handle) ?? [],
+    tags: p.tags ?? [],
+    season: null,
+    capsule: null,
+    ageRange: null,
+    seo: {
+      title: p.seo?.title ?? undefined,
+      desc: p.seo?.description ?? undefined,
+    },
   };
 }

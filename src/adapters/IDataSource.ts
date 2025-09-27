@@ -1,23 +1,16 @@
-export type Size = 'S' | 'M' | 'L' | 'XL' | '2XL' | '3XL';
+import type { Product } from '@/lib/types';
 
-export interface ProductVariant {
-  id: string;
-  size: Size;
-  sku?: string;
-  inStock: boolean;
-  stockLevel?: number;
-  price?: number;
-}
-
-export interface Product {
-  id: string;
+export interface CollectionSummary {
   handle: string;
   title: string;
   description?: string;
-  images: string[];
-  price?: number;
-  variants: ProductVariant[];
-  tags?: string[];
+  heroImage?: string;
+  filters?: {
+    sizes?: string[];
+    colors?: string[];
+    tags?: string[];
+  };
+  productHandles: string[];
 }
 
 export interface CartLineInput {
@@ -33,8 +26,12 @@ export interface Cart {
 }
 
 export interface IDataSource {
+  getCollections(): Promise<CollectionSummary[]>;
+  getCollectionByHandle(handle: string): Promise<CollectionSummary | null>;
   getProducts(): Promise<Product[]>;
+  getProductsByCollection(handle: string): Promise<Product[]>;
   getProductByHandle(handle: string): Promise<Product | null>;
+  searchProducts(query: string): Promise<Product[]>;
   createCart(): Promise<Cart>;
   addLines(cartId: string, lines: CartLineInput[]): Promise<Cart>;
   getCheckoutUrl(cartId: string): Promise<string>;

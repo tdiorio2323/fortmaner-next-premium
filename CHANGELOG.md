@@ -15,3 +15,15 @@
 - Typecheck: `npm run typecheck` → OK
 - Build: `npm run build` → OK
 
+## [0.2.0] - Launch hardening
+- Replace static collection pages with adapter-driven `CollectionRoute`, add breadcrumbs, skeleton loaders, and shared empty states.
+- Harden `ProductDetail` with adapter data, variant safeguards, keyboard-accessible gallery, and currency formatting helper.
+- Extend catalog adapter, local fixtures, and search hooks; add `/demo` hub, `/500` page, and navigation/footer audits.
+- Add Vitest smoke tests, npm `test` target, and Node link checker (`npm run check:links`).
+
+### Verification
+- `npm run typecheck`
+- `npm run lint`
+- `npm run test`
+- `npm run build`
+- `npm run check:links`

@@ -2,22 +2,27 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Search, Instagram, Facebook, Phone, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
-// Using public asset path for the logo
-import { Product } from '@/lib/types';
 
 const navigation = [
   { label: "Home", href: "/" },
   { label: "Men", href: "/men" },
-  { label: "Ladies", href: "/ladies" },
+  { label: "Women", href: "/ladies" },
+  { label: "Kids", href: "/kids" },
   { label: "Accessories", href: "/accessories" },
-  { label: "About Us", href: "/about-us" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact#form" },
+  { label: "Shop All", href: "/shop-all" },
+  { label: "Capsules", href: "/shop/capsules" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact", hash: "#form" },
 ];
 
 export default function Header() {
   const location = useLocation();
   const [hideOnHero, setHideOnHero] = useState(false);
+
+  const isRouteActive = (href: string) => {
+    if (href === '/') return location.pathname === '/';
+    return location.pathname === href || location.pathname.startsWith(`${href}/`);
+  };
 
   useEffect(() => {
     if (location.pathname !== "/") {
@@ -54,19 +59,29 @@ export default function Header() {
 
           {/* Center: Nav */}
           <nav className="hidden md:flex items-center justify-center gap-6 text-xl">
-            {navigation.map((n) => (
-              <Link
-                key={n.href}
-                to={n.href}
-                className="hover:text-white/80 whitespace-nowrap"
-              >
-                {n.label}
-              </Link>
-            ))}
+            {navigation.map((n) => {
+              const target = n.hash ? `${n.href}${n.hash}` : n.href;
+              const active = isRouteActive(n.href);
+              return (
+                <Link
+                  key={n.href}
+                  to={target}
+                  className={`whitespace-nowrap transition-colors ${active ? 'text-white font-semibold' : 'text-white/80 hover:text-white'}`}
+                  aria-current={active ? 'page' : undefined}
+                >
+                  {n.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Right: Mobile menu + Search + Social + Phone */}
           <div className="flex items-center justify-end gap-2">
+            {import.meta.env.DEV && (
+              <Link to="/demo" className="hidden md:inline-block text-xs uppercase tracking-wide text-white/70 hover:text-white/90">
+                Demo
+              </Link>
+            )}
             {/* Mobile hamburger */}
             <div className="md:hidden">
               <Sheet>
@@ -75,13 +90,21 @@ export default function Header() {
                 </SheetTrigger>
                 <SheetContent side="left" className="bg-black text-white w-5/6 max-w-xs">
                   <div className="mt-10 space-y-4 pb-24">
-                    {navigation.map((n) => (
-                      <SheetClose asChild key={n.href}>
-                        <Link to={n.href} className="block px-2 py-2 text-lg hover:text-white/80">
-                          {n.label}
-                        </Link>
-                      </SheetClose>
-                    ))}
+                    {navigation.map((n) => {
+                      const target = n.hash ? `${n.href}${n.hash}` : n.href;
+                      const active = isRouteActive(n.href);
+                      return (
+                        <SheetClose asChild key={n.href}>
+                          <Link
+                            to={target}
+                            className={`block px-2 py-2 text-lg transition-colors ${active ? 'text-white font-semibold' : 'hover:text-white/80'}`}
+                            aria-current={active ? 'page' : undefined}
+                          >
+                            {n.label}
+                          </Link>
+                        </SheetClose>
+                      );
+                    })}
                     <div className="flex items-center gap-3 pt-2">
                       <a href="https://www.instagram.com/_fortmaner/" target="_blank" rel="noreferrer" aria-label="Instagram" className="p-2 rounded-md hover:bg-white/10">
                         <Instagram size={24} className="text-white" />

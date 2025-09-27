@@ -1,44 +1,19 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `src/pages/`: Route components (React Router v6).
-- `src/components/` and `src/components/ui/`: Reusable UI and shadcn/ui primitives.
-- `src/data/`: JSON catalogs (products, collections, community).
-- `src/lib/`: Types and utilities (e.g., `cn` in `utils.ts`).
-- `src/integrations/supabase/`: Typed Supabase client and DB types.
-- `src/context/`, `src/hooks/`: Shared state and custom hooks.
-- `public/` (static assets) and `src/assets/` (imported images).
-- `supabase/`: `config.toml` and SQL migrations (schema + RLS).
+Keep route-level React components in `src/pages/` and shared UI in `src/components/` or `src/components/ui/` (shadcn primitives). Place reusable hooks and context under `src/hooks/` and `src/context/`, and isolate typed utilities in `src/lib/`. Store JSON catalogs in `src/data/`, Supabase clients and types in `src/integrations/supabase/`, and imported assets in `src/assets/` while static files live in `public/`. Supabase configuration and RLS migrations reside in `supabase/`.
 
 ## Build, Test, and Development Commands
-- `npm run dev`: Start Vite dev server at http://localhost:8080.
-- `npm run build`: Production build.
-- `npm run build:dev`: Development-mode build.
-- `npm run preview`: Serve the production build locally.
-- `npm run lint`: ESLint (TypeScript + React).
-- `npm run test`: Runs Vitest if configured.
+Use `npm run dev` to launch the Vite dev server at http://localhost:8080. Build production bundles with `npm run build` or development-tuned artifacts via `npm run build:dev`. Preview the production output using `npm run preview`. Run linting with `npm run lint`, and execute the Vitest suite through `npm run test`.
 
 ## Coding Style & Naming Conventions
-- TypeScript + React function components; 2-space indent, single quotes, semicolons.
-- Components: PascalCase files; default exports allowed.
-- Hooks: `useThing.ts[x]` in `src/hooks/`. Utilities/types: camelCase in `src/lib/`.
-- Imports: use `@` alias to `src` (e.g., `import { Button } from '@/components/ui/button'`).
-- Styling: Tailwind CSS; prefer utilities; use `cn()` for conditional classes.
+Code in TypeScript with React function components, using 2-space indentation, single quotes, and semicolons. Name components with PascalCase (`HeroBanner.tsx`), hooks with the `useThing.ts` pattern, and utilities in camelCase (`formatPrice.ts`). Reference modules with the `@` alias (e.g., `@/components/ui/button`). Style with Tailwind CSS utility classes, combining conditionals via the shared `cn()` helper when necessary.
 
 ## Testing Guidelines
-- Prefer Vitest + Testing Library; colocate tests as `*.test.ts[x]`.
-- Keep new-code coverage ≥ 80%.
-- Add `"test": "vitest"` to `package.json` and run `npm run test`.
-- Mock external calls; avoid networked tests (e.g., Supabase).
+Write Vitest + Testing Library specs colocated as `*.test.tsx` or `*.test.ts`. Maintain ≥80% coverage on new code paths. Mock Supabase or network boundaries, and run `npm run test` before sending changes for review.
 
 ## Commit & Pull Request Guidelines
-- Commits: short, imperative; scope prefix optional (e.g., `header:`).
-  Examples: "Add hero slider", "Fix: secure payment info".
-- PRs: include summary, linked issues, screenshots/GIFs for UI changes, and notes on performance or accessibility.
-- Ensure `npm run lint`, `npm run build`, and `npm run preview` succeed before opening.
+Compose short, imperative commits (e.g., `header: add sticky nav`). For pull requests, include a concise summary, reference related issues, attach screenshots or GIFs for UI adjustments, and note any performance or accessibility impacts. Ensure `npm run lint`, `npm run build`, and `npm run preview` succeed locally prior to requesting review.
 
-## Security & Configuration
-- Env: set `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`, `VITE_SUPABASE_PROJECT_ID` (from `.env.example` if present).
-- Never commit secrets; only publishable client keys.
-- Review Supabase RLS in `supabase/migrations/` when touching orders or user data.
-
+## Security & Configuration Tips
+Populate `.env` with `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`, and `VITE_SUPABASE_PROJECT_ID` before local development. Never commit private keys. Review Supabase migrations in `supabase/migrations/` when altering user or order logic to confirm RLS remains correct.

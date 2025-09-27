@@ -1,9 +1,180 @@
 {
-  "men": ["air-jordan-6-cool-grey", "nike-dunk-low-reverse-panda", "godspeed-graphic-hoodie", "chicago-script-tee", "essential-zip-hoodie", "nike-air-max-1-premium", "stacked-logo-crewneck", "utility-sling-bag"],
-  "ladies": ["nike-dunk-low-reverse-panda", "godspeed-graphic-hoodie", "chicago-script-tee", "essential-zip-hoodie", "stacked-logo-crewneck"],
-  "hats": ["logo-dad-hat", "la-varsity-cap", "chicago-skyline-beanie"],
-  "footwear": ["air-jordan-6-cool-grey", "nike-dunk-low-reverse-panda", "nike-air-max-1-premium"],
-  "clothing": ["godspeed-graphic-hoodie", "chicago-script-tee", "essential-zip-hoodie", "stacked-logo-crewneck"],
-  "accessories": ["logo-dad-hat", "crew-socks-2pack", "la-varsity-cap", "utility-sling-bag", "chicago-skyline-beanie"],
-  "featured": ["air-jordan-6-cool-grey", "nike-dunk-low-reverse-panda", "godspeed-graphic-hoodie", "crew-socks-2pack", "la-varsity-cap", "essential-zip-hoodie", "utility-sling-bag", "chicago-skyline-beanie"]
+  "collections": [
+    {
+      "handle": "men",
+      "title": "Men's Collection",
+      "description": "City-ready layers, footwear, and essentials tailored for the Fort Maner man.",
+      "heroImage": "/home-1.jpg",
+      "productHandles": [
+        "air-jordan-6-cool-grey",
+        "mountain-hoodie",
+        "godspeed-graphic-hoodie",
+        "stone-runners",
+        "chicago-script-tee",
+        "essential-zip-hoodie",
+        "stacked-logo-crewneck",
+        "utility-sling-bag"
+      ],
+      "filters": {
+        "sizes": ["S", "M", "L", "XL", "XXL"],
+        "colors": ["Black", "Grey", "White"],
+        "tags": ["outerwear", "tops", "footwear", "accessories"]
+      }
+    },
+    {
+      "handle": "women",
+      "title": "Women's Collection",
+      "description": "Soft textures, cropped silhouettes, and lightweight layers for every day.",
+      "heroImage": "/home-2.jpg",
+      "productHandles": [
+        "nike-dunk-low-reverse-panda",
+        "summer-capsule-tee",
+        "jaguar-tee",
+        "stacked-logo-crewneck",
+        "crew-socks-2pack",
+        "chicago-skyline-beanie"
+      ],
+      "filters": {
+        "sizes": ["XS", "S", "M", "L"],
+        "colors": ["Black", "White", "Stone"],
+        "tags": ["tops", "layers", "footwear"]
+      }
+    },
+    {
+      "handle": "kids",
+      "title": "Kids",
+      "description": "Mini versions of the Fort Maner staples built for playground wear.",
+      "heroImage": "/fort-mock.png",
+      "productHandles": [
+        "kids-logo-hoodie",
+        "crew-socks-2pack",
+        "la-varsity-cap"
+      ],
+      "filters": {
+        "sizes": ["XS", "S", "M"],
+        "colors": ["Black", "Stone"],
+        "tags": ["kids", "play"]
+      }
+    },
+    {
+      "handle": "accessories",
+      "title": "Accessories",
+      "description": "Finishing touches from bags to everyday carry.",
+      "heroImage": "/fort-maner-collection.png",
+      "productHandles": [
+        "utility-sling-bag",
+        "logo-dad-hat",
+        "crew-socks-2pack",
+        "la-varsity-cap",
+        "chicago-skyline-beanie"
+      ],
+      "filters": {
+        "sizes": ["OS"],
+        "colors": ["Black", "Stone"],
+        "tags": ["accessories"]
+      }
+    },
+    {
+      "handle": "hats",
+      "title": "Hats",
+      "description": "Caps and beanies with signature Fort Maner lettering.",
+      "heroImage": "/fort-maner-logo-main.jpg",
+      "productHandles": [
+        "logo-dad-hat",
+        "la-varsity-cap",
+        "chicago-skyline-beanie"
+      ],
+      "filters": {
+        "sizes": ["OS"],
+        "colors": ["Black", "Stone", "Navy"],
+        "tags": ["headwear"]
+      }
+    },
+    {
+      "handle": "footwear",
+      "title": "Footwear",
+      "description": "Sneakers and runners engineered for movement.",
+      "heroImage": "/images/community/skate-jam.jpg",
+      "productHandles": [
+        "air-jordan-6-cool-grey",
+        "nike-dunk-low-reverse-panda",
+        "nike-air-max-1-premium",
+        "stone-runners"
+      ],
+      "filters": {
+        "sizes": ["8", "9", "10", "11", "12"],
+        "colors": ["Cool Grey", "Black"],
+        "tags": ["footwear"]
+      }
+    },
+    {
+      "handle": "fw",
+      "title": "Fall / Winter",
+      "description": "Layered knits and insulated shells for colder months.",
+      "heroImage": "/fort-maner-luxury-cover.jpg",
+      "productHandles": [
+        "mountain-hoodie",
+        "godspeed-graphic-hoodie",
+        "stacked-logo-crewneck",
+        "stone-runners",
+        "air-jordan-6-cool-grey"
+      ],
+      "filters": {
+        "sizes": ["S", "M", "L", "XL"],
+        "colors": ["Black", "Grey"],
+        "tags": ["outerwear", "seasonal"]
+      }
+    },
+    {
+      "handle": "ss",
+      "title": "Spring / Summer",
+      "description": "Breathable tees and warm-weather staples.",
+      "heroImage": "/home-1.jpg",
+      "productHandles": [
+        "summer-capsule-tee",
+        "chicago-script-tee",
+        "jaguar-tee",
+        "crew-socks-2pack",
+        "nike-dunk-low-reverse-panda"
+      ],
+      "filters": {
+        "sizes": ["XS", "S", "M", "L"],
+        "colors": ["White", "Stone", "Black"],
+        "tags": ["lightweight"]
+      }
+    },
+    {
+      "handle": "capsules",
+      "title": "Limited Capsules",
+      "description": "Small-batch drops with bold graphics and cuts.",
+      "heroImage": "/best-sellers-mobile.jpg",
+      "productHandles": [
+        "skull-head-hoodie",
+        "summer-capsule-tee",
+        "jaguar-tee"
+      ],
+      "filters": {
+        "sizes": ["S", "M", "L"],
+        "colors": ["Black", "White"],
+        "tags": ["capsule", "limited"]
+      }
+    },
+    {
+      "handle": "shop-all",
+      "title": "Shop All",
+      "description": "Browse the full Fort Maner line in one view.",
+      "heroImage": "/fort-maner-luxury-cover.jpg",
+      "productHandles": []
+    }
+  ],
+  "featuredHandles": [
+    "air-jordan-6-cool-grey",
+    "nike-dunk-low-reverse-panda",
+    "godspeed-graphic-hoodie",
+    "mountain-hoodie",
+    "jaguar-tee",
+    "stone-runners",
+    "utility-sling-bag",
+    "crew-socks-2pack"
+  ]
 }
